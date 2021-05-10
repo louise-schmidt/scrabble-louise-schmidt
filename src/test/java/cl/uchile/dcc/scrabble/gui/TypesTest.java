@@ -9,17 +9,20 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class TypesTest {
 
-    private StringType Binary;
-    private BoolType Bool;
-    private FloatType Float;
-    private IntType Int;
-    private StringType string;
+    private BinaryType BinaryO;
+    private BoolType BoolO;
+    private FloatType FloatO;
+    private IntType IntO;
+    private StringType stringO;
 
+    private String binary;
     private String str;
-    private boolean Bool;
-    private double Float;
-    private int Int;
-    private String Binary;
+    private boolean bool;
+    private double decimal;
+    private int integer;
+
+    private char[] binary01 = {'0','1'};
+
     private int seed;
     private Random rng;
 

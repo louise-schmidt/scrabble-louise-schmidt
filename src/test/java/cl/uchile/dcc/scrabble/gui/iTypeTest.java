@@ -15,12 +15,18 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class iTypeTest {
 
-    private StringType str;
-    private String string;
-    private boolean Bool;
-    private double Float;
-    private int Int;
-    private String Binary;
+    private StringType Binary;
+    private BoolType Bool;
+    private FloatType Float;
+    private IntType Int;
+    private StringType string;
+
+    private String binary;
+    private String str;
+    private boolean bool;
+    private double float;
+    private int int;
+
     private int seed;
     private Random rng;
 
