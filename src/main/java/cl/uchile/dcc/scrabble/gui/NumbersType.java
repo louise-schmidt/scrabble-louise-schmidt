@@ -1,4 +1,4 @@
 package cl.uchile.dcc.scrabble.gui;
 
-public class NumbersType {
+public abstract class NumbersType {
 }
