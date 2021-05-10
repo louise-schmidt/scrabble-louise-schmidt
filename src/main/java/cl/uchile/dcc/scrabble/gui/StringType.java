@@ -7,6 +7,17 @@ public class StringType {
         this.string=string;
     }
 
+    public String getString() {
+        return string;
+    }
+
+    @Override
+    public String toString() {
+        return this.getString();
+    }
+
+
+
 
 
 }

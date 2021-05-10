@@ -1,18 +1,27 @@
 package cl.uchile.dcc.scrabble.gui;
 
-public class BoolType {
+public class BoolType extends Types {
     private boolean Bool;
 
     public BoolType(boolean Bool) {
         this.Bool=Bool;
     }
 
-    public StringType BoolToString(){
-
+    public boolean getBool() {
+        return Bool;
     }
 
-    public BoolType BoolToBool(){
-
+    @Override
+    public String toString() {
+        return String.valueOf(this.getBool());
     }
+
+    @Override
+    // quizas es con getters ojo
+    public BoolType ToBool() {
+        return this;
+    }
+
+
 
 }

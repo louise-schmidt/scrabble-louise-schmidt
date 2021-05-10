@@ -11,15 +11,13 @@ public class FloatType extends NumbersType {
         return Float;
     }
 
-    public StringType FloatToString(){
-
-
+    @Override
+    public String toString() {
+        return String.valueOf(this.getFloat());
     }
 
-    public FloatType FloatToFloat(FloatType F){
-        return F;
+    @Override
+    public FloatType ToFloat() {
+        return this;
     }
-
-
-
 }

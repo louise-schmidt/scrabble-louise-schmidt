@@ -7,7 +7,30 @@ public abstract class Types implements iType {
     private int Int;
     private String Binary;
 
+    @Override
+    public StringType ToStringS() {
+        return new StringType(this.toString());
+    }
 
+    @Override
+    public BoolType ToBool(){
+        return null;
+    }
+
+    @Override
+    public FloatType ToFloat(){
+        return null;
+    }
+
+    @Override
+    public IntType ToInt(){
+        return null;
+    }
+
+    @Override
+    public BinaryType ToBinary(){
+        return null;
+    }
 
 
 }

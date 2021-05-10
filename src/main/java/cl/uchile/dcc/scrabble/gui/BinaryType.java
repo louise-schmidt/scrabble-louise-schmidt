@@ -7,15 +7,17 @@ public class BinaryType extends NumbersType {
         this.Binary=Binary;
     }
 
-    public StringType BinaryToString(){
+    public String getBinary() {
+        return Binary;
     }
 
-    public FloatType BinaryToFloat(){
+    @Override
+    public String toString() {
+        return this.getBinary();
     }
 
-    public IntType BinaryToInt(){
-    }
-
-    public BinaryType BinaryToBinary(){
+    @Override
+    public BinaryType ToBinary() {
+        return this;
     }
 }

@@ -7,19 +7,27 @@ public class IntType extends NumbersType {
         this.Int=Int;
     }
 
-    public StringType IntToString(){
-
+    public int getInt() {
+        return Int;
     }
 
-    public FloatType IntToFloat(){
-
+    @Override
+    public String toString() {
+        return String.valueOf(this.getInt());
     }
 
-    public IntType IntToInt(){
-
+    @Override
+    public StringType ToStringS() {
+        return new StringType(this.toString());
     }
 
-    public BinaryType IntToBinary(){
+    @Override
+    public IntType ToInt() {
+        return this;
+    }
 
+    @Override
+    public FloatType ToFloat() {
+        return new FloatType(this.getInt());
     }
 }
