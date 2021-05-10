@@ -14,6 +14,12 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.*;
 
 class iTypeTest {
+    
+    private String string;
+    private boolean Bool;
+    private double Float;
+    private int Int;
+    private String Binary;
 
     @BeforeEach
     void setUp() {
