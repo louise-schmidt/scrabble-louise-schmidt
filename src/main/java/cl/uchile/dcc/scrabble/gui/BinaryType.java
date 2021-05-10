@@ -6,18 +6,14 @@ public class BinaryType extends NumbersType {
     }
 
     public StringType BinaryToString(){
-
     }
 
     public FloatType BinaryToFloat(){
-
     }
 
     public IntType BinaryToInt(){
-
     }
 
     public BinaryType BinaryToBinary(){
-        
     }
 }
