@@ -5,4 +5,6 @@ public abstract class NumbersType extends Types {
     public NumbersType() {
     }
 
+
+
 }

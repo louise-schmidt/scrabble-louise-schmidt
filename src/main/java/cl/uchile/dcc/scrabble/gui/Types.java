@@ -14,8 +14,7 @@ public abstract class Types implements iType {
 
     @Override
     public BoolType ToBool(){
-        return null;
-    }
+        return null; }
 
     @Override
     public FloatType ToFloat(){
@@ -31,6 +30,5 @@ public abstract class Types implements iType {
     public BinaryType ToBinary(){
         return null;
     }
-
 
 }
