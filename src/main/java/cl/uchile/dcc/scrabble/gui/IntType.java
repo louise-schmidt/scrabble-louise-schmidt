@@ -22,12 +22,30 @@ public class IntType extends NumbersType {
     }
 
     @Override
+    public FloatType ToFloat() {
+        return new FloatType(this.getInt());
+    }
+
+    @Override
     public IntType ToInt() {
         return this;
     }
 
     @Override
-    public FloatType ToFloat() {
-        return new FloatType(this.getInt());
+    public BinaryType ToBinary(int in) {
+        if(in<0){
+
+        }
+        else{
+            int[] binary = new int[in.lenght];
+        }
+
+
+        public twoscomplement(Int I){
+
+        }
+
+        return super.ToBinary();
     }
+
 }

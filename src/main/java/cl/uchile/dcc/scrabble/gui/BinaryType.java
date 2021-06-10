@@ -17,6 +17,21 @@ public class BinaryType extends NumbersType {
     }
 
     @Override
+    public StringType ToStringS() {
+        return super.ToStringS();
+    }
+
+    @Override
+    public FloatType ToFloat() {
+        return super.ToFloat();
+    }
+
+    @Override
+    public IntType ToInt() {
+        return super.ToInt();
+    }
+
+    @Override
     public BinaryType ToBinary() {
         return this;
     }

@@ -12,8 +12,8 @@ public class StringType {
     }
 
     @Override
-    public String toString() {
-        return this.getString();
+    public StringType toString() {
+        return this;
     }
 
 }

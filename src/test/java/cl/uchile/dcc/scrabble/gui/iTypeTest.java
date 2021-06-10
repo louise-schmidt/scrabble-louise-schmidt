@@ -14,7 +14,6 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.*;
 
 class iTypeTest {
-
     private StringType Binary;
     private BoolType Bool;
     private FloatType Float;
