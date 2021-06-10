@@ -31,21 +31,47 @@ public class IntType extends NumbersType {
         return this;
     }
 
-    @Override
     public BinaryType ToBinary(int in) {
-        if(in<0){
-
+        int length = 0;
+        int contador = 0;
+        String s = "0";
+        String s3 = "";
+        String s2 = "";
+        while ((2 ^ contador) < in) {
+            length++;
+            contador++;
+            in = Math.abs(in);
         }
-        else{
-            int[] binary = new int[in.lenght];
+        while (in > 0) {
+            s = s + Integer.toString(in % 2);
+            in = in / 2;
         }
-
-
-        public twoscomplement(Int I){
-
+        if (in < 0) {
+            for (int i = 0; i < length; i++) {
+                if (s.charAt(i) == '1') {
+                    s2 += "0";
+                } else {
+                    s2 += "1";
+                }
+            }
+            boolean b = true;
+            for (int i = length; i > 0; i--) {
+                if (b) {
+                    if (s2.charAt(i) == '1') {
+                        s3 = "0" + s3;
+                    } else {
+                        s3 = "1" + s3;
+                        b = false;
+                    }
+                } else {
+                    if (s2.charAt(i) == '1') {
+                        s3 = "1" + s3;
+                    } else {
+                        s3 = "0" + s3;
+                    }
+                }
+            }
         }
-
-        return super.ToBinary();
+        return new BinaryType(s3);
     }
-
 }

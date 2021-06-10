@@ -35,7 +35,7 @@ class iTypeTest {
         rng = new Random(seed);
         int strSize = rng.nextInt(20);
         string = RandomStringUtils.random(strSize, 0, Character.MAX_CODE_POINT, true, false, null, rng);
-        new ToStringS(string);
+        s = new ToStringS(string);
     }
 
     @Test
@@ -56,5 +56,33 @@ class iTypeTest {
 
     @Test
     void toBinary() {
+    }
+
+    @Test
+    void Suma() {
+    }
+
+    @Test
+    void Resta() {
+    }
+
+    @Test
+    void Multiplicacion() {
+    }
+
+    @Test
+    void Division() {
+    }
+
+    @Test
+    void Negacion() {
+    }
+
+    @Test
+    void Conjuncion() {
+    }
+
+    @Test
+    void Disyuncion() {
     }
 }

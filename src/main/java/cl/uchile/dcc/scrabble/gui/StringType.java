@@ -1,19 +1,18 @@
 package cl.uchile.dcc.scrabble.gui;
 
-public class StringType {
+public class StringType extends Types {
     private String string;
 
     public StringType(String string) {
         this.string=string;
     }
 
-    public String getString() {
+    public String toString() {
         return string;
     }
 
     @Override
-    public StringType toString() {
-        return this;
+    public StringType toStringS() {
+        return new StringType(this.string);
     }
-
 }

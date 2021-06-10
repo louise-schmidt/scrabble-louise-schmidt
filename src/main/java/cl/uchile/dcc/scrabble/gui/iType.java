@@ -6,6 +6,5 @@ public interface iType {
     BoolType ToBool();
     FloatType ToFloat();
     IntType ToInt();
-    BinaryType ToBinary();
 
 }
