@@ -44,13 +44,9 @@ public class BinaryType extends Types {
     private int bitToInt(char bit) { return bit == '0' ? 0 : 1;
     }
 
-    public IntType ToIntType(int i) {
-        return new IntType(i);
-    }
+    public IntType ToIntType() { return new IntType(this.ToInt()); }
 
-    public BinaryType ToBinary() {
-        return this;
-    }
+    public BinaryType ToBinary() { return new BinaryType(this.Binary); }
 
     @Override
     public boolean equals(Object o) {

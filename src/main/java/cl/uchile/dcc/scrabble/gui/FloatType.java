@@ -9,13 +9,86 @@ public class FloatType extends Types {
         this.Float=Float;
     }
 
-    public double getFloat() {
-        return Float;
+    public double getFloat() { return this.Float; }
+
+    public FloatType ToFloatType(){ return new FloatType(this.Float); }
+
+    public FloatType suma(FloatType F) {
+        FloatType f = this;
+        double d = F.getFloat();
+        return f.operacionFloatType(d, "suma");
     }
 
-    public FloatType ToFloat() {
-        return this;
+    public FloatType suma(IntType I) {
+        FloatType f = this;
+        double d = (I.ToFloatType()).getFloat();
+        return f.operacionFloatType(d, "suma");
     }
+
+    public FloatType suma(BinaryType B) {
+        IntType iB = B.ToIntType();
+        FloatType f = this;
+        double d = (iB.ToFloatType()).getFloat();
+        return f.operacionFloatType(d, "suma");
+    }
+
+    public FloatType resta(FloatType F) {
+        FloatType f1 = this;
+        double d = F.getFloat();
+        return f1.operacionFloatType(d, "resta");
+    }
+
+    public FloatType resta(IntType I) {
+        FloatType f = this;
+        double d = (I.ToFloatType()).getFloat();
+        return f.operacionFloatType(d, "resta");
+    }
+
+    public FloatType resta(BinaryType B) {
+        IntType iB = B.ToIntType();
+        FloatType f = this;
+        double d = (iB.ToFloatType()).getFloat();
+        return f.operacionFloatType(d, "resta");
+    }
+
+    public FloatType mult(FloatType F) {
+        FloatType f = this;
+        double d = F.getFloat();
+        return f.operacionFloatType(d, "multiplicacion");
+    }
+
+    public FloatType mult(IntType I) {
+        FloatType f = this;
+        double d = (I.ToFloatType()).getFloat();
+        return f.operacionFloatType(d, "multiplicacion");
+    }
+
+    public FloatType mult(BinaryType B) {
+        IntType iB = B.ToIntType();
+        FloatType f = this;
+        double d = (iB.ToFloatType()).getFloat();
+        return f.operacionFloatType(d, "multiplicacion");
+    }
+
+    public FloatType division(FloatType F) {
+        FloatType f = this;
+        double d = F.getFloat();
+        return f.operacionFloatType(d, "division");
+    }
+
+    public FloatType division(IntType I) {
+        FloatType f = this;
+        double d = (I.ToFloatType()).getFloat();
+        return f.operacionFloatType(d, "division");
+    }
+
+    public FloatType division(BinaryType B) {
+        IntType iB = B.ToIntType();
+        FloatType f = this;
+        double d = (iB.ToFloatType()).getFloat();
+        return f.operacionFloatType(d, "division");
+    }
+
 
     @Override
     public boolean equals(Object o) {

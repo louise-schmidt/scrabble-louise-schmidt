@@ -10,7 +10,7 @@ public class IntType extends Types {
     }
 
     public int getInt() {
-        return Int;
+        return this.Int;
     }
 
     @Override
@@ -18,7 +18,7 @@ public class IntType extends Types {
         return new StringType(this.toString());
     }
 
-    public FloatType ToFloat() {
+    public FloatType ToFloatType() {
         return new FloatType(this.getInt());
     }
 
@@ -28,11 +28,8 @@ public class IntType extends Types {
 
     public BinaryType ToBinary(int in) {
         int length = 0;
-        int contador = 0;
-        in = Math.abs(in);
-        while ((2 ^ contador) < in) {
+        while ((2 ^ length) <= Math.abs(in)) {
             length++;
-            contador++;
         }
         int a[] = new int[length];
         for(int i=0; i<length; i++) {
@@ -42,7 +39,7 @@ public class IntType extends Types {
         if (in < 0) {
             for (int i = 0; i < length; i++) {
                 if (a[i] == 1) {
-                    a[i]= 0;
+                    a[i] = 0;
                 } else {
                     a[i] = 1;
                 }
@@ -56,17 +53,13 @@ public class IntType extends Types {
                         a[i] = 1;
                         b = false;
                     }
-                } else {
-                    if (a[i] == 1) {
-                        a[i] = 1;
-                    } else {
-                        a[i] = 0;
-                    }
-                }
+                } else { break; }
             }
+            String answer = java.util.Arrays.toString(a);
+            return new BinaryType('1'+answer);
         }
         String answer = java.util.Arrays.toString(a);
-        return new BinaryType(answer);
+        return new BinaryType('0'+answer);
     }
 
     @Override

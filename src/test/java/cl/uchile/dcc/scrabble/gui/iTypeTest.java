@@ -23,8 +23,8 @@ class iTypeTest {
     private String binary;
     private String str;
     private boolean bool;
-    private double float;
-    private int int;
+    private double floatt;
+    private int integer;
 
     private int seed;
     private Random rng;

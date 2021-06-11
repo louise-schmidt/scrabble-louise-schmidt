@@ -16,8 +16,26 @@ public abstract class Types implements iType {
         return String.valueOf(this);
     }
 
-    public StringType sumaS() {
-        return ;
+    public FloatType operacionFloatType(double d, String s) {
+        if(s=="suma") {
+            return new FloatType(this.Float+d);
+        } else if(s=="resta"){
+            return new FloatType(this.Float-d);
+        } else if(s=="multiplicacion"){
+            return new FloatType(this.Float*d);
+        } else {
+            return new FloatType(this.Float/d); }
     }
 
+    public IntType operacionIntType(int i, String s) {
+        if(s=="suma") {
+            return new IntType(this.Int+i);
+        } else if(s=="resta"){
+            return new IntType(this.Int-i);
+        } else if(s=="multiplicacion"){
+            return new IntType(this.Int*i);
+        } else {
+            return new IntType(this.Int/i); }
+
+    }
 }

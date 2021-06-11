@@ -10,11 +10,11 @@ public class BoolType extends Types {
     }
 
     public boolean getBool() {
-        return Bool;
+        return this.Bool;
     }
 
-    public BoolType ToBool() {
-        return this;
+    public BoolType ToBoolType() {
+        return new BoolType(this.Bool);
     }
 
     @Override
