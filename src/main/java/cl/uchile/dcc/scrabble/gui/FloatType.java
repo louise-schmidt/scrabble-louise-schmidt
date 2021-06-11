@@ -2,7 +2,7 @@ package cl.uchile.dcc.scrabble.gui;
 
 import java.util.Objects;
 
-public class FloatType extends NumbersType {
+public class FloatType extends Types {
     private double Float;
 
     public FloatType(double Float) {

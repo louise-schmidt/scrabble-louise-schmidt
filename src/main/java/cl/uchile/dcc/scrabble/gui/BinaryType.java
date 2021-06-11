@@ -2,7 +2,7 @@ package cl.uchile.dcc.scrabble.gui;
 
 import java.util.Objects;
 
-public class BinaryType extends NumbersType {
+public class BinaryType extends Types {
     private String Binary;
 
     public BinaryType(String Binary) {

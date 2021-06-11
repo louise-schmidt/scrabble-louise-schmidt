@@ -16,18 +16,5 @@ public abstract class Types implements iType {
         return string;
     }
 
-    @Override
-    public BoolType ToBool() { return null; }
-
-    @Override
-    public FloatType ToFloat(){
-        return null;
-    }
-
-    @Override
-    public IntType ToInt(){
-        return null;
-    }
-
     public abstract StringType toStringS();
 }

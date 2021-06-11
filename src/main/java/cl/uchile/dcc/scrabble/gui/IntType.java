@@ -2,7 +2,7 @@ package cl.uchile.dcc.scrabble.gui;
 
 import java.util.Objects;
 
-public class IntType extends NumbersType {
+public class IntType extends Types {
     private int Int;
 
     public IntType(int Int) {
