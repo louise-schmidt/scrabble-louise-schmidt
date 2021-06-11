@@ -14,21 +14,14 @@ public class IntType extends Types {
     }
 
     @Override
-    public String toString() {
-        return String.valueOf(this.getInt());
-    }
-
-    @Override
     public StringType ToStringS() {
         return new StringType(this.toString());
     }
 
-    @Override
     public FloatType ToFloat() {
         return new FloatType(this.getInt());
     }
 
-    @Override
     public IntType ToInt() {
         return this;
     }

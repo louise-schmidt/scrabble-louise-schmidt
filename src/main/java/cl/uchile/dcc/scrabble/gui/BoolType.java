@@ -13,13 +13,6 @@ public class BoolType extends Types {
         return Bool;
     }
 
-    @Override
-    public String toString() {
-        return String.valueOf(this.getBool());
-    }
-
-    @Override
-    // quizas es con getters ojo
     public BoolType ToBool() {
         return this;
     }

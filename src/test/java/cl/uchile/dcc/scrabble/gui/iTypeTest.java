@@ -66,7 +66,7 @@ class iTypeTest {
     }
 
     @Test
-    void Suma() {
+    void sumaS() {
     }
 
     @Test

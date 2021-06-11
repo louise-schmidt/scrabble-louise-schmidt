@@ -13,16 +13,9 @@ public class FloatType extends Types {
         return Float;
     }
 
-    @Override
-    public String toString() {
-        return String.valueOf(this.getFloat());
-    }
-
-    @Override
     public FloatType ToFloat() {
         return this;
     }
-
 
     @Override
     public boolean equals(Object o) {

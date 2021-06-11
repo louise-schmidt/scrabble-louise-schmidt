@@ -13,8 +13,11 @@ public abstract class Types implements iType {
     }
 
     public String toString() {
-        return string;
+        return String.valueOf(this);
     }
 
-    public abstract StringType toStringS();
+    public StringType sumaS() {
+        return ;
+    }
+
 }

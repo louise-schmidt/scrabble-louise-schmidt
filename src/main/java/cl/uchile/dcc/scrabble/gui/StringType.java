@@ -9,9 +9,29 @@ public class StringType extends Types {
         this.string=string;
     }
 
-    @Override
-    public StringType toStringS() {
-        return new StringType(this.string);
+    public StringType sumaS(StringType string) {
+        String s=string.toString();
+        return new StringType(this.string+s);
+    }
+
+    public StringType sumaS(BoolType bool) {
+        String b=bool.toString();
+        return new StringType(this.string+b);
+    }
+
+    public StringType sumaS(FloatType Float) {
+        String f=Float.toString();
+        return new StringType(this.string+f);
+    }
+
+    public StringType sumaS(IntType Int) {
+        String i=Int.toString();
+        return new StringType(this.string+i);
+    }
+
+    public StringType sumaS(BinaryType binary) {
+        String bi=binary.toString();
+        return new StringType(this.string+bi);
     }
 
     @Override

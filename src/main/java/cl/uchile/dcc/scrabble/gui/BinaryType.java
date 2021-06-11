@@ -14,44 +14,40 @@ public class BinaryType extends Types {
     }
 
     @Override
-    public String toString() {
-        return this.getBinary();
-    }
-
-    @Override
     public StringType ToStringS() {
         return super.ToStringS();
     }
 
-    @Override
-    public FloatType ToFloat() {
-
-
+    public FloatType ToFloat(String Binary) {
+        double i=(double)this.ToInt();
+        return new FloatType(i);
     }
 
-    @Override
-    public IntType ToInt(String binary) {
-        String binary = this.getBinary();
-        if (bitToInt(binary.charAt(0)) == 0) {
-            return positiveBinToInt(binary); }
-        else {
-            return negativeBinaryToInt(binary); }
+    public int ToInt() {
+        String Binary = this.getBinary();
+        if (bitToInt(this.Binary.charAt(0)) == 0) { return positiveBinToInt(Binary); }
+        else { return negativeBinaryToInt(Binary); }
         }
-        private int negativeBinaryToInt(String binary) {
-            int n = binary.length() - 1;
-            int w = -bitToInt(binary.charAt(0)) * (int) Math.pow(2, n);
-            for (int i = n, j = 0; i > 0; i--, j++) {
-                w += (int) Math.pow(2, j) * (binary.charAt(i) == '1' ? 1 : 0); }
-            return w; }
-        private int positiveBinToInt(String binary) {
-            int w = 0;
-            for (int i = binary.length() - 1, j = 0; i > 0; i--, j++) {
-                w += (int) Math.pow(2, j) * bitToInt(binary.charAt(i)); }
-            return w; }
-        private int bitToInt(char bit) { return bit == '0' ? 0 : 1; }
+    private int negativeBinaryToInt(String binary) {
+        int n = binary.length() - 1;
+        int w = -bitToInt(binary.charAt(0)) * (int) Math.pow(2, n);
+        for (int i = n, j = 0; i > 0; i--, j++) {
+            w += (int) Math.pow(2, j) * (binary.charAt(i) == '1' ? 1 : 0); }
+        return w;
+    }
+    private int positiveBinToInt(String binary) {
+        int w = 0;
+        for (int i = binary.length() - 1, j = 0; i > 0; i--, j++) {
+            w += (int) Math.pow(2, j) * bitToInt(binary.charAt(i)); }
+        return w;
+    }
+    private int bitToInt(char bit) { return bit == '0' ? 0 : 1;
     }
 
-    @Override
+    public IntType ToIntType(int i) {
+        return new IntType(i);
+    }
+
     public BinaryType ToBinary() {
         return this;
     }
