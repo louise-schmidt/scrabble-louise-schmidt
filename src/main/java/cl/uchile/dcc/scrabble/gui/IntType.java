@@ -1,5 +1,7 @@
 package cl.uchile.dcc.scrabble.gui;
 
+import java.util.Objects;
+
 public class IntType extends NumbersType {
     private int Int;
 
@@ -34,44 +36,56 @@ public class IntType extends NumbersType {
     public BinaryType ToBinary(int in) {
         int length = 0;
         int contador = 0;
-        String s = "0";
-        String s3 = "";
-        String s2 = "";
+        in = Math.abs(in);
         while ((2 ^ contador) < in) {
             length++;
             contador++;
-            in = Math.abs(in);
         }
-        while (in > 0) {
-            s = s + Integer.toString(in % 2);
+        int a[] = new int[length];
+        for(int i=0; i<length; i++) {
+            a[i] = in % 2;
             in = in / 2;
         }
         if (in < 0) {
             for (int i = 0; i < length; i++) {
-                if (s.charAt(i) == '1') {
-                    s2 += "0";
+                if (a[i] == 1) {
+                    a[i]= 0;
                 } else {
-                    s2 += "1";
+                    a[i] = 1;
                 }
             }
             boolean b = true;
             for (int i = length; i > 0; i--) {
                 if (b) {
-                    if (s2.charAt(i) == '1') {
-                        s3 = "0" + s3;
+                    if (a[i] == 1) {
+                        a[i] = 0;
                     } else {
-                        s3 = "1" + s3;
+                        a[i] = 1;
                         b = false;
                     }
                 } else {
-                    if (s2.charAt(i) == '1') {
-                        s3 = "1" + s3;
+                    if (a[i] == 1) {
+                        a[i] = 1;
                     } else {
-                        s3 = "0" + s3;
+                        a[i] = 0;
                     }
                 }
             }
         }
-        return new BinaryType(s3);
+        String answer = java.util.Arrays.toString(a);
+        return new BinaryType(answer);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        IntType intType = (IntType) o;
+        return Int == intType.Int;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(Int);
     }
 }

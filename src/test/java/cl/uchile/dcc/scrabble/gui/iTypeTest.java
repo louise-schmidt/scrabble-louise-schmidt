@@ -35,11 +35,18 @@ class iTypeTest {
         rng = new Random(seed);
         int strSize = rng.nextInt(20);
         string = RandomStringUtils.random(strSize, 0, Character.MAX_CODE_POINT, true, false, null, rng);
-        s = new ToStringS(string);
+
+        String s="1100";
+        boolean bo=true;
+        double d=4.5;
+        int i=60;
+        String b="01010";
     }
 
     @Test
     void toStringS() {
+
+
     }
 
     @Test

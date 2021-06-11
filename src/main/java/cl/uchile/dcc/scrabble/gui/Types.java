@@ -12,8 +12,12 @@ public abstract class Types implements iType {
         return new StringType(this.toString());
     }
 
+    public String toString() {
+        return string;
+    }
+
     @Override
-    public BoolType ToBool(){ return null; }
+    public BoolType ToBool() { return null; }
 
     @Override
     public FloatType ToFloat(){
@@ -24,4 +28,6 @@ public abstract class Types implements iType {
     public IntType ToInt(){
         return null;
     }
+
+    public abstract StringType toStringS();
 }
