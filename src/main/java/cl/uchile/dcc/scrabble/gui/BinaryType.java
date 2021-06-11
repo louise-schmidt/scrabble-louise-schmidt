@@ -25,7 +25,8 @@ public class BinaryType extends Types {
 
     @Override
     public FloatType ToFloat() {
-        return super.ToFloat();
+
+
     }
 
     @Override
