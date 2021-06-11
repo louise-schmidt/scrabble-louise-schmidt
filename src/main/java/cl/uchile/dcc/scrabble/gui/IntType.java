@@ -1,5 +1,4 @@
 package cl.uchile.dcc.scrabble.gui;
-
 import java.util.Objects;
 
 public class IntType extends Types {
@@ -18,13 +17,7 @@ public class IntType extends Types {
         return new StringType(this.toString());
     }
 
-    public FloatType ToFloatType() {
-        return new FloatType(this.getInt());
-    }
-
-    public IntType ToInt() {
-        return this;
-    }
+    public FloatType ToFloatType() { return new FloatType(this.getInt()); }
 
     public BinaryType ToBinary(int in) {
         int length = 0;
@@ -60,6 +53,63 @@ public class IntType extends Types {
         }
         String answer = java.util.Arrays.toString(a);
         return new BinaryType('0'+answer);
+    }
+
+    public FloatType suma(FloatType F) { return F.suma(this); }
+
+    public IntType suma(IntType I) {
+        IntType i = this;
+        int in = I.getInt();
+        return i.operacionIntType(in, "suma");
+    }
+
+    public IntType suma(BinaryType B) {
+        IntType i = this;
+        int iB = B.ToInt();
+        return i.operacionIntType(iB, "suma");
+
+    }
+
+    public FloatType resta(FloatType F) { return F.resta(this); }
+
+    public IntType resta(IntType I) {
+        IntType i = this;
+        int in = I.getInt();
+        return i.operacionIntType(in, "resta");
+    }
+
+    public IntType resta(BinaryType B) {
+        IntType i = this;
+        int in = B.ToInt();
+        return i.operacionIntType(in, "resta");
+    }
+
+    public FloatType mult(FloatType F) { return F.mult(this); }
+
+    public IntType mult(IntType I) {
+        IntType i = this;
+        int in = I.getInt();
+        return i.operacionIntType(in, "multiplicacion");
+    }
+
+    public IntType mult(BinaryType B) {
+        IntType i = this;
+        int in = B.ToInt();
+        return i.operacionIntType(in, "multiplicacion");
+    }
+
+    public FloatType division(FloatType F) { return F.mult(this); }
+
+    public IntType division(IntType I) {
+        IntType i = this;
+        int in = I.getInt();
+        return i.operacionIntType(in, "division");
+    }
+
+    public IntType division(BinaryType B) {
+        IntType i = this;
+        int in = B.ToInt();
+        return i.operacionIntType(in, "division");
     }
 
     @Override

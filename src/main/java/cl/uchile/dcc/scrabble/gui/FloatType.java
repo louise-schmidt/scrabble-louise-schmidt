@@ -1,5 +1,4 @@
 package cl.uchile.dcc.scrabble.gui;
-
 import java.util.Objects;
 
 public class FloatType extends Types {
@@ -11,7 +10,9 @@ public class FloatType extends Types {
 
     public double getFloat() { return this.Float; }
 
+    /*
     public FloatType ToFloatType(){ return new FloatType(this.Float); }
+     */
 
     public FloatType suma(FloatType F) {
         FloatType f = this;

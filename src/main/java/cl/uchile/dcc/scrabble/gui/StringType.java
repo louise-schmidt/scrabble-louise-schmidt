@@ -1,5 +1,4 @@
 package cl.uchile.dcc.scrabble.gui;
-
 import java.util.Objects;
 
 public class StringType extends Types {

@@ -35,7 +35,19 @@ public abstract class Types implements iType {
         } else if(s=="multiplicacion"){
             return new IntType(this.Int*i);
         } else {
-            return new IntType(this.Int/i); }
-
+            return new IntType((int)(this.Int/i)); }
     }
+
+    public BinaryType operacionBinaryType(String b, String s) {
+        if(s=="suma") {
+            return new BinaryType(b);
+        } else if(s=="resta"){
+            return new BinaryType(b);
+        } else if(s=="multiplicacion"){
+            return new BinaryType(b);
+        } else {
+            return new BinaryType((b); }
+    }
+
+
 }

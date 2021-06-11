@@ -10,8 +10,14 @@ public class BinaryType extends Types {
     }
 
     public String getBinary() {
-        return Binary;
+        return this.Binary;
     }
+
+    public IntType ToIntType() { return new IntType(this.ToInt()); }
+
+    /*
+    public BinaryType ToBinary() { return new BinaryType(this.Binary); }
+     */
 
     @Override
     public StringType ToStringS() {
@@ -43,10 +49,6 @@ public class BinaryType extends Types {
     }
     private int bitToInt(char bit) { return bit == '0' ? 0 : 1;
     }
-
-    public IntType ToIntType() { return new IntType(this.ToInt()); }
-
-    public BinaryType ToBinary() { return new BinaryType(this.Binary); }
 
     @Override
     public boolean equals(Object o) {
