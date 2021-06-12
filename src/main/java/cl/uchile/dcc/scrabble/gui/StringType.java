@@ -1,21 +1,25 @@
 package cl.uchile.dcc.scrabble.gui;
 import java.util.Objects;
 
+/**
+ * subclase para el String de Scrabble
+ * extiende la clase abstracta Types
+ */
 public class StringType extends Types {
     private String string;
 
     /**
-     *
-     * @param string
+     * Constructor de la subclase
+     * @param string de tipo String de Java
      */
     public StringType(String string) {
         this.string=string;
     }
 
     /**
-     *
-     * @param string
-     * @return
+     * Metodo suma para dos Strings
+     * @param string es String de Java
+     * @return 
      */
     public StringType suma(StringType string) {
         String s=string.getString();
