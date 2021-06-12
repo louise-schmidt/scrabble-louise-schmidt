@@ -19,7 +19,7 @@ public class StringType extends Types {
     /**
      * Metodo suma para dos Strings
      * @param string es String de Java
-     * @return 
+     * @return nuevo StringType de string sumado a un StringType
      */
     public StringType suma(StringType string) {
         String s=string.getString();
@@ -27,9 +27,9 @@ public class StringType extends Types {
     }
 
     /**
-     *
-     * @param bool
-     * @return
+     * Metodo suma
+     * @param bool se convierte en StringType
+     * @return un nuevo StringType que suma el bool transformado a un StringType
      */
     public StringType suma(BoolType bool) {
         String b=bool.getString();
@@ -37,9 +37,9 @@ public class StringType extends Types {
     }
 
     /**
-     *
-     * @param Float
-     * @return
+     * Metodo suma Float
+     * @param Float se convierte en StringType
+     * @return un nuevo StringType que suma el Float transformado a un StringType
      */
     public StringType suma(FloatType Float) {
         String f=Float.getString();
@@ -47,29 +47,24 @@ public class StringType extends Types {
     }
 
     /**
-     *
-     * @param Int
-     * @return
+     * Metodo suma para Int
+     * @param Int se convierte en StringType
+     * @return un nuevo StringType que suma el Int transformado a un StringType
      */
     public StringType suma(IntType Int) {
         String i=Int.getString();
         return new StringType(this.string+i); }
 
     /**
-     *
-     * @param binary
-     * @return
+     * Metodo suma para binary
+     * @param binary se convierte en StringType
+     * @return un nuevo StringType que suma el binary transformado a un StringType
      */
     public StringType suma(BinaryType binary) {
         String bi=binary.getString();
         return new StringType(this.string+bi);
     }
 
-    /**
-     *
-     * @param o
-     * @return
-     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -78,10 +73,6 @@ public class StringType extends Types {
         return Objects.equals(string, that.string);
     }
 
-    /**
-     *
-     * @return
-     */
     @Override
     public int hashCode() {
         return Objects.hash(string);

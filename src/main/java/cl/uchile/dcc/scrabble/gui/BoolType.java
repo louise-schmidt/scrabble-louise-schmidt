@@ -1,21 +1,40 @@
 package cl.uchile.dcc.scrabble.gui;
 import java.util.Objects;
 
+/**
+ * 
+ */
 public class BoolType extends Types {
     private boolean Bool;
 
+    /**
+     *
+     * @param Bool
+     */
     public BoolType(boolean Bool) {
         this.Bool=Bool;
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean getBool() {
         return this.Bool;
     }
 
+    /**
+     *
+     * @return
+     */
     public BoolType ToBoolType() {
         return new BoolType(this.Bool);
     }
 
+    /**
+     *
+     * @return
+     */
     public BoolType negacion() {
         return new BoolType(!(this.Bool));
     }
