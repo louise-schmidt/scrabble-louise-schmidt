@@ -4,4 +4,7 @@ public interface iType {
 
     String toString();
     StringType ToStringS();
+    IntType operacionIntType();
+    BinaryType operacionBinaryType();
+    FloatType operacionFloatType();
 }

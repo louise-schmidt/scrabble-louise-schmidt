@@ -10,9 +10,7 @@ public class FloatType extends Types {
 
     public double getFloat() { return this.Float; }
 
-    /*
     public FloatType ToFloatType(){ return new FloatType(this.Float); }
-     */
 
     public FloatType suma(FloatType F) {
         FloatType f = this;
@@ -34,9 +32,9 @@ public class FloatType extends Types {
     }
 
     public FloatType resta(FloatType F) {
-        FloatType f1 = this;
+        FloatType f = this;
         double d = F.getFloat();
-        return f1.operacionFloatType(d, "resta");
+        return f.operacionFloatType(d, "resta");
     }
 
     public FloatType resta(IntType I) {
@@ -89,7 +87,6 @@ public class FloatType extends Types {
         double d = (iB.ToFloatType()).getFloat();
         return f.operacionFloatType(d, "division");
     }
-
 
     @Override
     public boolean equals(Object o) {

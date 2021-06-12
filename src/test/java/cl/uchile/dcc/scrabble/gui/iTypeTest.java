@@ -26,16 +26,8 @@ class iTypeTest {
     private double floatt;
     private int integer;
 
-    private int seed;
-    private Random rng;
-
     @BeforeEach
     void setUp() {
-        seed = new Random().nextInt();
-        rng = new Random(seed);
-        int strSize = rng.nextInt(20);
-        string = RandomStringUtils.random(strSize, 0, Character.MAX_CODE_POINT, true, false, null, rng);
-
         String s="1100";
         boolean bo=true;
         double d=4.5;
@@ -45,7 +37,7 @@ class iTypeTest {
 
     @Test
     void toStringS() {
-
+        assertEquals();
 
     }
 

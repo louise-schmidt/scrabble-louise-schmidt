@@ -9,26 +9,26 @@ public class StringType extends Types {
     }
 
     public StringType suma(StringType string) {
-        String s=string.toString();
+        String s=string.getString();
         return new StringType(this.string+s);
     }
 
     public StringType suma(BoolType bool) {
-        String b=bool.toString();
+        String b=bool.getString();
         return new StringType(this.string+b);
     }
 
     public StringType suma(FloatType Float) {
-        String f=Float.toString();
+        String f=Float.getString();
         return new StringType(this.string+f);
     }
 
     public StringType suma(IntType Int) {
-        String i=Int.toString();
+        String i=Int.getString();
         return new StringType(this.string+i); }
 
     public StringType suma(BinaryType binary) {
-        String bi=binary.toString();
+        String bi=binary.getString();
         return new StringType(this.string+bi);
     }
 

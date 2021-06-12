@@ -12,7 +12,7 @@ public abstract class Types implements iType {
         return new StringType(this.toString());
     }
 
-    public String toString() {
+    public String getString() {
         return String.valueOf(this);
     }
 
@@ -37,17 +37,5 @@ public abstract class Types implements iType {
         } else {
             return new IntType((int)(this.Int/i)); }
     }
-
-    public BinaryType operacionBinaryType(String b, String s) {
-        if(s=="suma") {
-            return new BinaryType(b);
-        } else if(s=="resta"){
-            return new BinaryType(b);
-        } else if(s=="multiplicacion"){
-            return new BinaryType(b);
-        } else {
-            return new BinaryType((b); }
-    }
-
 
 }

@@ -19,17 +19,17 @@ public class IntType extends Types {
 
     public FloatType ToFloatType() { return new FloatType(this.getInt()); }
 
-    public BinaryType ToBinary(int in) {
+    public BinaryType getBinary() {
         int length = 0;
-        while ((2 ^ length) <= Math.abs(in)) {
+        while ((2 ^ length) <= Math.abs(this.Int)) {
             length++;
         }
         int a[] = new int[length];
         for(int i=0; i<length; i++) {
-            a[i] = in % 2;
-            in = in / 2;
+            a[i] = this.Int % 2;
+            this.Int = this.Int / 2;
         }
-        if (in < 0) {
+        if (this.Int < 0) {
             for (int i = 0; i < length; i++) {
                 if (a[i] == 1) {
                     a[i] = 0;
@@ -48,11 +48,17 @@ public class IntType extends Types {
                     }
                 } else { break; }
             }
-            String answer = java.util.Arrays.toString(a);
-            return new BinaryType('1'+answer);
+            String s="1";
+            for(int i=length; i>0; i++) {
+                s+=String.valueOf(a[i]);
+            }
+            return new BinaryType(s);
         }
-        String answer = java.util.Arrays.toString(a);
-        return new BinaryType('0'+answer);
+        String s="0";
+        for(int i=length; i>0; i++) {
+            s+=String.valueOf(a[i]);
+        }
+        return new BinaryType(s);
     }
 
     public FloatType suma(FloatType F) { return F.suma(this); }
@@ -65,7 +71,7 @@ public class IntType extends Types {
 
     public IntType suma(BinaryType B) {
         IntType i = this;
-        int iB = B.ToInt();
+        int iB = B.getInt();
         return i.operacionIntType(iB, "suma");
 
     }
@@ -80,7 +86,7 @@ public class IntType extends Types {
 
     public IntType resta(BinaryType B) {
         IntType i = this;
-        int in = B.ToInt();
+        int in = B.getInt();
         return i.operacionIntType(in, "resta");
     }
 
@@ -94,7 +100,7 @@ public class IntType extends Types {
 
     public IntType mult(BinaryType B) {
         IntType i = this;
-        int in = B.ToInt();
+        int in = B.getInt();
         return i.operacionIntType(in, "multiplicacion");
     }
 
@@ -108,7 +114,7 @@ public class IntType extends Types {
 
     public IntType division(BinaryType B) {
         IntType i = this;
-        int in = B.ToInt();
+        int in = B.getInt();
         return i.operacionIntType(in, "division");
     }
 
