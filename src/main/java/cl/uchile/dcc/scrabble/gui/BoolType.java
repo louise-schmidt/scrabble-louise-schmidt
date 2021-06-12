@@ -2,39 +2,28 @@ package cl.uchile.dcc.scrabble.gui;
 import java.util.Objects;
 
 /**
- * 
+ * Subclase para el Bool de Scrabble
+ * Extiende la clase Type
  */
 public class BoolType extends Types {
     private boolean Bool;
 
     /**
-     *
-     * @param Bool
+     * Constructor BoolType
+     * @param Bool es de tipo boolean de Java
      */
     public BoolType(boolean Bool) {
         this.Bool=Bool;
     }
 
-    /**
-     *
-     * @return
-     */
     public boolean getBool() {
         return this.Bool;
     }
 
-    /**
-     *
-     * @return
-     */
     public BoolType ToBoolType() {
         return new BoolType(this.Bool);
     }
 
-    /**
-     *
-     * @return
-     */
     public BoolType negacion() {
         return new BoolType(!(this.Bool));
     }
