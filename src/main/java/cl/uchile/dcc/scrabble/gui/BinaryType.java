@@ -88,12 +88,6 @@ public class BinaryType extends Types {
         return new BinaryType(String.valueOf(r));
     }
 
-    public BinaryType negacion() {
-        int i = Integer.valueOf(this.Binary);
-        int largo = this.Binary.length();
-        return new BinaryType(String.valueOf(i));
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

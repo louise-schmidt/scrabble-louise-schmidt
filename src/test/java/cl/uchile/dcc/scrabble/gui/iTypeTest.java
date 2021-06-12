@@ -58,30 +58,23 @@ class iTypeTest {
     }
 
     @Test
-    void sumaS() {
+    void suma() {
     }
 
     @Test
-    void Resta() {
+    void resta() {
     }
 
     @Test
-    void Multiplicacion() {
+    void mult() {
     }
 
     @Test
-    void Division() {
+    void division() {
     }
 
     @Test
-    void Negacion() {
+    void negacion() {
     }
 
-    @Test
-    void Conjuncion() {
-    }
-
-    @Test
-    void Disyuncion() {
-    }
 }
