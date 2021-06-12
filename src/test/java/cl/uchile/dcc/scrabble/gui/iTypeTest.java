@@ -34,7 +34,39 @@ class iTypeTest {
         Int = new IntType(i);
         string = new StringType(s);
     }
+    // Tests de Equals
+    @Test
+    void EqualsInt() {
+        var uno = new IntType(1);
+        var dos = new IntType(1);
+        assertEquals(uno,dos);
+    }
+    @Test
+    void EqualsFloat() {
+        var uno = new FloatType(1.0);
+        var dos = new FloatType(1.0);
+        assertEquals(uno,dos);
+    }
+    @Test
+    void EqualsBinary() {
+        var uno = new BinaryType("1010");
+        var dos = new BinaryType("1010");
+        assertEquals(uno,dos);
+    }
+    @Test
+    void EqualsString() {
+        var uno = new StringType("hola");
+        var dos = new StringType("hola");
+        assertEquals(uno,dos);
+    }
+    @Test
+    void EqualsBool() {
+        var uno = new BoolType(true);
+        var dos = new BoolType(true);
+        assertEquals(uno,dos);
+    }
 
+    // Tests toAlgo
     @Test
     void toStringS() {
         var expected = new StringType(s);
@@ -61,25 +93,54 @@ class iTypeTest {
         assertEquals(expected,Binary);
     }
     @Test
-    void suma() {
+    void ToIntType() {
+        var expected = new IntType(i);
+        assertEquals(expected,Binary.ToIntType());
+    }
+    @Test
+    void ToFloatType() {
+        var expected = new FloatType(f);
+        assertEquals(expected,Int.ToFloatType());
+    }
+    @Test
+    void ToBoolTypeBool() {
+        var expected = new BoolType(true);
+        var ocupado = new BoolType(true);
+        assertEquals(expected,ocupado.ToBoolType());
+    }
+    @Test
+    void ToStringTypeString() {
+        var expected = new BoolType(true);
+        var expected2 = new StringType("true");
+        assertEquals(expected2,expected.ToStringS());
     }
 
+    //Tests de operaciones
+    @Test
+    void suma() {
+        var expected1 = new IntType(10);
+        var expected2 = new IntType(5);
+        var expected3 = new IntType(15);
+        assertEquals(expected1.suma(expected2),expected3);
+    }
     @Test
     void resta() {
+        var expected1 = new IntType(10);
+        var expected2 = new IntType(5);
+        var expected3 = new IntType(5);
+        assertEquals(expected1.resta(expected2),expected3);
     }
-
     @Test
     void mult() {
     }
-
     @Test
     void division() {
     }
-
     @Test
     void negacion() {
-        var expected = new BoolType(bo);
-
+        var expected = new BoolType(true);
+        var expected2 = new BoolType(false);
+        assertEquals(expected,expected2.negacion());
     }
 
 }

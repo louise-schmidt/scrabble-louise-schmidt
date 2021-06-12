@@ -7,13 +7,27 @@ public abstract class Types implements iType {
     private int Int;
     private String Binary;
 
+    /**
+     *
+     * @return
+     */
     @Override
     public StringType ToStringS() { return new StringType(this.toString()); }
 
+    /**
+     *
+     * @return
+     */
     public String getString() {
         return String.valueOf(this);
     }
 
+    /**
+     *
+     * @param i
+     * @param s
+     * @return
+     */
     public IntType operacionIntType(int i, String s) {
         if(s=="suma") {
             return new IntType(this.Int+i);
@@ -25,6 +39,12 @@ public abstract class Types implements iType {
             return new IntType((int)(this.Int/i)); }
     }
 
+    /**
+     *
+     * @param d
+     * @param s
+     * @return
+     */
     public FloatType operacionFloatType(double d, String s) {
         if(s=="suma") {
             return new FloatType(this.Float+d);
