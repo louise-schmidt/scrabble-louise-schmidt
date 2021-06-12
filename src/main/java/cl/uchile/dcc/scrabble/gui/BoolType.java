@@ -20,23 +20,6 @@ public class BoolType extends Types {
         return new BoolType(!(this.Bool));
     }
 
-    public BoolType conjuncion(BoolType B) {
-
-    }
-
-    public BoolType conjuncion(BinaryType Bi) {
-
-    }
-
-    public BoolType disyuncion(BoolType B) {
-
-    }
-
-    public BoolType disyuncion(BinaryType Bi) {
-
-    }
-
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

@@ -21,7 +21,7 @@ public class BinaryType extends Types {
     }
 
     public FloatType ToFloat(String Binary) {
-        double i=(double)this.getInt();
+        double i=(double)Integer.valueOf(Binary);
         return new FloatType(i);
     }
 
@@ -53,18 +53,11 @@ public class BinaryType extends Types {
         return it.getBinary();
     }
 
-    public BinaryType suma(BinaryType B) {
-        BinaryType b = this;
-    }
-
     public BinaryType resta(IntType I) {
         BinaryType b = this;
         IntType ib = b.ToIntType();
         IntType it = ib.resta(I);
         return it.getBinary();
-    }
-
-    public BinaryType resta(BinaryType B) {
     }
 
     public BinaryType mult(IntType I) {
@@ -75,6 +68,10 @@ public class BinaryType extends Types {
     }
 
     public BinaryType mult(BinaryType B) {
+        int i = Integer.valueOf(this.Binary);
+        int i2 = B.getInt();
+        int r = i*i2;
+        return new BinaryType(String.valueOf(r));
     }
 
     public BinaryType division(IntType I) {
@@ -85,6 +82,10 @@ public class BinaryType extends Types {
     }
 
     public BinaryType division(BinaryType B) {
+        int i = Integer.valueOf(this.Binary);
+        int i2 = B.getInt();
+        int r = (int)(i/i2);
+        return new BinaryType(String.valueOf(r));
     }
 
     public BinaryType negacion() {

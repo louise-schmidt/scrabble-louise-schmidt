@@ -73,7 +73,6 @@ public class IntType extends Types {
         IntType i = this;
         int iB = B.getInt();
         return i.operacionIntType(iB, "suma");
-
     }
 
     public FloatType resta(FloatType F) { return F.resta(this); }
