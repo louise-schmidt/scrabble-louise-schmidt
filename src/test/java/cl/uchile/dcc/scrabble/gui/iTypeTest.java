@@ -14,49 +14,52 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.*;
 
 class iTypeTest {
-    private StringType Binary;
+    private BinaryType Binary;
     private BoolType Bool;
     private FloatType Float;
     private IntType Int;
     private StringType string;
 
-    private String binary;
-    private String str;
-    private boolean bool;
-    private double floatt;
-    private int integer;
+    private String bi = "1010";
+    private String s = "buenos dias";
+    private boolean bo = true;
+    private double f = 4.55;
+    private int i = 8;
 
     @BeforeEach
     void setUp() {
-        String s="1100";
-        boolean bo=true;
-        double d=4.5;
-        int i=60;
-        String b="01010";
+        Binary = new BinaryType(bi);
+        Bool = new BoolType(bo);
+        Float = new FloatType(f);
+        Int = new IntType(i);
+        string = new StringType(s);
     }
 
     @Test
     void toStringS() {
-        assertEquals();
-
+        var expected = new StringType(s);
+        assertEquals(expected,string);
     }
-
     @Test
     void toBool() {
+        var expected = new BoolType(bo);
+        assertEquals(expected,Bool);
     }
-
     @Test
     void toFloat() {
+        var expected = new FloatType(f);
+        assertEquals(expected,Float);
     }
-
     @Test
     void toInt() {
+        var expected = new IntType(i);
+        assertEquals(expected,Int);
     }
-
     @Test
     void toBinary() {
+        var expected = new BinaryType(bi);
+        assertEquals(expected,Binary);
     }
-
     @Test
     void suma() {
     }
@@ -75,6 +78,8 @@ class iTypeTest {
 
     @Test
     void negacion() {
+        var expected = new BoolType(bo);
+
     }
 
 }
