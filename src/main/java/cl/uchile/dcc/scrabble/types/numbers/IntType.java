@@ -1,135 +1,232 @@
 package cl.uchile.dcc.scrabble.types.numbers;
 import cl.uchile.dcc.scrabble.types.StringType;
 import cl.uchile.dcc.scrabble.types.AbstractType;
+import cl.uchile.dcc.scrabble.types.operations.IBinary;
 
 import java.util.Objects;
 
-public class IntType extends AbstractType {
-    private int Int;
+import static java.lang.Math.abs;
 
-    public IntType(int Int) {
-        this.Int=Int;
+public class IntType extends AbstractType implements INumbers, IBinary {
+    private final int value;
+
+    /**
+     * Constructor
+     **/
+    public IntType(int value) {
+        this.value = value;
     }
 
-    public int getInt() {
-        return this.Int;
+    /**
+     * getter
+     * @return
+     */
+    public int getValue() {
+        return value;
+    }
+
+    /**
+     * Test Constructor
+     **/
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof IntType) {
+            var o = (IntType) obj;
+            return o.value == this.value;
+        }
+        return false;
+    }
+
+    /**
+     * Transformacion SInt a SString
+     **/
+    public StringType asString() {
+        return new StringType(Integer.toString(value));
+    }
+
+    /**
+     * Transformacion de SInt a SInt
+     * @return
+     */
+    public IntType asInt() {
+        return this;
+    }
+
+    /**
+     * Transformacion de SInt a SBinary
+     * @return
+     */
+    @Override
+    public BinaryType asBinary() {
+        return new BinaryType(this.toBinaryStr());
+    }
+
+    /**
+     * Transformacion SInt a SFloat
+     **/
+    @Override
+    public FloatType asFloat() {
+        return new FloatType(Double.valueOf(this.toString()));
+    }
+
+    /**
+     * suma de tipo SInt con SString
+     * @param addend recibe un SString
+     * @return llama a la funcion addToString que retorna un nuevo SString
+     */
+    @Override
+    public StringType addToString(StringType addend) {
+        return new StringType(addend.toString()+this.toString());
+    }
+
+    /**
+     * Suma de SInt con SFloat
+     */
+    @Override
+    public FloatType addToFloat(FloatType addend) {
+        return addend.add(this);
+    }
+
+    /**
+     * suma de dos SInt
+     * @param addend se suma al SInt
+     * @return un nuevo SInt
+     */
+    @Override
+    public IntType addToInt(IntType addend) {
+        int r = this.getValue() + addend.getValue();
+        return new IntType(r);
+    }
+
+    /**
+     * resta de dos SInt
+     * @param subtrahend se resta al SInt
+     * @return un nuevo SInt
+     */
+    @Override
+    public IntType subtractToInt(IntType subtrahend) {
+        int r = this.getValue() - subtrahend.getValue();
+        return new IntType(r);
+    }
+
+    /**
+     * Resta de SInt con SFloat
+     */
+    @Override
+    public FloatType subtractToFloat(FloatType subtrahend) {
+        return subtrahend.subtract(this);
+    }
+
+    /**
+     * Multiplicacion de SInt con SFloat
+     */
+    @Override
+    public FloatType multiplyToFloat(FloatType product) {
+        return product.multiply(this);
+    }
+
+    /**
+     * Division de SInt con SFloat
+     */
+    @Override
+    public FloatType divideToFloat(FloatType divisor) {
+        return divisor.divide(this);
+    }
+
+    /**
+     * producto de dos SInt
+     * @param product se multiplica con SInt
+     * @return un nuevo SInt
+     */
+    @Override
+    public IntType multiplyToInt(IntType product) {
+        int r = this.getValue() * product.getValue();
+        return new IntType(r);
+    }
+
+    /**
+     * division de dos SInt
+     * @param dividend divide a SInt
+     * @return un nuevo SInt
+     */
+    @Override
+    public INumbers divideToInt(IntType dividend) {
+        int r = this.getValue() / dividend.getValue();
+        return new IntType(r);
     }
 
     @Override
-    public StringType ToStringS() {
-        return new StringType(this.toString());
-    }
-
-    public FloatType ToFloatType() { return new FloatType(this.getInt()); }
-
-    public BinaryType getBinary() {
-        int length = 0;
-        while ((2 ^ length) <= Math.abs(this.Int)) {
-            length++;
-        }
-        int a[] = new int[length];
-        for(int i=0; i<length; i++) {
-            a[i] = this.Int % 2;
-            this.Int = this.Int / 2;
-        }
-        if (this.Int < 0) {
-            for (int i = 0; i < length; i++) {
-                if (a[i] == 1) {
-                    a[i] = 0;
-                } else {
-                    a[i] = 1;
-                }
-            }
-            boolean b = true;
-            for (int i = length; i > 0; i--) {
-                if (b) {
-                    if (a[i] == 1) {
-                        a[i] = 0;
-                    } else {
-                        a[i] = 1;
-                        b = false;
-                    }
-                } else { break; }
-            }
-            String s="1";
-            for(int i=length; i>0; i++) {
-                s+=String.valueOf(a[i]);
-            }
-            return new BinaryType(s);
-        }
-        String s="0";
-        for(int i=length; i>0; i++) {
-            s+=String.valueOf(a[i]);
-        }
-        return new BinaryType(s);
-    }
-
-    public FloatType suma(FloatType F) { return F.suma(this); }
-
-    public IntType suma(IntType I) {
-        IntType i = this;
-        int in = I.getInt();
-        return i.operacionIntType(in, "suma");
-    }
-
-    public IntType suma(BinaryType B) {
-        IntType i = this;
-        int iB = B.getInt();
-        return i.operacionIntType(iB, "suma");
-    }
-
-    public FloatType resta(FloatType F) { return F.resta(this); }
-
-    public IntType resta(IntType I) {
-        IntType i = this;
-        int in = I.getInt();
-        return i.operacionIntType(in, "resta");
-    }
-
-    public IntType resta(BinaryType B) {
-        IntType i = this;
-        int in = B.getInt();
-        return i.operacionIntType(in, "resta");
-    }
-
-    public FloatType mult(FloatType F) { return F.mult(this); }
-
-    public IntType mult(IntType I) {
-        IntType i = this;
-        int in = I.getInt();
-        return i.operacionIntType(in, "multiplicacion");
-    }
-
-    public IntType mult(BinaryType B) {
-        IntType i = this;
-        int in = B.getInt();
-        return i.operacionIntType(in, "multiplicacion");
-    }
-
-    public FloatType division(FloatType F) { return F.mult(this); }
-
-    public IntType division(IntType I) {
-        IntType i = this;
-        int in = I.getInt();
-        return i.operacionIntType(in, "division");
-    }
-
-    public IntType division(BinaryType B) {
-        IntType i = this;
-        int in = B.getInt();
-        return i.operacionIntType(in, "division");
+    public BinaryType addToBinary(BinaryType addend) {
+        return null;
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        IntType intType = (IntType) o;
-        return Int == intType.Int;
+    public BinaryType subtractToBinary(BinaryType subtractor) {
+        return null;
     }
 
     @Override
-    public int hashCode() {
-        return Objects.hash(Int);
+    public BinaryType multiplyToBinary(BinaryType product) {
+        return null;
+    }
+
+    @Override
+    public BinaryType divideToBinary(BinaryType dividend) {
+        return null;
+    }
+
+    private String toBinaryStr() {
+        int bi = abs(this.value);
+        IntType in = new IntType(bi);
+        String resultado = in.positiveToBinary();
+        if (this.value < 0) {
+            String b = complementoDeDos(resultado);
+            BinaryType sb = new BinaryType(b);
+            return sb.toString();
+        }
+        BinaryType sb = new BinaryType(resultado);
+        return sb.toString();
+    }
+
+    private String positiveToBinary() {
+        int d;
+        int n = this.value;
+        int exp = 0;
+        double bin = 0;
+        while (n != 0) {
+            d = n%2;
+            bin = bin + (d * Math.pow(10, exp));
+            exp++;
+            n = n/2;
+        }
+        String bin2 = String.valueOf((int) bin);
+        String res = String.format("%32s",bin2).replaceAll(" ", "0");
+        return res;
+    }
+
+    private String complementoDeDos(String bin) {
+        String t = "";
+        String o = "";
+        for (int i = 0; i < bin.length(); i++) {
+            o += (bin.charAt(i) == '0') ? '1' : '0';
+        }
+        StringBuilder builder = new StringBuilder(o);
+        boolean b = false;
+        for (int i = o.length() -1; i>0; i--) {
+            if (o.charAt(i) == '1') {
+                builder.setCharAt(i, '0');
+            }
+            else {
+                builder.setCharAt(i, '1');
+                b=true;
+                break;
+            }
+        }
+        if (!b) {
+            builder.append("1",0,7);
+        }
+        t = builder.toString();
+        return t;
     }
 }
+

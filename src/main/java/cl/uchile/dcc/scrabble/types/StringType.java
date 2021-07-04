@@ -1,84 +1,57 @@
 package cl.uchile.dcc.scrabble.types;
-import cl.uchile.dcc.scrabble.types.numbers.BinaryType;
-import cl.uchile.dcc.scrabble.types.numbers.FloatType;
-import cl.uchile.dcc.scrabble.types.numbers.IntType;
 
-import java.util.Objects;
-
-/**
- * subclase para el String de Scrabble
- * extiende la clase abstracta Types
- */
-public class StringType extends AbstractType {
-    private String string;
+public class StringType implements iType {
+    private final String value;
 
     /**
-     * Constructor de la subclase
-     * @param string de tipo String de Java
+     * get de SString
+     * @return tipo String
      */
-    public StringType(String string) {
-        this.string=string;
+    public String getValue() {
+        return value;
     }
 
     /**
-     * Metodo suma para dos Strings
-     * @param string es String de Java
-     * @return nuevo StringType de string sumado a un StringType
-     */
-    public StringType suma(StringType string) {
-        String s=string.getString();
-        return new StringType(this.string+s);
+     * Constructor de SString
+     **/
+    public StringType(String value) {
+        this.value = value;
     }
 
     /**
-     * Metodo suma
-     * @param bool se convierte en StringType
-     * @return un nuevo StringType que suma el bool transformado a un StringType
-     */
-    public StringType suma(BoolType bool) {
-        String b=bool.getString();
-        return new StringType(this.string+b);
-    }
-
-    /**
-     * Metodo suma Float
-     * @param Float se convierte en StringType
-     * @return un nuevo StringType que suma el Float transformado a un StringType
-     */
-    public StringType suma(FloatType Float) {
-        String f=Float.getString();
-        return new StringType(this.string+f);
-    }
-
-    /**
-     * Metodo suma para Int
-     * @param Int se convierte en StringType
-     * @return un nuevo StringType que suma el Int transformado a un StringType
-     */
-    public StringType suma(IntType Int) {
-        String i=Int.getString();
-        return new StringType(this.string+i); }
-
-    /**
-     * Metodo suma para binary
-     * @param binary se convierte en StringType
-     * @return un nuevo StringType que suma el binary transformado a un StringType
-     */
-    public StringType suma(BinaryType binary) {
-        String bi=binary.getString();
-        return new StringType(this.string+bi);
-    }
-
+     * Equals de SString
+     **/
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        StringType that = (StringType) o;
-        return Objects.equals(string, that.string);
+    public boolean equals(Object obj) {
+        if (obj instanceof StringType) {
+            var o = (StringType) obj;
+            return o.value == this.value;
+        }
+        return false;
     }
 
+    /**
+     * Transformación SString a SString
+     **/
     @Override
-    public int hashCode() {
-        return Objects.hash(string);
+    public StringType asString() {
+        return this;
+    }
+
+    /**
+     * suma cualquier SString con cualquier STipos
+     * @param addend cualquier STipos
+     * @return llama a addToString, el cual retorna un SString
+     */
+    public StringType addToString(iType addend) {
+        return new StringType(addend.toString()+this.toString());
+    }
+
+    /**
+     * convierte a String un SString
+     */
+    @Override
+    public String toString() {
+        return value;
     }
 }
