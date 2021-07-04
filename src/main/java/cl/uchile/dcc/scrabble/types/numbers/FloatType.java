@@ -1,7 +1,9 @@
-package cl.uchile.dcc.scrabble.gui;
+package cl.uchile.dcc.scrabble.types.numbers;
+import cl.uchile.dcc.scrabble.types.AbstractType;
+
 import java.util.Objects;
 
-public class FloatType extends Types {
+public class FloatType extends AbstractType {
     private double Float;
 
     public FloatType(double Float) {

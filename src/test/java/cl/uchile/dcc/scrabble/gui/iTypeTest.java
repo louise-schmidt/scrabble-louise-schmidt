@@ -1,12 +1,14 @@
 package cl.uchile.dcc.scrabble.gui;
+import cl.uchile.dcc.scrabble.types.StringType;
+import cl.uchile.dcc.scrabble.types.numbers.BinaryType;
+import cl.uchile.dcc.scrabble.types.BoolType;
+import cl.uchile.dcc.scrabble.types.numbers.FloatType;
+import cl.uchile.dcc.scrabble.types.numbers.IntType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.apache.commons.lang3.RandomStringUtils;
-import org.junit.jupiter.api.RepeatedTest;
-import java.util.Random;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
-import static org.junit.jupiter.api.Assertions.*;
 
 class iTypeTest {
     private BinaryType Binary;

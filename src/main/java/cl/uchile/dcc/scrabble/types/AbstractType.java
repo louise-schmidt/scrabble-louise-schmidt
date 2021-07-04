@@ -1,11 +1,14 @@
-package cl.uchile.dcc.scrabble.gui;
+package cl.uchile.dcc.scrabble.types;
+
+import cl.uchile.dcc.scrabble.types.numbers.FloatType;
+import cl.uchile.dcc.scrabble.types.numbers.IntType;
 
 /**
  * clase abstracta principal Types
  * implementa la interface iType
  * contiene los atributos string, Bool, Float, Int, Binary
  */
-public abstract class Types implements iType {
+public abstract class AbstractType implements iType {
     private String string;
     private boolean Bool;
     private double Float;

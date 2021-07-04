@@ -1,11 +1,12 @@
-package cl.uchile.dcc.scrabble.gui;
+package cl.uchile.dcc.scrabble.types;
+
 import java.util.Objects;
 
 /**
  * Subclase para el Bool de Scrabble
  * Extiende la clase Type
  */
-public class BoolType extends Types {
+public class BoolType extends AbstractType {
     private boolean Bool;
 
     /**
@@ -16,13 +17,11 @@ public class BoolType extends Types {
         this.Bool=Bool;
     }
 
-    public boolean getBool() {
-        return this.Bool;
-    }
-
     public BoolType ToBoolType() {
         return new BoolType(this.Bool);
     }
+
+
 
     public BoolType negacion() {
         return new BoolType(!(this.Bool));

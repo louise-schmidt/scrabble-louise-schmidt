@@ -1,7 +1,10 @@
-package cl.uchile.dcc.scrabble.gui;
+package cl.uchile.dcc.scrabble.types.numbers;
+import cl.uchile.dcc.scrabble.types.StringType;
+import cl.uchile.dcc.scrabble.types.AbstractType;
+
 import java.util.Objects;
 
-public class IntType extends Types {
+public class IntType extends AbstractType {
     private int Int;
 
     public IntType(int Int) {

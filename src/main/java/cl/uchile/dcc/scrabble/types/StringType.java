@@ -1,11 +1,15 @@
-package cl.uchile.dcc.scrabble.gui;
+package cl.uchile.dcc.scrabble.types;
+import cl.uchile.dcc.scrabble.types.numbers.BinaryType;
+import cl.uchile.dcc.scrabble.types.numbers.FloatType;
+import cl.uchile.dcc.scrabble.types.numbers.IntType;
+
 import java.util.Objects;
 
 /**
  * subclase para el String de Scrabble
  * extiende la clase abstracta Types
  */
-public class StringType extends Types {
+public class StringType extends AbstractType {
     private String string;
 
     /**

@@ -1,8 +1,10 @@
-package cl.uchile.dcc.scrabble.gui;
-import java.net.NetworkInterface;
+package cl.uchile.dcc.scrabble.types.numbers;
+import cl.uchile.dcc.scrabble.types.StringType;
+import cl.uchile.dcc.scrabble.types.AbstractType;
+
 import java.util.Objects;
 
-public class BinaryType extends Types {
+public class BinaryType extends AbstractType {
     private String Binary;
 
     public BinaryType(String Binary) {
