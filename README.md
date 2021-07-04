@@ -13,13 +13,16 @@ _University of Chile_.
 
 ---
 
-# The Project
-The following project represents a simplified version of *Scratch*, a programming enviroment where the user can create simple programms without having a further knowledge in programming languages. 
+## Project Description
+The following project represents a simplified version of *Scratch*, a programming enviroment where the user can create simple programs without having a further knowledge in programming languages. 
 
 It includes three basic types and three subtypes:
 1. Strings
 2. Booleans
-3. Numbers (integers, floats, binarys)
+3. Numbers
+    1. Integers
+    2. Floats
+    3. Binarys
 
 It also includes transformations and basic operations between types. The transformations are:
 - to String
@@ -38,7 +41,8 @@ and the operations are:
 - logical disjunction
 
 
-The programm includes its self representation through an **Abstract Syntaxis Tree (AST)** where each node is an instruction -transformations and operations-. It also optimizes the variables and memory via considering each variable as a pair **(id, value)** where *id* is the name of the variable with its *value*. The program is planned as a [MVC software design pattern](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller).
+The program includes its self representation through an **Abstract Syntaxis Tree (AST)** where each node is an instruction (transformations and operations). It also optimizes the variables and memory via considering each variable as a pair `(id, value)` where *id* is the name of the variable with its *value*. The program is planned as a [MVC software design pattern](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller).
+
 
 ## Project Setup
 - Have a compatible version of the JVM on your system (Java 14 works)
