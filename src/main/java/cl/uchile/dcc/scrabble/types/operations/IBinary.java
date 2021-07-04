@@ -1,8 +1,5 @@
 package cl.uchile.dcc.scrabble.types.operations;
-
 import cl.uchile.dcc.scrabble.types.numbers.BinaryType;
-import cl.uchile.dcc.scrabble.types.numbers.BinaryType;
-import cl.uchile.dcc.scrabble.types.numbers.FloatType;
 import cl.uchile.dcc.scrabble.types.numbers.IntType;
 
 public interface IBinary {

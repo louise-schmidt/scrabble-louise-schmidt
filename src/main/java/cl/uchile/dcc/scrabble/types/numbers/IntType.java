@@ -70,7 +70,7 @@ public class IntType extends AbstractType implements INumbers, IBinary {
     }
 
     /**
-     * suma de tipo SInt con SString
+     * suma de tipo IntType con StringType
      * @param addend recibe un SString
      * @return llama a la funcion addToString que retorna un nuevo SString
      */
@@ -80,7 +80,7 @@ public class IntType extends AbstractType implements INumbers, IBinary {
     }
 
     /**
-     * Suma de SInt con SFloat
+     * Suma de IntType con FloatType
      */
     @Override
     public FloatType addToFloat(FloatType addend) {
@@ -88,9 +88,9 @@ public class IntType extends AbstractType implements INumbers, IBinary {
     }
 
     /**
-     * suma de dos SInt
-     * @param addend se suma al SInt
-     * @return un nuevo SInt
+     * suma de dos IntType
+     * @param addend se suma al IntType
+     * @return un nuevo IntType
      */
     @Override
     public IntType addToInt(IntType addend) {
@@ -99,9 +99,9 @@ public class IntType extends AbstractType implements INumbers, IBinary {
     }
 
     /**
-     * resta de dos SInt
-     * @param subtrahend se resta al SInt
-     * @return un nuevo SInt
+     * resta de dos IntType
+     * @param subtrahend se resta al IntType
+     * @return un nuevo IntType
      */
     @Override
     public IntType subtractToInt(IntType subtrahend) {
@@ -110,7 +110,7 @@ public class IntType extends AbstractType implements INumbers, IBinary {
     }
 
     /**
-     * Resta de SInt con SFloat
+     * Resta de IntType con FloatType
      */
     @Override
     public FloatType subtractToFloat(FloatType subtrahend) {
@@ -118,7 +118,7 @@ public class IntType extends AbstractType implements INumbers, IBinary {
     }
 
     /**
-     * Multiplicacion de SInt con SFloat
+     * Multiplicacion de IntType con FloatType
      */
     @Override
     public FloatType multiplyToFloat(FloatType product) {

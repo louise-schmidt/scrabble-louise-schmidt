@@ -1,7 +1,5 @@
 package cl.uchile.dcc.scrabble.types.operations;
 
-import cl.uchile.dcc.scrabble.types.BoolType;
-
 public interface ILogical {
     ILogical and(ILogical conjunct);
 

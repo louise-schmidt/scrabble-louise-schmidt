@@ -89,55 +89,5 @@ class iTypeTest {
         var expected = new BinaryType(bi);
         assertEquals(expected,Binary);
     }
-    @Test
-    void ToIntType() {
-        var expected = new IntType(i);
-        assertEquals(expected,Binary.ToIntType());
-    }
-    @Test
-    void ToFloatType() {
-        var expected = new FloatType(f);
-        assertEquals(expected,Int.ToFloatType());
-    }
-    @Test
-    void ToBoolTypeBool() {
-        var expected = new BoolType(true);
-        var ocupado = new BoolType(true);
-        assertEquals(expected,ocupado.ToBoolType());
-    }
-    @Test
-    void ToStringTypeString() {
-        var expected = new BoolType(true);
-        var expected2 = new StringType("true");
-        assertEquals(expected2,expected.ToStringS());
-    }
-
-    //Tests de operaciones
-    @Test
-    void suma() {
-        var expected1 = new IntType(10);
-        var expected2 = new IntType(5);
-        var expected3 = new IntType(15);
-        assertEquals(expected1.suma(expected2),expected3);
-    }
-    @Test
-    void resta() {
-        var expected1 = new IntType(10);
-        var expected2 = new IntType(5);
-        var expected3 = new IntType(5);
-        assertEquals(expected1.resta(expected2),expected3);
-    }
-    @Test
-    void mult() {
-    }
-    @Test
-    void division() {
-    }
-    @Test
-    void negacion() {
-        var expected = new BoolType(true);
-        var expected2 = new BoolType(false);
-        assertEquals(expected,expected2.negacion());
-    }
 
 }
