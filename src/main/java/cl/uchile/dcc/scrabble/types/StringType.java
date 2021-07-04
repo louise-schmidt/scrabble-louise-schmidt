@@ -1,5 +1,9 @@
 package cl.uchile.dcc.scrabble.types;
 
+import cl.uchile.dcc.scrabble.types.numbers.FloatType;
+
+import java.util.Objects;
+
 public class StringType implements iType {
     private final String value;
 
@@ -28,6 +32,11 @@ public class StringType implements iType {
             return o.value == this.value;
         }
         return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(StringType.class);
     }
 
     /**

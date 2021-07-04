@@ -27,6 +27,15 @@ public class FloatType extends AbstractType implements INumbers {
     }
 
     /**
+     *
+     * @return
+     */
+    @Override
+    public int hashCode() {
+        return Objects.hash(FloatType.class);
+    }
+
+    /**
      * get de SFloat
      */
     public double getValue() {

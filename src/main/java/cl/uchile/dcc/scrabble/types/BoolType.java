@@ -1,5 +1,8 @@
 package cl.uchile.dcc.scrabble.types;
+import cl.uchile.dcc.scrabble.types.numbers.FloatType;
 import cl.uchile.dcc.scrabble.types.operations.ILogical;
+
+import java.util.Objects;
 
 public class BoolType implements iType, ILogical {
     private final boolean value;
@@ -21,6 +24,11 @@ public class BoolType implements iType, ILogical {
             return o.value == this.value;
         }
         return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(BoolType.class);
     }
 
     /**

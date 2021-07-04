@@ -13,21 +13,18 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 class iTypeTest {
     private BinaryType Binary;
     private BoolType Bool;
-    private FloatType Float;
     private IntType Int;
     private StringType string;
 
     private String bi = "1010";
     private String s = "buenos dias";
     private boolean bo = true;
-    private double f = 4.55;
     private int i = 8;
 
     @BeforeEach
     void setUp() {
         Binary = new BinaryType(bi);
         Bool = new BoolType(bo);
-        Float = new FloatType(f);
         Int = new IntType(i);
         string = new StringType(s);
     }
@@ -38,12 +35,7 @@ class iTypeTest {
         var dos = new IntType(1);
         assertEquals(uno,dos);
     }
-    @Test
-    void EqualsFloat() {
-        var uno = new FloatType(1.0);
-        var dos = new FloatType(1.0);
-        assertEquals(uno,dos);
-    }
+
     @Test
     void EqualsBinary() {
         var uno = new BinaryType("1010");
@@ -74,11 +66,7 @@ class iTypeTest {
         var expected = new BoolType(bo);
         assertEquals(expected,Bool);
     }
-    @Test
-    void toFloat() {
-        var expected = new FloatType(f);
-        assertEquals(expected,Float);
-    }
+
     @Test
     void toInt() {
         var expected = new IntType(i);

@@ -25,6 +25,11 @@ public class IntType extends AbstractType implements INumbers, IBinary {
         return value;
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(IntType.class);
+    }
+
     /**
      * Test Constructor
      **/
