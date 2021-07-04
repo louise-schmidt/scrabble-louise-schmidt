@@ -13,4 +13,41 @@ _University of Chile_.
 
 ---
 
-**The rest of the documentation is left for the users of this template to complete**
+# The Project
+The following project represents a simplified version of *Scratch*, a programming enviroment where the user can create simple programms without having a further knowledge in programming languages. 
+
+It includes three basic types and three subtypes:
+1. Strings
+2. Booleans
+3. Numbers (integers, floats, binarys)
+
+It also includes transformations and basic operations between types. The transofrmations are:
+- to String
+- to Bool
+- to Float
+- to Int
+- to Binary
+
+and the operations are:
+- addition
+- subtraction
+- multiplication
+- division
+- negation
+- logical conjunction
+- logical disjunction
+
+
+The programm includes its self representation through an Abstract Syntaxis Tree (AST) where each node is an instruction -transformations and operations-. It also optimizes the variables and memory via considering each variable as a pair (id, value) where *id* is the name of the variable with its *value*. 
+
+## Project Setup
+- Have a compatible version of the JVM on your system (Java 14 works)
+- Clone the repo with the following command:
+```
+git clone https://github.com/CC3002-Metodologias/scrabble-louise-schmidt
+```
+- Run the "Scrabble.java" file (uncomplete)
+
+
+## Project Design
+The program is planned as a [MVC software design pattern](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller)
