@@ -43,7 +43,8 @@ public class StringType implements iType {
      * @param addend cualquier STipos
      * @return llama a addToString, el cual retorna un SString
      */
-    public StringType addToString(iType addend) {
+    @Override
+    public StringType addToString(StringType addend) {
         return new StringType(addend.toString()+this.toString());
     }
 
