@@ -20,6 +20,7 @@ public class BoolTypeTest {
     @Test
     void testConstructor() {
         var exps = new BoolType(bo);
+        assertEquals(exps.hashCode(),booltype.hashCode());
         assertEquals(exps,booltype);
     }
 

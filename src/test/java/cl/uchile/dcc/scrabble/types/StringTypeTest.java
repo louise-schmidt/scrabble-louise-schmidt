@@ -16,7 +16,8 @@ class StringTypeTest {
     @Test
     void testConstructor() {
         var exps = new StringType(str);
-        assertEquals(exps, stringtype);
+        assertEquals(exps.hashCode(),stringtype.hashCode());
+        assertEquals(exps,stringtype);
     }
 
     @Test

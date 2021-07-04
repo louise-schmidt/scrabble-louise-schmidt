@@ -19,6 +19,7 @@ class FloatTypeTest {
     @Test
     void testConstructor() {
         var exps = new FloatType(f);
+        assertEquals(exps.hashCode(),floattype.hashCode());
         assertEquals(exps,floattype);
     }
 
@@ -41,13 +42,5 @@ class FloatTypeTest {
         FloatType prueba = floattype.asFloat();
         assertEquals(floattype,prueba);
     }
-
-    /*
-    @Test
-    void constructorTest() {
-        var expected = new FloatType(4.55);
-        assertEquals(expected.hashCode(), Float.hashCode());
-        assertEquals(expected, Float);
-     */
 
 }

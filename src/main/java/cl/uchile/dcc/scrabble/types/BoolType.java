@@ -26,6 +26,9 @@ public class BoolType implements iType, ILogical {
         return false;
     }
 
+    /**
+     * @return valor hash del objeto
+     */
     @Override
     public int hashCode() {
         return Objects.hash(BoolType.class);

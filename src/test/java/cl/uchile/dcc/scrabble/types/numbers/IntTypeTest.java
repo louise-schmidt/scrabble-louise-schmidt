@@ -19,11 +19,12 @@ class IntTypeTest {
     @Test
     void testConstructor() {
         var exps = new IntType(in);
+        assertEquals(exps.hashCode(),inttype.hashCode());
         assertEquals(exps, inttype);
     }
 
     @Test
-    void testaString() {
+    void testasString() {
         StringType prueba = inttype.asString();
         StringType expected = new StringType(String.valueOf(in));
         assertEquals(expected.getValue(),prueba.getValue());

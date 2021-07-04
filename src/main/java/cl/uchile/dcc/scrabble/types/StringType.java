@@ -34,6 +34,9 @@ public class StringType implements iType {
         return false;
     }
 
+    /**
+     * @return valor hash del objeto
+     */
     @Override
     public int hashCode() {
         return Objects.hash(StringType.class);

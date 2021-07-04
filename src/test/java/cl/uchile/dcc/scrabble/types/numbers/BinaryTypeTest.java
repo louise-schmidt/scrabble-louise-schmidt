@@ -19,11 +19,12 @@ class BinaryTypeTest {
     @Test
     void testConstructor() {
         var exps = new BinaryType(bi);
+        assertEquals(exps.hashCode(),binarytype.hashCode());
         assertEquals(exps,binarytype);
     }
 
     @Test
-    void testaString() {
+    void testasString() {
         StringType prueba = binarytype.asString();
         StringType expected = new StringType(String.valueOf(bi));
         assertEquals(expected.getValue(),prueba.getValue());

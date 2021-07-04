@@ -1,4 +1,5 @@
 package cl.uchile.dcc.scrabble.types.numbers;
+import cl.uchile.dcc.scrabble.types.BoolType;
 import cl.uchile.dcc.scrabble.types.StringType;
 import cl.uchile.dcc.scrabble.types.AbstractType;
 import cl.uchile.dcc.scrabble.types.operations.IBinary;
@@ -25,6 +26,14 @@ public class BinaryType extends AbstractType implements INumbers, IBinary, ILogi
             return o.value == this.value;
         }
         return false;
+    }
+
+    /**
+     * @return valor hash del objeto
+     */
+    @Override
+    public int hashCode() {
+        return Objects.hash(BinaryType.class);
     }
 
     public String getValue() {
@@ -92,7 +101,6 @@ public class BinaryType extends AbstractType implements INumbers, IBinary, ILogi
     }
 
     /**
-     *
      * @param conjunct
      * @return
      */

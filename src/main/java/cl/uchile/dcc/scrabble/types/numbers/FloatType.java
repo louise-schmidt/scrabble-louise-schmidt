@@ -27,8 +27,7 @@ public class FloatType extends AbstractType implements INumbers {
     }
 
     /**
-     *
-     * @return
+     * @return valor hash del objeto
      */
     @Override
     public int hashCode() {
