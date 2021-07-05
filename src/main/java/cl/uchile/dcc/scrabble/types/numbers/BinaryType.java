@@ -1,5 +1,4 @@
 package cl.uchile.dcc.scrabble.types.numbers;
-import cl.uchile.dcc.scrabble.types.BoolType;
 import cl.uchile.dcc.scrabble.types.StringType;
 import cl.uchile.dcc.scrabble.types.AbstractType;
 import cl.uchile.dcc.scrabble.types.operations.IBinary;
@@ -10,7 +9,7 @@ public class BinaryType extends AbstractType implements INumbers, IBinary, ILogi
     private final String value;
 
     /**
-     * Constructor
+     * Constructor de BinaryType
      **/
     public BinaryType(String value) {
         this.value = value;
@@ -41,7 +40,7 @@ public class BinaryType extends AbstractType implements INumbers, IBinary, ILogi
     }
 
     /**
-     * Transformacion SBinary a SString
+     * Transformacion BinaryType a StringType
      **/
     @Override
     public StringType asString() {
@@ -49,7 +48,7 @@ public class BinaryType extends AbstractType implements INumbers, IBinary, ILogi
     }
 
     /**
-     * Transformacion SBinary a SFloat
+     * Transformacion BinaryType a FloatType
      **/
     @Override
     public FloatType asFloat() {
@@ -57,21 +56,19 @@ public class BinaryType extends AbstractType implements INumbers, IBinary, ILogi
     }
 
     /**
-     * Transformacion SBinary a SInt
-     * @return
+     * Transformacion BinaryType a IntType
+     * @return nuevo IntType
      */
     @Override
     public IntType asInt() {
-        return new IntType(toInt(this.value));
-    }
-
-    public int toInt(String binary) {
-        if (bitToInt(binary.charAt(0)) == 0) {
-            return positiveBinToInt(binary);
-        } else {
-            return negativeBinaryToInt(binary);
+        if(bitToInt(this.getValue().charAt(0)) == 0){
+            return new IntType(positiveBinToInt(this.getValue()));
+        }
+        else {
+            return new IntType(negativeBinaryToInt(this.getValue()));
         }
     }
+
     private int negativeBinaryToInt(String binary) {
         int n = binary.length() - 1;
         int w = -bitToInt(binary.charAt(0)) * (int) Math.pow(2, n);
@@ -92,8 +89,8 @@ public class BinaryType extends AbstractType implements INumbers, IBinary, ILogi
     }
 
     /**
-     * Transformacion SBinary a SBinary
-     * @return
+     * Transformacion BinaryType a BinaryType
+     * @return tipo BinaryType
      */
     @Override
     public BinaryType asBinary() {
@@ -102,7 +99,7 @@ public class BinaryType extends AbstractType implements INumbers, IBinary, ILogi
 
     /**
      * @param conjunct
-     * @return
+     * @return conjuncion logica
      */
     public ILogical and(ILogical conjunct) {
         return conjunct.andBinary(this);

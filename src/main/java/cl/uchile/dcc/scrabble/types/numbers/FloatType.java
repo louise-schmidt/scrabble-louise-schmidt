@@ -1,14 +1,13 @@
 package cl.uchile.dcc.scrabble.types.numbers;
 import cl.uchile.dcc.scrabble.types.AbstractType;
 import cl.uchile.dcc.scrabble.types.StringType;
-
 import java.util.Objects;
 
 public class FloatType extends AbstractType implements INumbers {
     private final double value;
 
     /**
-     * Constructor
+     * Constructor FloatType
      **/
     public FloatType(double value) {
         this.value = value;
@@ -35,14 +34,14 @@ public class FloatType extends AbstractType implements INumbers {
     }
 
     /**
-     * get de SFloat
+     * get de FloatType
      */
     public double getValue() {
         return value;
     }
 
     /**
-     * Transformacion SFloat a SString
+     * Transformacion FloatType a StringType
      **/
     @Override
     public StringType asString() {
@@ -50,16 +49,16 @@ public class FloatType extends AbstractType implements INumbers {
     }
 
     /**
-     * Transformacion SFloat a SFloat
+     * Transformacion FloatType a FloatType
      **/
     public FloatType asFloat() {
         return this;
     }
 
     /**
-     * suma de tipo SFloat con SString
-     * @param addend recibe un SString
-     * @return llama a la funcion add.ToString que retorna un nuevo SString
+     * suma de tipo FloatType con StringType
+     * @param addend recibe un StringType
+     * @return llama a la funcion add.ToString que retorna un nuevo StringType
      */
     @Override
     public StringType addToString(StringType addend) {
@@ -67,44 +66,44 @@ public class FloatType extends AbstractType implements INumbers {
     }
 
     /**
-     * suma de SFloat con cualquier SNumero
-     * @param addend cualquier SNumero
-     * @return llamado a addToFloat, que retorna un nuevo SFloat
+     * suma de SFloat con cualquier tipo numero
+     * @param addend cualquier tipo numero
+     * @return llamado a addToFloat, que retorna un nuevo FloatType
      */
     public FloatType add(INumbers addend) {
         return addend.addToFloat(this.asFloat());
     }
 
     /**
-     * resta de SFloat con cualquier SNumero
-     * @param subtractor cualquier SNumero
-     * @return llamado a subtractToFloat, que retorna un nuevo SFloat
+     * resta de SFloat con cualquier tipo numero
+     * @param subtractor cualquier tipo numero
+     * @return llamado a subtractToFloat, que retorna un nuevo FloatType
      */
     public FloatType subtract(INumbers subtractor) {
         return subtractor.subtractToFloat(this.asFloat());
     }
 
     /**
-     * multiplicacion de SFloat con cualquier SNumero
-     * @param product cualquier SNumero
-     * @return llamado a multiplyToFloat, que retorna un nuevo SFloat
+     * multiplicacion de SFloat con cualquier tipo numero
+     * @param product cualquier tipo numero
+     * @return llamado a multiplyToFloat, que retorna un nuevo FloatType
      */
     public FloatType multiply(INumbers product) {
         return product.multiplyToFloat(this.asFloat());
     }
 
     /**
-     * division de SFloat con cualquier SNumero
-     * @param divisor cualquier SNumero
-     * @return llamado a divideToFloat, que retorna un nuevo SFloat
+     * division de SFloat con cualquier tipo numero
+     * @param divisor cualquier tipo numero
+     * @return llamado a divideToFloat, que retorna un nuevo FloatType
      */
     public FloatType divide(INumbers divisor) {
         return divisor.divideToFloat(this.asFloat());
     }
 
     /**
-     * Suma de dos SFloat
-     * @return un nuevo SFloat
+     * Suma de dos FloatType
+     * @return un nuevo FloatType
      */
     @Override
     public FloatType addToFloat(FloatType addend) {
@@ -112,8 +111,8 @@ public class FloatType extends AbstractType implements INumbers {
     }
 
     /**
-     * Resta de dos SFloat
-     * @return un nuevo SFloat
+     * Resta de dos FloatType
+     * @return un nuevo FloatType
      */
     @Override
     public FloatType subtractToFloat(FloatType subtrahend) {
@@ -121,8 +120,8 @@ public class FloatType extends AbstractType implements INumbers {
     }
 
     /**
-     * Multiplicacion de dos SFloat
-     * @return un nuevo SFloat
+     * Multiplicacion de dos FloatType
+     * @return un nuevo FloatType
      */
     @Override
     public FloatType multiplyToFloat(FloatType product) {
@@ -130,8 +129,8 @@ public class FloatType extends AbstractType implements INumbers {
     }
 
     /**
-     * Division de dos SFloat
-     * @return un nuevo SFloat
+     * Division de dos FloatType
+     * @return un nuevo FloatType
      */
     @Override
     public FloatType divideToFloat(FloatType divisor) {
@@ -139,7 +138,7 @@ public class FloatType extends AbstractType implements INumbers {
     }
 
     /**
-     * Suma de SFloat con SInt
+     * Suma de FloatType con IntType
      */
     @Override
     public FloatType addToInt(IntType addend) {
@@ -147,7 +146,7 @@ public class FloatType extends AbstractType implements INumbers {
     }
 
     /**
-     * Resta de SFloat con SInt
+     * Resta de FloatType con IntType
      */
     @Override
     public FloatType subtractToInt(IntType subtrahend) {
@@ -155,7 +154,7 @@ public class FloatType extends AbstractType implements INumbers {
     }
 
     /**
-     * Multiplicacion de SFloat con SInt
+     * Multiplicacion de FloatType con IntType
      */
     @Override
     public FloatType multiplyToInt(IntType product) {
@@ -163,7 +162,7 @@ public class FloatType extends AbstractType implements INumbers {
     }
 
     /**
-     * Division de SFloat con SInt
+     * Division de FloatType con IntType
      */
     @Override
     public FloatType divideToInt(IntType dividend) {

@@ -21,7 +21,7 @@ class StringTypeTest {
     }
 
     @Test
-    void testasString() {
+    void asString() {
         StringType prueba = stringtype.asString();
         assertEquals(stringtype, prueba);
     }

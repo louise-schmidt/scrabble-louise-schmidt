@@ -4,8 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class BinaryFactory {
-    static Map<String, BinaryType> mapBinaryType = new HashMap<>();
-
+    static HashMap<String, BinaryType> mapBinaryType = new HashMap<>();
     public static BinaryType newBinaryType(String value) {
         String key = value;
         BinaryType r = mapBinaryType.get(key);

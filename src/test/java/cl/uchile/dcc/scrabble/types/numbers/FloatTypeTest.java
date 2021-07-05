@@ -1,9 +1,6 @@
 package cl.uchile.dcc.scrabble.types.numbers;
-
 import cl.uchile.dcc.scrabble.types.StringType;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class FloatTypeTest {
@@ -31,14 +28,14 @@ class FloatTypeTest {
     }
 
     @Test
-    void testasString() {
+    void asString() {
         StringType prueba = floattype.asString();
         StringType expected = new StringType(String.valueOf(3.14));
         assertEquals(expected.getValue(),prueba.getValue());
     }
 
     @Test
-    void testasSFloat() {
+    void asSFloat() {
         FloatType prueba = floattype.asFloat();
         assertEquals(floattype,prueba);
     }

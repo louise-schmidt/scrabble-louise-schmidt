@@ -5,7 +5,7 @@ import java.util.HashMap;
 public class BoolFactory {
     static HashMap<Object, BoolType> mapBoolType = new HashMap<>();
 
-    public static BoolType newIntType(boolean value) {
+    public static BoolType newBoolType(boolean value) {
         boolean key = value;
         BoolType r = mapBoolType.get(key);
         if(r==null) {

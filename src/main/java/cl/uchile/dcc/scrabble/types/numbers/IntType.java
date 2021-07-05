@@ -2,9 +2,7 @@ package cl.uchile.dcc.scrabble.types.numbers;
 import cl.uchile.dcc.scrabble.types.StringType;
 import cl.uchile.dcc.scrabble.types.AbstractType;
 import cl.uchile.dcc.scrabble.types.operations.IBinary;
-
 import java.util.Objects;
-
 import static java.lang.Math.abs;
 
 public class IntType extends AbstractType implements INumbers, IBinary {
@@ -74,7 +72,7 @@ public class IntType extends AbstractType implements INumbers, IBinary {
      **/
     @Override
     public FloatType asFloat() {
-        return new FloatType(Double.valueOf(this.toString()));
+        return new FloatType(this.getValue());
     }
 
     /**

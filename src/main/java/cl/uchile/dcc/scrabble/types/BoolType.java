@@ -1,21 +1,19 @@
 package cl.uchile.dcc.scrabble.types;
-import cl.uchile.dcc.scrabble.types.numbers.FloatType;
 import cl.uchile.dcc.scrabble.types.operations.ILogical;
-
 import java.util.Objects;
 
 public class BoolType implements iType, ILogical {
     private final boolean value;
 
     /**
-     * Constructor de SBool
+     * Constructor de BoolType
      **/
     public BoolType(boolean value) {
         this.value = value;
     }
 
     /**
-     * Equals de SBool
+     * Equals de BoolType
      **/
     @Override
     public boolean equals(Object obj) {
@@ -35,7 +33,7 @@ public class BoolType implements iType, ILogical {
     }
 
     /**
-     * get de SBool
+     * get de BoolType
      * @return un boolean
      */
     public boolean isValue() {
@@ -43,14 +41,14 @@ public class BoolType implements iType, ILogical {
     }
 
     /**
-     * Transformacion SBool a SBool
+     * Transformacion BoolType a BinaryType
      **/
     public BoolType asBool() {
         return this;
     }
 
     /**
-     * Transformacion SBool a SString
+     * Transformacion BoolType a StringType
      **/
     @Override
     public StringType asString() {
@@ -58,8 +56,8 @@ public class BoolType implements iType, ILogical {
     }
 
     /**
-     * Suma de SBool con SString
-     * @return llama a addToString, el cual retorna un nuevo SString
+     * Suma de BoolType con StringType
+     * @return llama a addToString, el cual retorna un nuevo StringType
      */
     @Override
     public StringType addToString(StringType addend) {
@@ -67,7 +65,7 @@ public class BoolType implements iType, ILogical {
     }
 
     /**
-     * y logico entre SBool y un operadoresLogicos
+     * y logico entre BoolType y un operadoresLogicos
      */
     @Override
     public ILogical and(ILogical conjunct) {
@@ -88,7 +86,7 @@ public class BoolType implements iType, ILogical {
     }
 
     /**
-     * o logico entre SBool y un operadoresLogicos
+     * o logico entre BoolType y un operadoresLogicos
      */
     @Override
     public ILogical or(ILogical operand) {
@@ -109,7 +107,7 @@ public class BoolType implements iType, ILogical {
     }
 
     @Override
-    public ILogical andBinary(ILogical sBinary) {
+    public ILogical andBinary(ILogical binarytype) {
         return null;
     }
 

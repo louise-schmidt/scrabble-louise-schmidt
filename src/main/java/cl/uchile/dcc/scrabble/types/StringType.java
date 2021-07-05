@@ -1,14 +1,11 @@
 package cl.uchile.dcc.scrabble.types;
-
-import cl.uchile.dcc.scrabble.types.numbers.FloatType;
-
 import java.util.Objects;
 
 public class StringType implements iType {
     private final String value;
 
     /**
-     * get de SString
+     * get de StringType
      * @return tipo String
      */
     public String getValue() {
@@ -16,14 +13,14 @@ public class StringType implements iType {
     }
 
     /**
-     * Constructor de SString
+     * Constructor de StringType
      **/
     public StringType(String value) {
         this.value = value;
     }
 
     /**
-     * Equals de SString
+     * Equals de StringType
      **/
     @Override
     public boolean equals(Object obj) {
@@ -43,7 +40,7 @@ public class StringType implements iType {
     }
 
     /**
-     * Transformación SString a SString
+     * Transformación StringType a StringType
      **/
     @Override
     public StringType asString() {
@@ -51,9 +48,9 @@ public class StringType implements iType {
     }
 
     /**
-     * suma cualquier SString con cualquier STipos
-     * @param addend cualquier STipos
-     * @return llama a addToString, el cual retorna un SString
+     * suma cualquier StringType con cualquier type
+     * @param addend cualquier type
+     * @return llama a addToString, el cual retorna un StringType
      */
     @Override
     public StringType addToString(StringType addend) {
@@ -61,7 +58,7 @@ public class StringType implements iType {
     }
 
     /**
-     * convierte a String un SString
+     * convierte a String un StringType
      */
     @Override
     public String toString() {

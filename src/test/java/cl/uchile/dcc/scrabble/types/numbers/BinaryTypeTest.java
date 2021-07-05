@@ -1,13 +1,9 @@
 package cl.uchile.dcc.scrabble.types.numbers;
-
 import cl.uchile.dcc.scrabble.types.StringType;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class BinaryTypeTest {
-
     private BinaryType binarytype;
     private String bi = "0100100111";
 
@@ -24,26 +20,28 @@ class BinaryTypeTest {
     }
 
     @Test
-    void testasString() {
+    void asString() {
         StringType prueba = binarytype.asString();
         StringType expected = new StringType(String.valueOf(bi));
         assertEquals(expected.getValue(),prueba.getValue());
     }
 
     @Test
-    void testasInt() {
+    void asInt() {
         IntType prueba = binarytype.asInt();
         assertEquals(295,prueba.getValue());
     }
 
     @Test
-    void testasFloat() {
+    void asFloat() {
+        FloatType i = new FloatType(295);
         FloatType prueba = binarytype.asFloat();
-        assertEquals((double) 295,prueba.getValue());
+        assertEquals(i,prueba);
     }
 
+
     @Test
-    void testasBinary() {
+    void asBinary() {
         BinaryType prueba = binarytype.asBinary();
         assertEquals(binarytype,prueba);
     }
