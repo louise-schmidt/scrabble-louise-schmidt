@@ -51,3 +51,6 @@ The program includes its self representation through an **Abstract Syntaxis Tree
 git clone https://github.com/CC3002-Metodologias/scrabble-louise-schmidt
 ```
 - Run the "Scrabble.java" file (uncomplete)
+
+
+It is also possible to examine each folder by itself via IntelliJ IDEA, for example. The `test` folder contains the respective tests for every `Class` made. The `main` folder contains multiple packages with the implementations.
