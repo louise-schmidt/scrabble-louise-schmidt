@@ -1,6 +1,6 @@
-package cl.uchile.dcc.scrabble.ast.operations;
-import cl.uchile.dcc.scrabble.ast.INode;
-import cl.uchile.dcc.scrabble.ast.oneNode;
+package cl.uchile.dcc.scrabble.transformations.functions;
+import cl.uchile.dcc.scrabble.transformations.NodeType.INode;
+import cl.uchile.dcc.scrabble.transformations.oneNode;
 
 public class not extends oneNode {
 

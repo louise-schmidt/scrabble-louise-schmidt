@@ -1,4 +1,6 @@
-package cl.uchile.dcc.scrabble.ast;
+package cl.uchile.dcc.scrabble.transformations;
+
+import cl.uchile.dcc.scrabble.transformations.NodeType.INode;
 
 public abstract class twoNodes implements INode {
     private INode hijoizq;

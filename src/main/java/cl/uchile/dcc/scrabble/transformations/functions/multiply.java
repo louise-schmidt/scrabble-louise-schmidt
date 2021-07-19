@@ -1,6 +1,6 @@
-package cl.uchile.dcc.scrabble.ast.operations;
-import cl.uchile.dcc.scrabble.ast.INode;
-import cl.uchile.dcc.scrabble.ast.twoNodes;
+package cl.uchile.dcc.scrabble.transformations.functions;
+import cl.uchile.dcc.scrabble.transformations.NodeType.INode;
+import cl.uchile.dcc.scrabble.transformations.twoNodes;
 
 public class multiply extends twoNodes {
 

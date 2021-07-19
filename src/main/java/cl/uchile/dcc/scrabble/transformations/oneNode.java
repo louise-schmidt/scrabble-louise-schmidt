@@ -1,4 +1,5 @@
-package cl.uchile.dcc.scrabble.ast;
+package cl.uchile.dcc.scrabble.transformations;
+import cl.uchile.dcc.scrabble.transformations.NodeType.INode;
 import cl.uchile.dcc.scrabble.types.iType;
 
 public abstract class oneNode implements INode {

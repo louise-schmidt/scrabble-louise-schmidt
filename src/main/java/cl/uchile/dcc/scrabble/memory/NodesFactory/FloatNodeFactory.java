@@ -1,19 +1,18 @@
-package cl.uchile.dcc.scrabble.memory.nodes;
+package cl.uchile.dcc.scrabble.memory.NodesFactory;
 
 import cl.uchile.dcc.scrabble.memory.TypesFactory.StringFactory;
-import cl.uchile.dcc.scrabble.operators.types.FloatNode;
 import cl.uchile.dcc.scrabble.types.numbers.FloatType;
 
 import java.util.Hashtable;
 
 public class FloatNodeFactory{
-    public static Hashtable<Double, FloatNode> storedVariables = new Hashtable<>();
+    public static Hashtable<Double, FloatNodeFactory> storedVariables = new Hashtable<>();
 
-    public static FloatNode get(double value) {
-        FloatNode floatNode = storedVariables.get(value);
+    public static FloatNodeFactory get(double value) {
+        FloatNodeFactory floatNode = storedVariables.get(value);
         if (floatNode == null) {
-            FloatType sFloat = StringFactory.getSFloat(value);
-            floatNode = new FloatNode(sFloat);
+            FloatType sFloat = StringFactory.getFloatType(value);
+            floatNode = new FloatNodeFactory(sFloat);
             storedVariables.put(value, floatNode);
         }
         return floatNode;

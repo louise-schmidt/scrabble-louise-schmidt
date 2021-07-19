@@ -1,4 +1,4 @@
-package cl.uchile.dcc.scrabble.memory.TypesFactory.numbersFactory;
+package cl.uchile.dcc.scrabble.memory.TypesFactory;
 import cl.uchile.dcc.scrabble.types.numbers.BinaryType;
 import java.util.HashMap;
 import java.util.Map;
@@ -15,9 +15,6 @@ public class BinaryFactory {
         return r;
     }
 
-    /**
-     * @return mapa Hash donde se guarda cada objeto distinto de tipo BinaryType
-     */
     public Map<String, BinaryType> getMapBinaryType() {
         return mapBinaryType;
     }

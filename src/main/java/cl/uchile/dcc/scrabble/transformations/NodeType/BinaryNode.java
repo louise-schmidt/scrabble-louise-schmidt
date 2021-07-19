@@ -1,7 +1,6 @@
-package cl.uchile.dcc.scrabble.ast.NodeType;
-import cl.uchile.dcc.scrabble.ast.INode;
+package cl.uchile.dcc.scrabble.transformations.NodeType;
 import cl.uchile.dcc.scrabble.types.iType;
-import static cl.uchile.dcc.scrabble.memory.TypesFactory.numbersFactory.BinaryFactory.newBinaryType;
+import static cl.uchile.dcc.scrabble.memory.TypesFactory.BinaryFactory.newBinaryType;
 
 public class BinaryNode implements INode {
     private final String value;

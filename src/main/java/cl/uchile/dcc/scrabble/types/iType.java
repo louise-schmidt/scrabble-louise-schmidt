@@ -1,5 +1,5 @@
 package cl.uchile.dcc.scrabble.types;
-import cl.uchile.dcc.scrabble.ast.INode;
+import cl.uchile.dcc.scrabble.transformations.NodeType.INode;
 
 public interface iType extends INode {
     /**

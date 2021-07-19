@@ -1,5 +1,4 @@
-package cl.uchile.dcc.scrabble.ast.NodeType;
-import cl.uchile.dcc.scrabble.ast.INode;
+package cl.uchile.dcc.scrabble.transformations.NodeType;
 import cl.uchile.dcc.scrabble.types.iType;
 
 public class FloatNode implements INode {

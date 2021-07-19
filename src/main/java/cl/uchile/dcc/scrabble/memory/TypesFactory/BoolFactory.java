@@ -15,9 +15,6 @@ public class BoolFactory {
         return r;
     }
 
-    /**
-     * @return mapa Hash donde se guarda cada objeto distinto de tipo BoolType
-     */
     public HashMap<Object, BoolType> getMapBoolType() {
         return mapBoolType;
     }

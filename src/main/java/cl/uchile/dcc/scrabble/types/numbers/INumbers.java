@@ -1,21 +1,35 @@
 package cl.uchile.dcc.scrabble.types.numbers;
 
-public interface INumbers {
-    FloatType asFloat();
+import cl.uchile.dcc.scrabble.memory.TypesFactory.IntFactory;
+import cl.uchile.dcc.scrabble.types.AbstractType;
 
-    FloatType addToFloat(FloatType addend);
 
-    FloatType subtractToFloat(FloatType subtrahend);
+public interface INumbers extends AbstractType{
 
-    INumbers subtractToInt(IntType subtrahend);
-
-    FloatType multiplyToFloat(FloatType product);
-
-    FloatType divideToFloat(FloatType divisor);
+    //SUMA
 
     INumbers addToInt(IntType addend);
 
-    INumbers multiplyToInt(IntType product);
+    INumbers addToFloat(FloatType addend);
+
+
+    //RESTA
+
+    INumbers subtractToInt(IntType minuend);
+
+    INumbers subtractToFloat(FloatType minuend);
+
+
+    //MULT
+
+    INumbers multiplyToInt(IntType multiplicand);
+
+    INumbers multiplyToFloat(FloatType multiplicand);
+
+
+    //DIV
 
     INumbers divideToInt(IntType dividend);
+
+    INumbers divideToFloat(FloatType dividend);
 }

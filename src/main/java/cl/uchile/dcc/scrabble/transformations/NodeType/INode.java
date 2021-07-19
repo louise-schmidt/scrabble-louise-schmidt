@@ -1,5 +1,4 @@
-package cl.uchile.dcc.scrabble.ast;
-import cl.uchile.dcc.scrabble.types.iType;
+package cl.uchile.dcc.scrabble.transformations.NodeType;
 
 public interface INode {
     /**

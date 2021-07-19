@@ -1,4 +1,4 @@
-package cl.uchile.dcc.scrabble.memory.TypesFactory.numbersFactory;
+package cl.uchile.dcc.scrabble.memory.TypesFactory;
 import cl.uchile.dcc.scrabble.types.numbers.IntType;
 import java.util.HashMap;
 
@@ -15,9 +15,6 @@ public class IntFactory {
         return r;
     }
 
-    /**
-     * @return mapa Hash donde se guarda cada objeto distinto de tipo IntType
-     */
     public HashMap<Object, IntType> getMapIntType() {
         return mapIntType;
     }

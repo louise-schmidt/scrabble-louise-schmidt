@@ -1,6 +1,5 @@
-package cl.uchile.dcc.scrabble.ast.transformations;
-import cl.uchile.dcc.scrabble.ast.INode;
-import cl.uchile.dcc.scrabble.ast.oneNode;
+package cl.uchile.dcc.scrabble.transformations;
+import cl.uchile.dcc.scrabble.transformations.NodeType.INode;
 
 public class asString extends oneNode{
 

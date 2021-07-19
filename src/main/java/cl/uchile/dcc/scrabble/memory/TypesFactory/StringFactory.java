@@ -16,9 +16,6 @@ public class StringFactory {
         return r;
     }
 
-    /**
-     * @return mapa Hash donde se guarda cada objeto distinto de tipo StringType
-     */
     public Map<String, StringType> getMapStringType() {
         return mapStringType;
     }

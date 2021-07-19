@@ -1,8 +1,10 @@
 package cl.uchile.dcc.scrabble.types.numbers;
+import cl.uchile.dcc.scrabble.memory.TypesFactory.TypeFactory;
+import cl.uchile.dcc.scrabble.types.BoolType;
 import cl.uchile.dcc.scrabble.types.StringType;
 import cl.uchile.dcc.scrabble.types.AbstractType;
-import cl.uchile.dcc.scrabble.types.operations.IBinary;
-import cl.uchile.dcc.scrabble.types.operations.ILogical;
+import cl.uchile.dcc.scrabble.operations.IBinary;
+import cl.uchile.dcc.scrabble.operations.ILogical;
 import java.util.Objects;
 
 public class BinaryType extends AbstractType implements INumbers, IBinary, ILogical {
@@ -19,12 +21,11 @@ public class BinaryType extends AbstractType implements INumbers, IBinary, ILogi
      * Test Constructor
      **/
     @Override
-    public boolean equals(Object obj) {
-        if (obj instanceof BinaryType) {
-            var o = (BinaryType) obj;
-            return o.value == this.value;
-        }
-        return false;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof BinaryType)) return false;
+        BinaryType binario = (BinaryType) o;
+        return Objects.equals(this.getValue(), binario.getValue());
     }
 
     /**
@@ -32,13 +33,17 @@ public class BinaryType extends AbstractType implements INumbers, IBinary, ILogi
      */
     @Override
     public int hashCode() {
-        return Objects.hash(BinaryType.class);
+        return Objects.hash(this.getValue());
     }
 
     public String getValue() {
         return this.value;
     }
 
+    @Override
+    public String toString(){
+        return this.getValue();
+    }
     /**
      * Transformacion BinaryType a StringType
      **/
@@ -50,22 +55,24 @@ public class BinaryType extends AbstractType implements INumbers, IBinary, ILogi
     /**
      * Transformacion BinaryType a FloatType
      **/
-    @Override
     public FloatType asFloat() {
-        return this.asInt().asFloat();
+        return TypeFactory.getIntType(toInt(this.getValue())).asFloat();
     }
 
     /**
      * Transformacion BinaryType a IntType
      * @return nuevo IntType
      */
-    @Override
-    public IntType asInt() {
-        if(bitToInt(this.getValue().charAt(0)) == 0){
-            return new IntType(positiveBinToInt(this.getValue()));
+    public IntType asInt(){
+        return TypeFactory.getIntType(this.toInt(this.getValue()));
+    }
+
+    private int toInt(String binary){
+        if (bitToInt(binary.charAt(0)) == 0){
+            return positiveBinToInt(binary);
         }
-        else {
-            return new IntType(negativeBinaryToInt(this.getValue()));
+        else{
+            return negativeBinaryToInt(binary);
         }
     }
 
@@ -94,116 +101,197 @@ public class BinaryType extends AbstractType implements INumbers, IBinary, ILogi
      */
     @Override
     public BinaryType asBinary() {
-        return this;
+        return TypeFactory.getBinaryType(this.getValue());
     }
 
-    /**
-     * @param conjunct
-     * @return conjuncion logica
-     */
-    public ILogical and(ILogical conjunct) {
-        return conjunct.andBinary(this);
+    @Override
+    public ILogical and(ILogical operand) {
+        return operand.andBinary(this);
+    }
+
+    @Override
+    public BinaryType andBool(BinaryType sBool) {
+        return TypeFactory.getBinaryType(sBool.getValue() ? this.getValue() : "0000000000000000");
+    }
+
+
+    @Override
+    public BinaryType andBinary(BinaryType sBinary) {
+        int n = sBinary.getValue().length();
+        StringBuilder resultado = new StringBuilder();
+        for (int i = 0; i < n; i++){
+            boolean b1 = sBinary.getValue().charAt(i) == '1';
+            boolean b2 = this.getValue().charAt(i) == '1';
+            resultado.append((b1 && b2) ? '1' : '0');
+        }
+        return TypeFactory.getBinaryType(resultado.toString());
     }
 
     @Override
     public ILogical or(ILogical operand) {
-        return null;
+        return operand.orBinary(this);
     }
 
-    public IBinary add(IBinary addend) {
+    @Override
+    public BinaryType orBool(BoolType sBool) {
+        return TypeFactory.getBinaryType(sBool.getValue() ? "1111111111111111" : this.getValue());
+    }
+
+    @Override
+    public BinaryType orBinary(BinaryType sBinary) {
+        int n = sBinary.getValue().length();
+        StringBuilder resultado = new StringBuilder();
+        for (int i = 0; i < n; i++){
+            boolean b1 = sBinary.getValue().charAt(i) == '1';
+            boolean b2 = this.getValue().charAt(i) == '1';
+            resultado.append((b1 || b2) ? '1' : '0');
+        }
+        return TypeFactory.getBinaryType(resultado.toString());
+    }
+
+    @Override
+    public BinaryType not() {
+        int n = this.getValue().length();
+        StringBuilder resultado = new StringBuilder();
+        for (int i = 0; i < n; i++){
+            boolean b = this.getValue().charAt(i) == '1';
+            resultado.append(!b ? '1' : '0');
+        }
+        return TypeFactory.getBinaryType(resultado.toString());
+    }
+
+    //SUMA
+
+    public IBinary add(IBinary addend){
         return addend.addToBinary(this);
     }
 
-    public IBinary multiply(IBinary product) {
-        return product.multiplyToBinary(this);
-    }
-
-    public IBinary subtract(IBinary subtractor) {
-        return subtractor.subtractToBinary(this);
-    }
-
-    public IBinary divide(IBinary divisor) {
-        return divisor.divideToBinary(this);
-    }
-
-
+    /**
+     * Adds an SInt object to this object.
+     * @param addend
+     *      The SInt object to be added.
+     * @return
+     *      New SBinary object representing the sum between both objects.
+     */
     @Override
-    public StringType addToString(StringType addend) {
-        return addend.addToString(this.asString());
+    public IntType addToInt(IntType addend) {
+        int addend1 = addend.getValue();
+        int addend2 = this.asInt().getValue();
+        return TypeFactory.getIntType(addend1 + addend2);
     }
 
     @Override
-    public BinaryType addToBinary(BinaryType addend) {
-        return null;
-    }
-
-    @Override
-    public BinaryType subtractToBinary(BinaryType subtractor) {
-        return null;
-    }
-
-    @Override
-    public BinaryType multiplyToBinary(BinaryType product) {
-        return null;
-    }
-
-    @Override
-    public BinaryType divideToBinary(BinaryType dividend) {
-        return null;
-    }
-
-    @Override
-    public ILogical andBool(ILogical bool) {
-        return null;
-    }
-
-    @Override
-    public ILogical orBool(ILogical operand) {
-        return null;
-    }
-
-    @Override
-    public ILogical andBinary(ILogical sBinary) {
-        return null;
+    public BinaryType addToBinary(BinaryType unBinario) {
+        int firstBinLen = this.getValue().length() - 1;
+        int secondBinLen = unBinario.getValue().length() - 1;
+        StringBuilder sb = new StringBuilder();
+        int resto = 0;
+        while (firstBinLen >= 0 || secondBinLen >= 0){
+            int suma = resto;
+            if (firstBinLen >= 0){
+                suma += this.getValue().charAt(firstBinLen) - '0';
+                firstBinLen--;
+            }
+            if (secondBinLen >= 0){
+                suma += unBinario.getValue().charAt(secondBinLen) - '0';
+                secondBinLen--;
+            }
+            resto = suma >> 1;
+            suma = suma & 1;
+            sb.append(suma == 0 ? '0' : '1');
+        }
+        if (resto > 0){
+            sb.append('1');
+        }
+        sb.reverse();
+        return TypeFactory.getBinaryType(String.valueOf(sb));
     }
 
     @Override
     public FloatType addToFloat(FloatType addend) {
-        return null;
+        double addend1 = this.asFloat().getValue();
+        double addend2 = addend.getValue();
+        return TypeFactory.getFloatType(addend1 + addend2);
+    }
+
+    //RESTA
+    public IBinary subtract(IBinary subtrahend){
+        return subtrahend.subtractToBinary(this);
     }
 
     @Override
-    public FloatType subtractToFloat(FloatType subtrahend) {
-        return null;
+    public IntType subtractToInt(IntType minuend) {
+        int intSubtrahend = this.asInt().getValue();
+        int intMinuend = minuend.getValue();
+        return TypeFactory.getIntType(intMinuend - intSubtrahend);
     }
 
     @Override
-    public INumbers subtractToInt(IntType subtrahend) {
-        return null;
+    public FloatType subtractToFloat(FloatType minuend) {
+        double floatSubtrahend = this.asFloat().getValue();
+        double floatMinuend = minuend.getValue();
+        return TypeFactory.getFloatType(floatMinuend - floatSubtrahend);
     }
 
     @Override
-    public FloatType multiplyToFloat(FloatType product) {
-        return null;
+    public BinaryType subtractToBinary(BinaryType minuend) {
+        int intMinuend = minuend.asInt().getValue();
+        int intSubtrahend = this.asInt().getValue();
+        return TypeFactory.getIntType(intMinuend - intSubtrahend).asBinary();
+    }
+
+    //MULT
+
+    public IBinary multiply(IBinary multiplier){
+        return multiplier.multiplyToBinary(this);
     }
 
     @Override
-    public FloatType divideToFloat(FloatType divisor) {
-        return null;
+    public IntType multiplyToInt(IntType multiplicand) {
+        int intMultiplier = this.asInt().getValue();
+        int intMultiplicand = multiplicand.getValue();
+        return TypeFactory.getIntType(intMultiplicand * intMultiplier);
     }
 
     @Override
-    public BinaryType addToInt(IntType addend) {
-        return null;
+    public BinaryType multiplyToBinary(BinaryType multiplicand) {
+        int intMultiplicand = multiplicand.asInt().getValue();
+        int intMultiplier = this.asInt().getValue();
+        return TypeFactory.getIntType(intMultiplicand * intMultiplier).asBinary();
     }
 
     @Override
-    public BinaryType multiplyToInt(IntType product) {
-        return null;
+    public FloatType multiplyToFloat(FloatType multiplicand) {
+        double floatMultiplier = this.asFloat().getValue();
+        double floatMultiplicand = multiplicand.getValue();
+        return TypeFactory.getFloatType(floatMultiplicand * floatMultiplier);
+    }
+
+    //DIV
+
+    public IBinary divide(IBinary divisor){
+        return divisor.divideToBinary(this);
     }
 
     @Override
-    public BinaryType divideToInt(IntType dividend) {
-        return null;
+    public IntType divideToInt(IntType dividend) {
+        int intDivisor = this.asInt().getValue();
+        int intDividend = dividend.getValue();
+        return TypeFactory.getIntType(intDividend / intDivisor);
     }
+
+    @Override
+    public BinaryType divideToBinary(BinaryType dividend) {
+        int intDivisor = this.asInt().getValue();
+        int intDividend = dividend.asInt().getValue();
+        return TypeFactory.getIntType(intDividend / intDivisor).asBinary();
+    }
+
+    @Override
+    public FloatType divideToFloat(FloatType dividend) {
+        double floatDivisor = this.asFloat().getValue();
+        double floatDividend = dividend.getValue();
+        return TypeFactory.getFloatType(floatDividend / floatDivisor);
+    }
+
 }

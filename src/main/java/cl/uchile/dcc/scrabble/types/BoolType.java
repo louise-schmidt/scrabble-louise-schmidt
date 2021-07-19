@@ -1,114 +1,84 @@
 package cl.uchile.dcc.scrabble.types;
-import cl.uchile.dcc.scrabble.types.operations.ILogical;
-import java.util.Objects;
 
-public class BoolType implements iType, ILogical {
+
+import cl.uchile.dcc.scrabble.memory.TypesFactory.BinaryFactory;
+import cl.uchile.dcc.scrabble.memory.TypesFactory.TypeFactory;
+import cl.uchile.dcc.scrabble.operations.ILogical;
+import cl.uchile.dcc.scrabble.types.numbers.BinaryType;
+
+
+public class BoolType extends AbstractType implements iType, ILogical {
     private final boolean value;
 
-    /**
-     * Constructor de BoolType
-     **/
-    public BoolType(boolean value) {
-        this.value = value;
+    public BoolType(boolean aBool) {
+        this.value = aBool;
     }
 
-    /**
-     * Equals de BoolType
-     **/
     @Override
-    public boolean equals(Object obj) {
-        if (obj instanceof BoolType) {
-            var o = (BoolType) obj;
-            return o.value == this.value;
-        }
-        return false;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof BoolType)) return false;
+        BoolType booleano = (BoolType) o;
+        return this.getValue() == booleano.getValue();
     }
 
-    /**
-     * @return valor hash del objeto
-     */
+
     @Override
     public int hashCode() {
-        return Objects.hash(BoolType.class);
+        return this.getValue() ? 1231 : 1237;
     }
 
-    /**
-     * get de BoolType
-     * @return un boolean
-     */
-    public boolean isValue() {
-        return value;
+    public boolean getValue(){
+        return this.value;
     }
 
-    /**
-     * Transformacion BoolType a BinaryType
-     **/
+    @Override
+    public String toString(){
+        return String.valueOf(this.getValue());
+    }
+
+
+    public StringType asString() {
+        return TypeFactory.getStringType(this.toString());
+    }
+
     public BoolType asBool() {
         return this;
     }
 
-    /**
-     * Transformacion BoolType a StringType
-     **/
     @Override
-    public StringType asString() {
-        return new StringType(Boolean.toString(value));
+    public ILogical and(ILogical operand) {
+        return operand.andBool(this);
     }
 
-    /**
-     * Suma de BoolType con StringType
-     * @return llama a addToString, el cual retorna un nuevo StringType
-     */
     @Override
-    public StringType addToString(StringType addend) {
-        return addend.addToString(this.asString());
+    public BoolType andBool(BoolType sBool) {
+        return TypeFactory.getBoolType(sBool.getValue() && this.getValue());
     }
 
-    /**
-     * y logico entre BoolType y un operadoresLogicos
-     */
     @Override
-    public ILogical and(ILogical conjunct) {
-        return conjunct.andBool(this);
+    public BinaryType andBinary(BinaryType sBinary) {
+        return TypeFactory.getBinaryType(this.getValue() ? sBinary.getValue() : "0000000000000000");
     }
 
-    /**
-     * realiza la operación y logica entre dos boolean
-     */
-    @Override
-    public ILogical andBool(ILogical bool) {
-        if (!this.value || !Boolean.parseBoolean(bool.toString())) {
-            return new BoolType(false);
-        }
-        else {
-            return new BoolType(true);
-        }
-    }
-
-    /**
-     * o logico entre BoolType y un operadoresLogicos
-     */
     @Override
     public ILogical or(ILogical operand) {
         return operand.orBool(this);
     }
 
-    /**
-     * realiza la operación o logica entre dos boolean
-     */
     @Override
-    public ILogical orBool(ILogical operand) {
-        if (this.value || Boolean.parseBoolean(operand.toString())) {
-            return new BoolType(false);
-        }
-        else {
-            return new BoolType(true);
-        }
+    public BoolType orBool(BoolType sBool) {
+        return TypeFactory.getBoolType(sBool.getValue() || this.getValue());
+    }
+
+
+    @Override
+    public BinaryType orBinary(BinaryType sBinary) {
+        return TypeFactory.getBinaryType(this.getValue() ? "1111111111111111" : sBinary.getValue());
     }
 
     @Override
-    public ILogical andBinary(ILogical binarytype) {
-        return null;
+    public BoolType not(){
+        return TypeFactory.getBoolType(!this.getValue());
     }
-
 }

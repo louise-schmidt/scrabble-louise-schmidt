@@ -1,4 +1,4 @@
-package cl.uchile.dcc.scrabble.memory.TypesFactory.numbersFactory;
+package cl.uchile.dcc.scrabble.memory.TypesFactory;
 import cl.uchile.dcc.scrabble.types.numbers.FloatType;
 import java.util.HashMap;
 
@@ -15,9 +15,6 @@ public class FloatFactory {
         return r;
     }
 
-    /**
-     * @return mapa Hash donde se guarda cada objeto distinto de tipo FloatType
-     */
     public HashMap<Object, FloatType> getMapFloatType() {
         return mapFloatType;
     }
