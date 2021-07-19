@@ -1,4 +1,4 @@
-package cl.uchile.dcc.scrabble.factory;
+package cl.uchile.dcc.scrabble.memory.TypesFactory;
 import cl.uchile.dcc.scrabble.types.StringType;
 import java.util.HashMap;
 import java.util.Map;

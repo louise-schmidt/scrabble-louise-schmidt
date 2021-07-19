@@ -1,4 +1,4 @@
-package cl.uchile.dcc.scrabble.factory.numbersFactory;
+package cl.uchile.dcc.scrabble.memory.TypesFactory.numbersFactory;
 import cl.uchile.dcc.scrabble.types.numbers.IntType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

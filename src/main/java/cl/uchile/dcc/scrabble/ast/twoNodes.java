@@ -15,7 +15,7 @@ public abstract class twoNodes implements INode {
     }
 
     /**
-     *  getter Hijoizq
+     * getter Hijoizq
      * @return INode del nodo hijo izquierdo
      */
     public INode getHijoizq() {

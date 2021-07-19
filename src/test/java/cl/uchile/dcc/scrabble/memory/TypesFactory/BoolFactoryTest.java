@@ -1,4 +1,4 @@
-package cl.uchile.dcc.scrabble.factory;
+package cl.uchile.dcc.scrabble.memory.TypesFactory;
 import cl.uchile.dcc.scrabble.types.BoolType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
