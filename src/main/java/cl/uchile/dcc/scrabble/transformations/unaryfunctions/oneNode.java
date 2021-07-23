@@ -1,9 +1,10 @@
-package cl.uchile.dcc.scrabble.transformations;
+package cl.uchile.dcc.scrabble.transformations.unaryfunctions;
+
 import cl.uchile.dcc.scrabble.transformations.NodeType.INode;
 import cl.uchile.dcc.scrabble.types.iType;
 
 public abstract class oneNode implements INode {
-    private INode hijo;
+    protected final INode hijo;
 
     /**
      * Constructor oneNode
@@ -14,20 +15,12 @@ public abstract class oneNode implements INode {
     }
 
     /**
-     * getter nodo hijo
-     * @return INode
-     */
-    public INode getHijo() {
-        return hijo;
-    }
-
-    /**
      * Sobreescribe metodo evaluate de INode
      * @return iType
      */
     @Override
-    public iType evaluate() {
-        return null;
+    public iType getValue(){
+        return this.evaluate().getValue();
     }
 
 }

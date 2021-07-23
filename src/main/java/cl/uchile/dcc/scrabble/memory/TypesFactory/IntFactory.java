@@ -1,5 +1,7 @@
 package cl.uchile.dcc.scrabble.memory.TypesFactory;
+
 import cl.uchile.dcc.scrabble.types.numbers.IntType;
+
 import java.util.HashMap;
 
 public class IntFactory {
@@ -14,7 +16,6 @@ public class IntFactory {
         }
         return r;
     }
-
     public HashMap<Object, IntType> getMapIntType() {
         return mapIntType;
     }

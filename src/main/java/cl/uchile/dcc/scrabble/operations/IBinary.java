@@ -5,6 +5,11 @@ import cl.uchile.dcc.scrabble.types.numbers.IntType;
 
 public interface IBinary {
 
+    /**
+     *
+     * @param addend
+     * @return
+     */
     BinaryType addToBinary(BinaryType addend);
 
     BinaryType subtractToBinary(BinaryType minuend);

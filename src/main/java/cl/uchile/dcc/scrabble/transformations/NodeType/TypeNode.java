@@ -1,153 +1,73 @@
 package cl.uchile.dcc.scrabble.transformations.NodeType;
 
-public abstract class TypeNode implements INode {
+public interface TypeNode extends INode {
 
-    @Override
-    public TypeNode add(TypeNode addend){
-        return null;
-    }
+    // ADD
+    TypeNode add(TypeNode addend);
 
-    @Override
-    public TypeNode addToInt(IntNode addend){
-        return null;
-    }
+    TypeNode addToInt(IntNode addend);
 
-    @Override
-    public TypeNode addToFloat(FloatNode addend){
-        return null;
-    }
+    TypeNode addToFloat(FloatNode addend);
 
-    @Override
-    public TypeNode addToBinary(BinaryNode addend){
-        return null;
-    }
+    TypeNode addToBinary(BinaryNode addend);
 
-    @Override
-    public StringNode addToString(StringNode addend){
-        return TypeNodeFactory.getStringNode(this.getValue().addToString(addend.getValue()).getValue());
-    }
+    StringNode addToString(StringNode addend);
+
+    // SUBTRACT
+    TypeNode subtract(TypeNode subtrahend);
+
+    TypeNode subtractToInt(IntNode minuend);
+
+    TypeNode subtractToFloat(FloatNode minuend);
+
+    TypeNode subtractToBinary(BinaryNode minuend);
 
 
-    @Override
-    public TypeNode subtract(TypeNode subtrahend){
-        return null;
-    }
+    // MULTIPLY
+    TypeNode multiply(TypeNode multiplier);
 
-    @Override
-    public TypeNode subtractToInt(IntNode minuend){
-        return null;
-    }
+    TypeNode multiplyToInt(IntNode multiplicand);
 
-    @Override
-    public TypeNode subtractToFloat(FloatNode minuend){
-        return null;
-    }
+    TypeNode multiplyToFloat(FloatNode multiplicand);
 
-    @Override
-    public TypeNode subtractToBinary(BinaryNode minuend){
-        return null;
-    }
+    TypeNode multiplyToBinary(BinaryNode multiplicand);
 
 
-    @Override
-    public TypeNode multiply(TypeNode multiplier){
-        return null;
-    }
+    // DIVIDE
+    TypeNode divide(TypeNode divisor);
 
-    @Override
-    public TypeNode multiplyToInt(IntNode multiplicand){
-        return null;
-    }
+    TypeNode divideToInt(IntNode dividend);
 
-    @Override
-    public TypeNode multiplyToFloat(FloatNode multiplicand){
-        return null;
-    }
+    TypeNode divideToFloat(FloatNode dividend);
 
-    @Override
-    public TypeNode multiplyToBinary(BinaryNode multiplicand){
-        return null;
-    }
+    TypeNode divideToBinary(BinaryNode dividend);
 
+    // AND
+    TypeNode and(TypeNode operand);
 
-    @Override
-    public TypeNode divide(TypeNode divisor){
-        return null;
-    }
+    TypeNode andBool(BoolNode boolNode);
 
-    @Override
-    public TypeNode divideToInt(IntNode dividend){
-        return null;
-    }
+    TypeNode andBinary(BinaryNode boolNode);
 
-    @Override
-    public TypeNode divideToFloat(FloatNode dividend){
-        return null;
-    }
+    // OR
+    TypeNode or(TypeNode operand);
 
-    @Override
-    public TypeNode divideToBinary(BinaryNode dividend){
-        return null;
-    }
+    TypeNode orBool(BoolNode boolNode);
 
-    @Override
-    public BinaryNode toBinaryNode(){
-        return null;
-    }
+    TypeNode orBinary(BinaryNode boolNode);
 
-    @Override
-    public BoolNode toBoolNode(){
-        return null;
-    }
+    // NOT
+    TypeNode not();
 
-    @Override
-    public FloatNode toFloatNode(){
-        return null;
-    }
+    // CASTING
+    BinaryNode toBinaryNode();
 
-    @Override
-    public IntNode toIntNode(){
-        return null;
-    }
+    BoolNode toBoolNode();
 
-    @Override
-    public StringNode toStringNode(){
-        return TypeNodeFactory.getStringNode(this.getValue().asString().getValue());
-    }
+    FloatNode toFloatNode();
 
-    @Override
-    public TypeNode and(TypeNode operand) {
-        return null;
-    }
+    IntNode toIntNode();
 
-    @Override
-    public TypeNode andBool(BoolNode boolNode) {
-        return null;
-    }
-
-    @Override
-    public TypeNode andBinary(BinaryNode boolNode) {
-        return null;
-    }
-
-    @Override
-    public TypeNode or(TypeNode operand) {
-        return null;
-    }
-
-    @Override
-    public TypeNode orBool(BoolNode boolNode) {
-        return null;
-    }
-
-    @Override
-    public TypeNode orBinary(BinaryNode boolNode) {
-        return null;
-    }
-
-    @Override
-    public TypeNode not() {
-        return null;
-    }
+    StringNode toStringNode();
 
 }

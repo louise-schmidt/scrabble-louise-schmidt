@@ -5,20 +5,67 @@ import cl.uchile.dcc.scrabble.types.numbers.BinaryType;
 
 public interface ILogical {
 
-    // AND
-    ILogical and(ILogical operand);
+    // And
+    /**
+     * Ejecuta el operador logico 'y' entre un objeto de tipo ILogical y otro objeto
+     * @param operador
+     * es el de tipo ILogical con el que se hará la operación
+     * @return
+     * un objeto de tipo ILogical que representa de la operacion
+     */
+    ILogical and(ILogical operador);
 
-    ILogical andBool(BoolType sBool);
+    /**
+     * Ejecuta el operador logico 'y' entre un objeto de tipo BoolType y otro objeto
+     * @param BoolType
+     * es el de tipo BoolType con el que se hará la operación
+     * @return
+     * un objeto de tipo ILogical con el resultado de la operacion
+     */
+    ILogical andBool(BoolType BoolType);
 
-    ILogical andBinary(BinaryType sBinary);
+    /**
+     * Ejecuta el operador logico 'y' entre un objeto de tipo BinaryType y otro objeto
+     * @param BinaryType
+     * es el de tipo BinaryType con el que se hará la operación
+     * @return
+     * un objeto de tipo ILogical con el resultado de la operacion
+     */
+    ILogical andBinary(BinaryType BinaryType);
 
-    // OR
-    ILogical or(ILogical operand);
+    // Or
+    /**
+     * Ejecuta el operador 'o' entre un objeto de tipo ILogical y otro objeto
+     * @param operador
+     * es el de tipo ILogical con el que se hará la operación
+     * @return
+     * un objeto de tipo ILogical con el resultado de la operacion
+     */
+    ILogical or(ILogical operador);
 
-    ILogical orBool(BoolType sBool);
+    /**
+     * Ejecuta el operador 'o' entre un objeto de tipo BoolType y otro objeto
+     * @param BoolType
+     * es el de tipo BoolType con el que se hará la operación
+     * @return
+     * un objeto de tipo ILogical con el resultado de la operacion
+     */
+    ILogical orBool(BoolType BoolType);
 
-    ILogical orBinary(BinaryType sBinary);
+    /**
+     * Ejecuta el operador 'o' entre un objeto de tipo BinaryType y otro objeto
+     * @param BinaryType
+     * es el de tipo BinaryType con el que se hará la operación
+     * @return
+     * un objeto de tipo ILogical con el resultado de la operacion
+     */
+    ILogical orBinary(BinaryType BinaryType);
 
-    // NOT
+    // Not
+    /**
+     * Ejecuta la negación a un objeto this
+     * @return
+     * un objeto de tipo ILogical con el resultado de la operacion
+     */
     ILogical not();
 }

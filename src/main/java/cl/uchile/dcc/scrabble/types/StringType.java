@@ -1,26 +1,43 @@
 package cl.uchile.dcc.scrabble.types;
+
 import java.util.Objects;
 
-public class StringType implements iType {
+/**
+ * La clase StringType genera un objeto del tipo String
+ * Representan un string
+ */
+public class StringType extends AbstractType {
+
+    /**
+     * valor inmutable del StringType
+     */
     private final String value;
 
     /**
-     * get de StringType
-     * @return tipo String
-     */
-    public String getValue() {
-        return value;
-    }
-
-    /**
-     * Constructor de StringType
+     * Crea un StringType con valor "value"
+     * @param value
+     * el String que será de tipo StringType
      **/
     public StringType(String value) {
         this.value = value;
     }
 
     /**
-     * Equals de StringType
+     * Retorn el valor del objeto StringType como un objeto de tipo String
+     * @return
+     * la representacion de tipo String del objeto
+     */
+    public String getValue() {
+        return value;
+    }
+
+    /**
+     * Compara el objeto this con el objeto o
+     * Son iguales si el argumento es un StringType del mismo valor que el objeto
+     * @param obj
+     * el objeto con el que se compara
+     * @return
+     * true si los objetos son iguales o false en el caso contrario
      **/
     @Override
     public boolean equals(Object obj) {
@@ -32,7 +49,9 @@ public class StringType implements iType {
     }
 
     /**
-     * @return valor hash del objeto
+     * Retorna un hashCode para StringType
+     * @return
+     * un hash code para el objeto
      */
     @Override
     public int hashCode() {
@@ -40,28 +59,27 @@ public class StringType implements iType {
     }
 
     /**
-     * Transformación StringType a StringType
-     **/
+     * Retorna un tipo StringType representando el valor del objeto StringType
+     * @return
+     * un objeto StrinType
+     */
     @Override
     public StringType asString() {
         return this;
     }
 
     /**
-     * suma cualquier StringType con cualquier type
-     * @param addend cualquier type
-     * @return llama a addToString, el cual retorna un StringType
-     */
-    @Override
-    public StringType addToString(StringType addend) {
-        return new StringType(addend.toString()+this.toString());
-    }
-
-    /**
-     * convierte a String un StringType
+     * Retorna un objeto de tipo String representando el valor del objeto
+     * @return
+     * un String
      */
     @Override
     public String toString() {
         return value;
+    }
+
+    //Concatenacion
+    public StringType add(StringType addend) {
+        return addend.addToString(this);
     }
 }

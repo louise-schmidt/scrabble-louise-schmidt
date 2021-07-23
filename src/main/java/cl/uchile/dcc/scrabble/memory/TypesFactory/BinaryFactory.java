@@ -1,10 +1,13 @@
 package cl.uchile.dcc.scrabble.memory.TypesFactory;
+
 import cl.uchile.dcc.scrabble.types.numbers.BinaryType;
+
 import java.util.HashMap;
 import java.util.Map;
 
 public class BinaryFactory {
-    static HashMap<String, BinaryType> mapBinaryType = new HashMap<>();
+    public static HashMap<String, BinaryType> mapBinaryType = new HashMap<>();
+
     public static BinaryType newBinaryType(String value) {
         String key = value;
         BinaryType r = mapBinaryType.get(key);

@@ -1,7 +1,6 @@
 package cl.uchile.dcc.scrabble.types;
-import cl.uchile.dcc.scrabble.transformations.NodeType.INode;
 
-public interface iType extends INode {
+public interface iType {
     /**
      * Pasa un objeto cualquiera a un objeto de tipo StringType
      * @return un StringType

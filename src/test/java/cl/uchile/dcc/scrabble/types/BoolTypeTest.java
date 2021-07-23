@@ -30,12 +30,4 @@ public class BoolTypeTest {
         StringType expected = new StringType(String.valueOf(bo));
         assertEquals(expected.getValue(),prueba.getValue());
     }
-
-    @Test
-    void asBool() {
-        BoolType prueba = booltype.asBool();
-        BoolType expected = new BoolType(bo);
-        assertEquals(expected.isValue(),prueba.isValue());
-        assertEquals(prueba,booltype);
-    }
 }
