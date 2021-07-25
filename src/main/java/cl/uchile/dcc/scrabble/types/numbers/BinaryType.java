@@ -30,7 +30,7 @@ public class BinaryType extends AbstractType implements INumbers, IBinary, ILogi
     }
 
     /**
-     * Retorn el valor del objeto BinaryType como un objeto de tipo Strng
+     * Retorna el valor del objeto BinaryType como un objeto de tipo String
      * @return
      * la representacion de tipo String del objeto
      */
