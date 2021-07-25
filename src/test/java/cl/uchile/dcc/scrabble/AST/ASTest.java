@@ -4,7 +4,7 @@ import cl.uchile.dcc.scrabble.memory.TypesFactory.TypeFactory;
 import cl.uchile.dcc.scrabble.memory.NodesFactory.NodeTypeFactory;
 import cl.uchile.dcc.scrabble.memory.NodesFactory.VarNodeFactory;
 import cl.uchile.dcc.scrabble.transformations.binaryfunctions.*;
-import cl.uchile.dcc.scrabble.memory.TypesFactory.TypeFactory;
+import cl.uchile.dcc.scrabble.transformations.unaryfunctions.transform.*;
 import cl.uchile.dcc.scrabble.types.iType;
 import org.junit.jupiter.api.Test;
 
@@ -21,7 +21,7 @@ public class ASTest {
                 NodeTypeFactory.newFloatNode(6.9),
                 new or(
                         NodeTypeFactory.newBinaryNode("0000000000001000"),
-                        new ToBinary(
+                        new asBinary(
                                 new subtract(
                                         NodeTypeFactory.newIntNode(25),
                                         NodeTypeFactory.newBinaryNode("0000000000000101")
@@ -124,16 +124,16 @@ public class ASTest {
     void intNodeTest(){
 
         var expectedIntNode = NodeTypeFactory.newIntNode(420).getValue();
-        var intToInt = new ToInt(NodeTypeFactory.newIntNode(420)).getValue();
+        var intToInt = new asInt(NodeTypeFactory.newIntNode(420)).getValue();
 
         var expectedStringNode = NodeTypeFactory.newStringNode("420").getValue();
-        var intToStr = new ToString(NodeTypeFactory.newIntNode(420)).getValue();
+        var intToStr = new asString(NodeTypeFactory.newIntNode(420)).getValue();
 
         var expectedFloatNode = NodeTypeFactory.newFloatNode(420.0).getValue();
-        var intToFloat = new ToFloat(NodeTypeFactory.newIntNode(420)).getValue();
+        var intToFloat = new asFloat(NodeTypeFactory.newIntNode(420)).getValue();
 
         var expectedBinaryNode = NodeTypeFactory.newBinaryNode("0000000110100100").getValue();
-        var intToBin = new ToBinary(NodeTypeFactory.newIntNode(420)).getValue();
+        var intToBin = new asBinary(NodeTypeFactory.newIntNode(420)).getValue();
 
         var expectedIntSum = NodeTypeFactory.newIntNode(69).getValue();
         var intSum = new add(
@@ -227,16 +227,16 @@ public class ASTest {
     void binaryNodeTest(){
 
         var expectedIntNode = NodeTypeFactory.newIntNode(420).getValue();
-        var binToInt = new ToInt(NodeTypeFactory.newBinaryNode("0000000110100100")).getValue();
+        var binToInt = new asInt(NodeTypeFactory.newBinaryNode("0000000110100100")).getValue();
 
         var expectedStringNode = NodeTypeFactory.newStringNode("0000000110100100").getValue();
-        var binToStr = new ToString(NodeTypeFactory.newBinaryNode("0000000110100100")).getValue();
+        var binToStr = new asString(NodeTypeFactory.newBinaryNode("0000000110100100")).getValue();
 
         var expectedFloatNode = NodeTypeFactory.newFloatNode(420.0).getValue();
-        var binToFloat = new ToFloat(NodeTypeFactory.newBinaryNode("0000000110100100")).getValue();
+        var binToFloat = new asFloat(NodeTypeFactory.newBinaryNode("0000000110100100")).getValue();
 
         var expectedBinaryNode = NodeTypeFactory.newBinaryNode("0000000110100100").getValue();
-        var binToBin = new ToBinary(NodeTypeFactory.newBinaryNode("0000000110100100")).getValue();
+        var binToBin = new asBinary(NodeTypeFactory.newBinaryNode("0000000110100100")).getValue();
 
         var expectedIntSum = NodeTypeFactory.newIntNode(69).getValue();
         var intSum = new add(
@@ -311,7 +311,7 @@ public class ASTest {
         var boolOrBin = new or(NodeTypeFactory.newBoolNode(true), NodeTypeFactory.newBinaryNode("0000110001101001")).getValue();
 
         var expectedAndBinary = NodeTypeFactory.newBinaryNode("0000000000001000").getValue();
-        var binAndBin = new and(NodeTypeFactory.newBinaryNode("0000000000111100"), TypeNodeFactory.getBinaryNode("0000000000001001")).getValue();
+        var binAndBin = new and(NodeTypeFactory.newBinaryNode("0000000000111100"), NodeTypeFactory.newBinaryNode("0000000000001001")).getValue();
 
         assertEquals(expectedIntNode, binToInt);
         assertEquals(expectedStringNode, binToStr);
@@ -338,7 +338,7 @@ public class ASTest {
     void floatNodeTest(){
 
         var expectedFloatNode = NodeTypeFactory.newFloatNode(420.0).getValue();
-        var floatToFloat = new ToFloat(NodeTypeFactory.newFloatNode(420.0)).getValue();
+        var floatToFloat = new asFloat(NodeTypeFactory.newFloatNode(420.0)).getValue();
 
         var expectedIntSum = NodeTypeFactory.newFloatNode(60.9).getValue();
         var intSum = new add(
@@ -402,7 +402,7 @@ public class ASTest {
     @Test
     void boolNodeTest(){
         var expectedBoolNode = NodeTypeFactory.newBoolNode(true).getValue();
-        var boolToBool = new ToBoolean(NodeTypeFactory.newBoolNode(true)).getValue();
+        var boolToBool = new asBool(NodeTypeFactory.newBoolNode(true)).getValue();
 
         var expectedAndBool = NodeTypeFactory.newBoolNode(false).getValue();
         var boolAndBool = new and(NodeTypeFactory.newBoolNode(true), NodeTypeFactory.newBoolNode(false)).getValue();
@@ -486,16 +486,16 @@ public class ASTest {
                 NodeTypeFactory.newBinaryNode("0101010101010101"),
                 NodeTypeFactory.newBoolNode(false)
         );
-        var ast17 = new ToBinary(
+        var ast17 = new asBinary(
                 NodeTypeFactory.newBoolNode(false)
         );
-        var ast18 = new ToFloat(
+        var ast18 = new asFloat(
                 NodeTypeFactory.newBoolNode(false)
         );
-        var ast19 = new ToInt(
+        var ast19 = new asInt(
                 NodeTypeFactory.newBoolNode(false)
         );
-        var ast20 = new ToBoolean(
+        var ast20 = new asBool(
                 NodeTypeFactory.newBinaryNode("0101010101010101")
         );
         var ast21 = new not(
