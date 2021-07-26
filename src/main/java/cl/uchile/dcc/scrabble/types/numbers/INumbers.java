@@ -4,19 +4,19 @@ import cl.uchile.dcc.scrabble.types.iType;
 
 public interface INumbers extends iType {
 
-    //Suma
+    //Sumas
     INumbers addToInt(IntType addend);
     INumbers addToFloat(FloatType addend);
 
-    //Resta
+    //Restas
     INumbers subtractToInt(IntType minuend);
     INumbers subtractToFloat(FloatType minuend);
 
-    //Multiplicacion
+    //Multiplicaciones
     INumbers multiplyToInt(IntType multiplicand);
     INumbers multiplyToFloat(FloatType multiplicand);
 
-    //Division
+    //Divisiones
     INumbers divideToInt(IntType dividend);
     INumbers divideToFloat(FloatType dividend);
 }

@@ -6,9 +6,19 @@ import cl.uchile.dcc.scrabble.types.numbers.IntType;
 
 import java.util.Hashtable;
 
+/**
+ * Clase que genera el nodo de tipo int
+ */
 public class IntNodeFactory{
     public static Hashtable<Integer, IntNode> storedVariables = new Hashtable<>();
 
+    /**
+     * Getter de la clase
+     * @param value
+     * direccion a buscar en hashtable
+     * @return
+     * un intNode creado a partir del parametro ingresado
+     */
     public static IntNode get(int value) {
         IntNode intNode = storedVariables.get(value);
         if (intNode == null) {

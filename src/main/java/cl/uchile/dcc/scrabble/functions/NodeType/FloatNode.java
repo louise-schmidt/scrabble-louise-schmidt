@@ -3,6 +3,10 @@ package cl.uchile.dcc.scrabble.functions.NodeType;
 import cl.uchile.dcc.scrabble.memory.NodesFactory.NodeTypeFactory;
 import cl.uchile.dcc.scrabble.types.numbers.FloatType;
 
+/**
+ * Clase de nodo float
+ * extiende la clase Nodo
+ */
 public class FloatNode extends Node {
     private final FloatType value;
 
@@ -82,4 +86,53 @@ public class FloatNode extends Node {
     public FloatNode divideToFloat(FloatNode dividend) {
         return NodeTypeFactory.newFloatNode(this.getValue().divideToFloat(dividend.getValue()).getValue());
     }
+
+    /**
+     * Metodo que compara un objeto nodo de tipo scrabble con this float
+     * @param typeNode
+     * es un nodo que contiene un objeto de tipo scrabble
+     * @return
+     * un entero igual a 0 si son iguales, menor a 0 si typeNode es menor o mayor a 0 en caso contrario
+     */
+    @Override
+    public int compareTo(TypeNode typeNode) {
+        return typeNode.compareToFloat(this);
+    }
+
+    /**
+     * Compara un FloatNode con un FloatNode
+     * @param floatNode
+     * el objeto que se utilizara para comparar
+     * @return
+     * un Integer menor, mayor o igual a 0 segun si el objeto ingresado es menor, mayor o igual a this
+     */
+    @Override
+    public Integer compareToFloat(FloatNode floatNode) {
+        return floatNode.getValue().compareTo(this.getValue());
+    }
+
+    /**
+     * Compara un IntNode con un FloatNode
+     * @param intNode
+     * el objeto que se utilizara para comparar
+     * @return
+     * un Integer menor, mayor o igual a 0 segun si el objeto ingresado es menor, mayor o igual a this
+     */
+    @Override
+    public  Integer compareToInt(IntNode intNode) {
+        return intNode.getValue().asFloat().compareTo(this.getValue());
+    }
+
+    /**
+     * Compara un BinaryNode con un FloatNode
+     * @param binaryNode
+     * el objeto que se utilizara para comparar
+     * @return
+     * un Integer menor, mayor o igual a 0 segun si el objeto ingresado es menor, mayor o igual a this
+     */
+    @Override
+    public Integer compareToBinary(BinaryNode binaryNode) {
+        return binaryNode.getValue().asFloat().compareTo(this.getValue());
+    }
+
 }

@@ -6,9 +6,19 @@ import cl.uchile.dcc.scrabble.types.numbers.BinaryType;
 
 import java.util.Hashtable;
 
+/**
+ * Clase que genera el nodo de tipo binary
+ */
 public class BinaryNodeFactory{
     public static Hashtable<String, BinaryNode> storedVariables = new Hashtable<>();
 
+    /**
+     * Getter de la clase
+     * @param value
+     * direccion a buscar en hashtable
+     * @return
+     * un binaryNode creado a partir del parametro ingresado
+     */
     public static BinaryNode get(String value){
         BinaryNode binaryNode = storedVariables.get(value);
         if (binaryNode == null){

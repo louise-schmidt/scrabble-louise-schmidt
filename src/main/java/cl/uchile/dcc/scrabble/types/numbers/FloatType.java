@@ -205,6 +205,13 @@ public class FloatType extends AbstractType implements INumbers, Comparable<Floa
         return TypeFactory.getFloatType(dividend.getValue() / this.getValue());
     }
 
+    /**
+     * Compara un FloatType con un FloatType
+     * @param floatype
+     * el objeto que se utilizara para comparar
+     * @return
+     * un int menor, mayor o igual a 0 segun si this es menor, mayor o igual a floatype
+     */
     @Override
     public int compareTo(FloatType floatype) {
         Double floatypevalue = Double.valueOf(floatype.getValue());

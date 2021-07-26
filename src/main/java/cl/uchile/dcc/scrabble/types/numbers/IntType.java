@@ -295,6 +295,13 @@ public class IntType extends AbstractType implements INumbers, IBinary, Comparab
         return TypeFactory.getIntType(intDividend / intDivisor).asBinary();
     }
 
+    /**
+     * Compara un IntType con un IntType
+     * @param intype
+     * el objeto que se utilizara para comparar
+     * @return
+     * un int menor, mayor o igual a 0 segun si this es menor, mayor o igual a intype
+     */
     @Override
     public int compareTo(IntType intype) {
         Integer intypevalue = Integer.valueOf(intype.getValue());

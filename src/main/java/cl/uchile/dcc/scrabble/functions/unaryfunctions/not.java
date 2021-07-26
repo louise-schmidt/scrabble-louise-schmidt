@@ -14,6 +14,11 @@ public class not extends oneNode {
         super(hijo);
     }
 
+    /**
+     * Evalua el hijo de oneNode
+     * @return
+     * TypeNode con el valor
+     */
     @Override
     public TypeNode evaluate() {
         return this.hijo.evaluate().not();

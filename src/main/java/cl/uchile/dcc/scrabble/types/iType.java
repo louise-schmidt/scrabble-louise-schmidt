@@ -14,7 +14,5 @@ public interface iType {
      */
     StringType addToString(StringType addend);
 
-
-
 }
 

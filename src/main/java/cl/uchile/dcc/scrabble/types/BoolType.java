@@ -3,7 +3,6 @@ package cl.uchile.dcc.scrabble.types;
 import cl.uchile.dcc.scrabble.memory.TypesFactory.TypeFactory;
 import cl.uchile.dcc.scrabble.operations.ILogical;
 import cl.uchile.dcc.scrabble.types.numbers.BinaryType;
-import cl.uchile.dcc.scrabble.types.numbers.FloatType;
 
 /**
  * La clase BoolType genera un objeto del tipo boolean
@@ -164,6 +163,13 @@ public class BoolType extends AbstractType implements iType, ILogical, Comparabl
         return TypeFactory.getBoolType(!this.getValue());
     }
 
+    /**
+     * Compara un BoolType con un BoolType
+     * @param booltype
+     * el objeto que se utilizara para comparar
+     * @return
+     * un int menor, mayor o igual a 0 segun si this es menor, mayor o igual a booltype
+     */
     @Override
     public int compareTo(BoolType booltype) {
         Boolean booltypevalue = Boolean.valueOf(booltype.getValue());

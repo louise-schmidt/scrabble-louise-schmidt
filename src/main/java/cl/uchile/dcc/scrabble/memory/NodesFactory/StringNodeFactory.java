@@ -6,9 +6,19 @@ import cl.uchile.dcc.scrabble.types.StringType;
 
 import java.util.Hashtable;
 
+/**
+ * Clase que genera el nodo de tipo string
+ */
 public class StringNodeFactory{
     public static Hashtable<String, StringNode> storedVariables = new Hashtable<>();
 
+    /**
+     * Getter de la clase
+     * @param value
+     * direccion a buscar en hashtable
+     * @return
+     * un stringNode creado a partir del parametro ingresado
+     */
     public static StringNode get(String value) {
         StringNode stringNode = storedVariables.get(value);
         if (stringNode == null) {

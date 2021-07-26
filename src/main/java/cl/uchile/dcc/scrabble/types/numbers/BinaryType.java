@@ -480,6 +480,13 @@ public class BinaryType extends AbstractType implements INumbers, IBinary, ILogi
         return TypeFactory.getIntType(intDividend / intDivisor).asBinary();
     }
 
+    /**
+     * Compara un BinaryType con un BinaryType
+     * @param binarytype
+     * el objeto que se utilizara para comparar
+     * @return
+     * un int menor, mayor o igual a 0 segun si this es menor, mayor o igual a binarytype
+     */
     @Override
     public int compareTo(BinaryType binarytype) {
         Integer binarytypevalue = Integer.valueOf(binarytype.asInt().getValue());

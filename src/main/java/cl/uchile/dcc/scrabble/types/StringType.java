@@ -83,6 +83,13 @@ public class StringType extends AbstractType implements Comparable<StringType> {
         return addend.addToString(this);
     }
 
+    /**
+     * Compara un StringType con un StringType
+     * @param stringtype
+     * el objeto que se utilizara para comparar
+     * @return
+     * un int menor, mayor o igual a 0 segun si this es menor, mayor o igual a stringtype
+     */
     @Override
     public int compareTo(StringType stringtype) {
         return this.getValue().compareTo(stringtype.getValue());
