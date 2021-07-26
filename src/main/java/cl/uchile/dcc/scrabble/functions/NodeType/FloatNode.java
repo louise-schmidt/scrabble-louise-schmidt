@@ -82,5 +82,4 @@ public class FloatNode extends Node {
     public FloatNode divideToFloat(FloatNode dividend) {
         return NodeTypeFactory.newFloatNode(this.getValue().divideToFloat(dividend.getValue()).getValue());
     }
-
 }

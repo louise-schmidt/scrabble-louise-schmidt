@@ -3,7 +3,7 @@ package cl.uchile.dcc.scrabble.functions.NodeType;
 import cl.uchile.dcc.scrabble.memory.NodesFactory.NodeTypeFactory;
 import cl.uchile.dcc.scrabble.types.BoolType;
 
-public class BoolNode extends Node {
+public class BoolNode extends Node implements Comparable<BoolNode>{
     private final BoolType value;
 
     public BoolNode(BoolType BoolType) {
@@ -58,4 +58,8 @@ public class BoolNode extends Node {
         return NodeTypeFactory.newBoolNode(this.getValue().not().getValue());
     }
 
+    @Override
+    public int compareTo(BoolNode boolnode) {
+        return this.getValue().compareTo(boolnode.getValue());
+    }
 }

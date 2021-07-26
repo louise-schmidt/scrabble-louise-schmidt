@@ -1,10 +1,11 @@
 package cl.uchile.dcc.scrabble.functions.NodeType;
 
 import cl.uchile.dcc.scrabble.memory.NodesFactory.NodeTypeFactory;
+import cl.uchile.dcc.scrabble.types.StringType;
 import cl.uchile.dcc.scrabble.types.numbers.BinaryType;
 
 
-public class BinaryNode extends Node {
+public class BinaryNode extends Node implements Comparable<BinaryNode> {
     private final BinaryType value;
 
     public BinaryNode(BinaryType BinaryType) {
@@ -147,6 +148,11 @@ public class BinaryNode extends Node {
     @Override
     public BinaryNode divideToBinary(BinaryNode dividend) {
         return NodeTypeFactory.newBinaryNode(this.getValue().divideToBinary(dividend.getValue()).getValue());
+    }
+
+    @Override
+    public int compareTo(BinaryNode binarynode) {
+        return this.getValue().compareTo(binarynode.getValue());
     }
 
 }
