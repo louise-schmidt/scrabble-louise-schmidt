@@ -41,7 +41,7 @@ and the operations are:
 - logical disjunction
 
 
-The program includes its self representation through an **Abstract Syntaxis Tree (AST)** where each node is an instruction (transformations and operations). It also optimizes the variables and memory via considering each variable as a pair `(id, value)` where *id* is the name of the variable with its *value*. The program is planned as a [MVC software design pattern](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller).
+The program includes its self representation through an **Abstract Syntaxis Tree (AST)** where each node is an instruction (transformations and operations). It also optimizes the variables and memory via considering each variable as a pair `(id, value)` where *id* is the name of the variable with its *value*. It includes the conditions 'while' and 'if' which allow to go through the unary and binary nodes and operate between them. It is also posible to assign variables. The program is planned as a [MVC software design pattern](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller).
 
 
 ## Project Setup
@@ -50,7 +50,7 @@ The program includes its self representation through an **Abstract Syntaxis Tree
 ```
 git clone https://github.com/CC3002-Metodologias/scrabble-louise-schmidt
 ```
-- Run the "Scrabble.java" file (uncomplete)
+- Run the "Scrabble.java" file
 
 
 It is also possible to examine each folder by itself via IntelliJ IDEA, for example. The `test` folder contains the respective tests for every `Class` made. The `main` folder contains multiple packages with the implementations.
