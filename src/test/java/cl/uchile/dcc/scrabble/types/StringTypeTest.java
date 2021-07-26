@@ -40,6 +40,12 @@ class StringTypeTest {
         var different = new StringType(string2);
         assertNotEquals(different, stringtype);
         assertNotEquals(different.hashCode(), stringtype.hashCode());
+
+        // Diferentes tipos
+        var different2 = new IntType(int1);
+        assertNotEquals(different2, stringtype);
+        assertNotEquals(different2.hashCode(), stringtype.hashCode());
+
     }
 
     @Test
@@ -57,13 +63,13 @@ class StringTypeTest {
 
     @Test
     void stringOperationsTest(){
-        // StringType-StringType concatenacion
+        // StringType - StringType concatenacion
         var variable1 = new StringType(string2);
         var variable2 = stringtype.add(variable1);
         var expected = new StringType(stringtype.toString() + variable1.toString());
         assertEquals(expected, variable2);
 
-        // StringType-BoolType concatenacion
+        // StringType - BoolType concatenacion
         booltype = new BoolType(trueBool);
         var expectedSB = new StringType(stringtype.toString() + booltype.toString());
         var stringB = stringtype.add(booltype);
@@ -89,3 +95,5 @@ class StringTypeTest {
     }
 
 }
+
+

@@ -1,4 +1,4 @@
-package cl.uchile.dcc.scrabble.transformations.NodeType;
+package cl.uchile.dcc.scrabble.functions.NodeType;
 
 import cl.uchile.dcc.scrabble.memory.NodesFactory.NodeTypeFactory;
 

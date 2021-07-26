@@ -1,6 +1,6 @@
 package cl.uchile.dcc.scrabble.memory.NodesFactory;
 
-import cl.uchile.dcc.scrabble.transformations.NodeType.*;
+import cl.uchile.dcc.scrabble.functions.NodeType.*;
 
 public class NodeTypeFactory {
 

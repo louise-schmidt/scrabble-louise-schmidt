@@ -1,7 +1,7 @@
-package cl.uchile.dcc.scrabble.transformations.binaryfunctions;
+package cl.uchile.dcc.scrabble.functions.binaryfunctions;
 
-import cl.uchile.dcc.scrabble.transformations.NodeType.INode;
-import cl.uchile.dcc.scrabble.transformations.NodeType.TypeNode;
+import cl.uchile.dcc.scrabble.functions.NodeType.INode;
+import cl.uchile.dcc.scrabble.functions.NodeType.TypeNode;
 
 public class or extends twoNodes {
 

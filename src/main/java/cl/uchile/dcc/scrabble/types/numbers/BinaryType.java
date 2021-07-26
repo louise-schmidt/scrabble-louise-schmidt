@@ -13,7 +13,7 @@ import java.util.Objects;
  * La clase BinaryType genera un objeto del tipo String formado por '0' y '1'
  * Representan un numero binario unsigned
  */
-public class BinaryType extends AbstractType implements INumbers, IBinary, ILogical {
+public class BinaryType extends AbstractType implements INumbers, IBinary, ILogical, Comparable<BinaryType> {
 
     /**
      * valor inmutable del BinaryType
@@ -478,5 +478,12 @@ public class BinaryType extends AbstractType implements INumbers, IBinary, ILogi
         int intDivisor = this.asInt().getValue();
         int intDividend = dividend.asInt().getValue();
         return TypeFactory.getIntType(intDividend / intDivisor).asBinary();
+    }
+
+    @Override
+    public int compareTo(BinaryType binarytype) {
+        Integer binarytypevalue = Integer.valueOf(binarytype.asInt().getValue());
+        Integer value = Integer.valueOf(this.asInt().getValue());
+        return value.compareTo(binarytypevalue);
     }
 }

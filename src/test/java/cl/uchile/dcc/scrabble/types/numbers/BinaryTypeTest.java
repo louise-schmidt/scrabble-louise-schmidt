@@ -10,9 +10,9 @@ public class BinaryTypeTest {
     BinaryType binarytype;
     String bipositive = "0000000000010100"; // 20
     String binegative = "1111111111101100"; // -20
-    String bi2 = "100100111"; // 295
-    String bi3 = "101000"; // 40
-    String bi4 = "111"; // 7
+    String bi2 = "0000000100100111"; // 295
+    String bi3 = "0000000000101000"; // 40
+    String bi4 = "0000000000000111"; // 7
 
     BoolType booltype;
     boolean verdadero = true;
@@ -48,7 +48,7 @@ public class BinaryTypeTest {
 
     // BinaryType a StringType
     @Test
-    void transformaionTest() {
+    void transformationTest() {
         // BinaryType a StringType
         var expectedString = new StringType(bipositive);
         assertEquals(expectedString, binarytype.asString());
@@ -81,96 +81,105 @@ public class BinaryTypeTest {
 
         // Y
         // BinaryType AND True BoolType
-        var biytrue = binario.and(booltype);
+        var biytrue = binarytype.and(booltype);
         var expected = new BinaryType(bipositive);
         assertEquals(expected, biytrue);
 
+
+
         // BinaryType AND False BoolType
-        var biandfalse = binario.and(boolf);
+        var biandfalse = binarytype.and(boolf);
         var expected2 = new BinaryType("0000000000000000");
         assertEquals(expected2, biandfalse);
 
         // BinaryType AND BinaryType
-        var biandbi = binario.and(binario);
+        var biandbi = binarytype.and(binario);
         var expected3 = new BinaryType("0000000000000100");
         assertEquals(expected3, biandbi);
 
-
         // O
         // BinaryType OR True SBool
-        var biortrue = binario.or(booltype);
+        var biortrue = binarytype.or(booltype);
         var expected4 = new BinaryType("1111111111111111");
         assertEquals(expected4, biortrue);
 
         // BinaryType OR False SBool
-        var biorfalse = binario.or(boolf);
+        var biorfalse = binarytype.or(boolf);
         var expected5 = new BinaryType(bipositive);
         assertEquals(expected5, biorfalse);
 
         // BinaryType OR BinaryType
-        var biorbi = binario.or(binario);
-        var expected6 = new BinaryType("0000000111100101");
+        var biorbi = binarytype.or(binario);
+        var expected6 = new BinaryType("0000000100110111");
         assertEquals(expected6, biorbi);
 
 
         // Not
-        var notbi = binario.not();
-        var expected7 = new BinaryType("1111111110111010");
+        var notbi = binarytype.not();
+        var expected7 = new BinaryType("1111111111101011");
         assertEquals(expected7, notbi);
 
 
         // Suma
         // BinaryType + BinaryType
-        var addbi = binario.add(binario);
-        var expected8 = new BinaryType("0000000111101001"); // 489
+        var addbi = binarytype.add(binario);
+        var expected8 = new BinaryType("0000000100111011"); // 315
         assertEquals(expected8, addbi);
 
+        // Suma BinaryType + BinaryType
+        var suma1 = new BinaryType("111");
+        var suma2 = new BinaryType("11");
+        var expected80 = new BinaryType("0000000000001010");
+        var resultado = suma1.add(suma2);
+        assertEquals(expected80, expected80);
+
         // BinaryType + BinaryType
-        var bi1 = new BinaryType(bi3);
-        var bi2 = new BinaryType(bi4);
-        var addBean = bi1.add(bi2);
-        var expected9 = new BinaryType("10000111");
-        assertEquals(expected9, addBean);
+        var bin1 = new BinaryType(bi3);
+        var bin2 = new BinaryType(bi4);
+        var add = bin1.add(bin2);
+        var expected9 = new BinaryType("0000000000101111");
+        assertEquals(expected9, add);
 
         // BinaryType + IntType
-        var addint = binario.add(intype);
-        var expected10 = new BinaryType("10100");
+        var addint = binarytype.add(intype);
+        var expected10 = new BinaryType("0000000000101000");
         assertEquals(expected10, addint);
 
 
         // Resta
         // BinaryType - BinaryType
-        var diffbi = binario.subtract(binario);
-        var expected11 = new BinaryType("1111111010100001");
+        var diffbi = binarytype.subtract(binario);
+        var expected11 = new BinaryType("1111111011101101");
         assertEquals(expected11, diffbi);
 
         // BinaryType - IntType
-        var diffint = binario.subtract(intype);
+        var diffint = binarytype.subtract(intype);
         var expected12 = new BinaryType("0000000000000000");
         assertEquals(expected12, diffint);
 
 
         // Multiplicacion
         // BinaryType * BinaryType
-        var prodbi = binario.multiply(binario);
-        var expected13 = new BinaryType("0111000100110100");
+        var prodbi = binarytype.multiply(binario);
+        var expected13 = new BinaryType("0001011100001100");
         assertEquals(expected13, prodbi);
 
         // BinaryType * IntType
-        var prodint = binario.multiply(intype);
-        var expected14 = new BinaryType("0001001010011001");
+        var prodint = binarytype.multiply(intype);
+        var expected14 = new BinaryType("0000000110010000");
         assertEquals(expected14, prodint);
 
 
         // Division
         // BinaryType / BinaryType
-        var divbi = binario.divide(binario);
+        var divbi = binarytype.divide(binario);
         var expected15 = new BinaryType("0000000000000000");
         assertEquals(expected15, divbi);
 
         // BinaryType / IntType
-        var divint = binario.divide(intype);
+        var divint = binarytype.divide(intype);
         var expected16 = new BinaryType("0000000000000001");
         assertEquals(expected16, divint);
     }
+
 }

@@ -47,6 +47,7 @@ class IntTypeTest {
 
     @Test
     void testTransformaciones() {
+
         // IntType a StringType
         var expectedstr = new StringType(String.valueOf(int1));
         assertEquals(expectedstr,intype.asString());
@@ -141,6 +142,5 @@ class IntTypeTest {
         var divBi = intype.divide(binarytype);
         var expectedDivBi = new IntType(int1 / asint);
         assertEquals(expectedDivBi, divBi);
-
     }
 }

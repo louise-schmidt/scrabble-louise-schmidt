@@ -6,7 +6,7 @@ import java.util.Objects;
  * La clase StringType genera un objeto del tipo String
  * Representan un string
  */
-public class StringType extends AbstractType {
+public class StringType extends AbstractType implements Comparable<StringType> {
 
     /**
      * valor inmutable del StringType
@@ -43,7 +43,7 @@ public class StringType extends AbstractType {
     public boolean equals(Object obj) {
         if (obj instanceof StringType) {
             var o = (StringType) obj;
-            return o.value == this.value;
+            return Objects.equals(o.value,this.value);
         }
         return false;
     }
@@ -55,7 +55,7 @@ public class StringType extends AbstractType {
      */
     @Override
     public int hashCode() {
-        return Objects.hash(StringType.class);
+        return Objects.hash(this.getValue());
     }
 
     /**
@@ -79,7 +79,13 @@ public class StringType extends AbstractType {
     }
 
     //Concatenacion
-    public StringType add(StringType addend) {
+    public StringType add(iType addend) {
         return addend.addToString(this);
     }
+
+    @Override
+    public int compareTo(StringType stringtype) {
+        return this.getValue().compareTo(stringtype.getValue());
+    }
+
 }

@@ -1,57 +1,28 @@
-package cl.uchile.dcc.scrabble.transformations.NodeType;
+package cl.uchile.dcc.scrabble.functions.NodeType;
 
 import cl.uchile.dcc.scrabble.memory.NodesFactory.NodeTypeFactory;
-import cl.uchile.dcc.scrabble.types.numbers.BinaryType;
+import cl.uchile.dcc.scrabble.types.numbers.IntType;
 
+public class IntNode extends Node {
+    private final IntType value;
 
-public class BinaryNode extends Node {
-    private final BinaryType value;
-
-    public BinaryNode(BinaryType BinaryType) {
-        this.value = BinaryType;
+    public IntNode(IntType IntType) {
+        this.value = IntType;
     }
 
-    public BinaryNode evaluate() {
+    @Override
+    public IntNode evaluate(){
         return this;
     }
 
-    public BinaryType getValue() {
+    @Override
+    public IntType getValue() {
         return this.value;
     }
 
     @Override
-    public TypeNode and(TypeNode operand){
-        return operand.andBinary(this);
-    }
-
-    @Override
-    public BinaryNode andBool(BoolNode boolNode){
-        return NodeTypeFactory.newBinaryNode(this.getValue().andBool(boolNode.getValue()).getValue());
-    }
-
-    @Override
-    public BinaryNode andBinary(BinaryNode binaryNode){
-        return NodeTypeFactory.newBinaryNode(this.getValue().andBinary(binaryNode.getValue()).getValue());
-    }
-
-    @Override
-    public TypeNode or(TypeNode operand){
-        return operand.orBinary(this);
-    }
-
-    @Override
-    public BinaryNode orBool(BoolNode boolNode){
-        return NodeTypeFactory.newBinaryNode(this.getValue().orBool(boolNode.getValue()).getValue());
-    }
-
-    @Override
-    public BinaryNode orBinary(BinaryNode binaryNode){
-        return NodeTypeFactory.newBinaryNode(this.getValue().orBinary(binaryNode.getValue()).getValue());
-    }
-
-    @Override
-    public BinaryNode not(){
-        return NodeTypeFactory.newBinaryNode(this.getValue().not().getValue());
+    public IntNode toIntNode() {
+        return this;
     }
 
     @Override
@@ -60,18 +31,13 @@ public class BinaryNode extends Node {
     }
 
     @Override
-    public IntNode toIntNode() {
-        return NodeTypeFactory.newIntNode(this.getValue().asInt().getValue());
-    }
-
-    @Override
     public BinaryNode toBinaryNode() {
-        return this;
+        return NodeTypeFactory.newBinaryNode(this.getValue().asBinary().getValue());
     }
 
     @Override
     public TypeNode add(TypeNode addend){
-        return addend.addToBinary(this);
+        return addend.addToInt(this);
     }
 
     @Override
@@ -91,7 +57,7 @@ public class BinaryNode extends Node {
 
     @Override
     public TypeNode subtract(TypeNode subtrahend){
-        return subtrahend.subtractToBinary(this);
+        return subtrahend.subtractToInt(this);
     }
 
     @Override
@@ -111,7 +77,7 @@ public class BinaryNode extends Node {
 
     @Override
     public TypeNode multiply(TypeNode multiplier){
-        return multiplier.multiplyToBinary(this);
+        return multiplier.multiplyToInt(this);
     }
 
     @Override
@@ -131,7 +97,7 @@ public class BinaryNode extends Node {
 
     @Override
     public TypeNode divide(TypeNode divisor){
-        return divisor.divideToBinary(this);
+        return divisor.divideToInt(this);
     }
 
     @Override
@@ -148,5 +114,4 @@ public class BinaryNode extends Node {
     public BinaryNode divideToBinary(BinaryNode dividend) {
         return NodeTypeFactory.newBinaryNode(this.getValue().divideToBinary(dividend.getValue()).getValue());
     }
-
 }

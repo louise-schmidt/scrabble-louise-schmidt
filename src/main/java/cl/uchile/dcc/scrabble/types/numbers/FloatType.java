@@ -10,7 +10,7 @@ import java.util.Objects;
  * La clase FloatType genera un objeto del tipo double
  * Representan un numero flotante
  */
-public class FloatType extends AbstractType implements INumbers {
+public class FloatType extends AbstractType implements INumbers, Comparable<FloatType> {
 
     /**
      * valor inmutable del FloatType
@@ -58,7 +58,7 @@ public class FloatType extends AbstractType implements INumbers {
      */
     @Override
     public int hashCode() {
-        return Objects.hash(FloatType.class);
+        return Objects.hash(this.getValue());
     }
 
     /**
@@ -203,5 +203,12 @@ public class FloatType extends AbstractType implements INumbers {
     @Override
     public FloatType divideToFloat(FloatType dividend) {
         return TypeFactory.getFloatType(dividend.getValue() / this.getValue());
+    }
+
+    @Override
+    public int compareTo(FloatType floatype) {
+        Double floatypevalue = Double.valueOf(floatype.getValue());
+        Double value = Double.valueOf(this.asFloat().getValue());
+        return value.compareTo(floatypevalue);
     }
 }

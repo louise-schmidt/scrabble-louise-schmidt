@@ -1,7 +1,7 @@
 package cl.uchile.dcc.scrabble.memory.NodesFactory;
 
 import cl.uchile.dcc.scrabble.memory.TypesFactory.TypeFactory;
-import cl.uchile.dcc.scrabble.transformations.NodeType.FloatNode;
+import cl.uchile.dcc.scrabble.functions.NodeType.FloatNode;
 import cl.uchile.dcc.scrabble.types.numbers.FloatType;
 
 import java.util.Hashtable;

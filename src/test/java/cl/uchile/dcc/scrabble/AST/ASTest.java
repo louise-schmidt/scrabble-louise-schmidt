@@ -1,10 +1,11 @@
 package cl.uchile.dcc.scrabble.AST;
 
+import cl.uchile.dcc.scrabble.functions.unaryfunctions.not;
 import cl.uchile.dcc.scrabble.memory.TypesFactory.TypeFactory;
 import cl.uchile.dcc.scrabble.memory.NodesFactory.NodeTypeFactory;
 import cl.uchile.dcc.scrabble.memory.NodesFactory.VarNodeFactory;
-import cl.uchile.dcc.scrabble.transformations.binaryfunctions.*;
-import cl.uchile.dcc.scrabble.transformations.unaryfunctions.transform.*;
+import cl.uchile.dcc.scrabble.functions.binaryfunctions.*;
+import cl.uchile.dcc.scrabble.functions.unaryfunctions.transform.*;
 import cl.uchile.dcc.scrabble.types.iType;
 import org.junit.jupiter.api.Test;
 
@@ -81,6 +82,7 @@ public class ASTest {
         var actualValue = astWithVar.getValue();
         assertEquals(expectedValue, actualValue);
     }
+
 
     @Test
     void strCatTest(){
@@ -331,7 +333,6 @@ public class ASTest {
         assertEquals(expectedBinaryDiv, binDiv);
         assertEquals(expectedOrBool, boolOrBin);
         assertEquals(expectedAndBinary, binAndBin);
-
     }
 
     @Test
@@ -399,6 +400,7 @@ public class ASTest {
 
     }
 
+
     @Test
     void boolNodeTest(){
         var expectedBoolNode = NodeTypeFactory.newBoolNode(true).getValue();
@@ -413,12 +415,17 @@ public class ASTest {
         var expectedOrBool = NodeTypeFactory.newBoolNode(true).getValue();
         var boolOrBool = new or(NodeTypeFactory.newBoolNode(true), NodeTypeFactory.newBoolNode(false)).getValue();
 
+        var truebool = NodeTypeFactory.newBoolNode(true).getValue();
+        var expected = new not(NodeTypeFactory.newBoolNode(false)).getValue();
+
         assertEquals(expectedBoolNode, boolToBool);
         assertEquals(expectedAndBool, boolAndBool);
         assertEquals(expectedAndBinary, binAndBool);
         assertEquals(expectedOrBool, boolOrBool);
+        assertEquals(truebool,expected);
 
     }
+
 
     @Test
     void nullTest(){

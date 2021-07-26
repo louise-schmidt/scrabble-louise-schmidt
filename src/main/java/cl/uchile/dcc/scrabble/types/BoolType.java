@@ -3,12 +3,13 @@ package cl.uchile.dcc.scrabble.types;
 import cl.uchile.dcc.scrabble.memory.TypesFactory.TypeFactory;
 import cl.uchile.dcc.scrabble.operations.ILogical;
 import cl.uchile.dcc.scrabble.types.numbers.BinaryType;
+import cl.uchile.dcc.scrabble.types.numbers.FloatType;
 
 /**
  * La clase BoolType genera un objeto del tipo boolean
  * Representan un valor booleano
  */
-public class BoolType extends AbstractType implements iType, ILogical {
+public class BoolType extends AbstractType implements iType, ILogical, Comparable<BoolType> {
     private final boolean value;
 
     /**
@@ -161,5 +162,12 @@ public class BoolType extends AbstractType implements iType, ILogical {
     @Override
     public BoolType not(){
         return TypeFactory.getBoolType(!this.getValue());
+    }
+
+    @Override
+    public int compareTo(BoolType booltype) {
+        Boolean booltypevalue = Boolean.valueOf(booltype.getValue());
+        Boolean value = Boolean.valueOf(this.getValue());
+        return value.compareTo(booltypevalue);
     }
 }

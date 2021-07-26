@@ -9,7 +9,7 @@ import cl.uchile.dcc.scrabble.operations.IBinary;
  * La clase IntType genera un objeto del tipo int
  * Representan un numero entero
  */
-public class IntType extends AbstractType implements INumbers, IBinary {
+public class IntType extends AbstractType implements INumbers, IBinary, Comparable<IntType> {
 
     /**
      * valor inmutable del IntType
@@ -293,6 +293,13 @@ public class IntType extends AbstractType implements INumbers, IBinary {
         int intDividend = dividend.asInt().getValue();
         int intDivisor = this.getValue();
         return TypeFactory.getIntType(intDividend / intDivisor).asBinary();
+    }
+
+    @Override
+    public int compareTo(IntType intype) {
+        Integer intypevalue = Integer.valueOf(intype.getValue());
+        Integer value = Integer.valueOf(this.asInt().getValue());
+        return value.compareTo(intypevalue);
     }
 }
 

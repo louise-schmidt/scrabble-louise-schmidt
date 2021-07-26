@@ -1,6 +1,6 @@
-package cl.uchile.dcc.scrabble.transformations.unaryfunctions;
+package cl.uchile.dcc.scrabble.functions.unaryfunctions;
 
-import cl.uchile.dcc.scrabble.transformations.NodeType.INode;
+import cl.uchile.dcc.scrabble.functions.NodeType.INode;
 import cl.uchile.dcc.scrabble.types.iType;
 
 public abstract class oneNode implements INode {
@@ -11,7 +11,7 @@ public abstract class oneNode implements INode {
      * @param hijo de tipo INode
      */
     public oneNode (INode hijo) {
-        this.hijo = this;
+        this.hijo = hijo;
     }
 
     /**

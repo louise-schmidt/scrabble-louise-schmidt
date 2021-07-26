@@ -1,6 +1,6 @@
-package cl.uchile.dcc.scrabble.transformations.binaryfunctions;
+package cl.uchile.dcc.scrabble.functions.binaryfunctions;
 
-import cl.uchile.dcc.scrabble.transformations.NodeType.INode;
+import cl.uchile.dcc.scrabble.functions.NodeType.INode;
 import cl.uchile.dcc.scrabble.types.iType;
 
 public abstract class twoNodes implements INode {

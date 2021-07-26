@@ -1,8 +1,8 @@
-package cl.uchile.dcc.scrabble.transformations.binaryfunctions;
+package cl.uchile.dcc.scrabble.functions.unaryfunctions;
 
-import cl.uchile.dcc.scrabble.transformations.NodeType.INode;
-import cl.uchile.dcc.scrabble.transformations.NodeType.TypeNode;
-import cl.uchile.dcc.scrabble.transformations.unaryfunctions.oneNode;
+import cl.uchile.dcc.scrabble.functions.NodeType.INode;
+import cl.uchile.dcc.scrabble.functions.NodeType.TypeNode;
+import cl.uchile.dcc.scrabble.functions.unaryfunctions.oneNode;
 
 public class not extends oneNode {
 

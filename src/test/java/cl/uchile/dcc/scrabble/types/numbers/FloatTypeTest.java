@@ -28,8 +28,9 @@ class FloatTypeTest {
         assertEquals(expected,floatype);
 
         var expected2 = new FloatType(1.0);
-        assertNotEquals(expected2.hashCode(),floatype.hashCode());
         assertNotEquals(expected2,floatype);
+        assertNotEquals(expected2.hashCode(),floatype.hashCode());
+
     }
 
     @Test
@@ -43,11 +44,13 @@ class FloatTypeTest {
         assertEquals(floatype.asFloat(),floatype);
     }
 
+
     @Test
     void asFloat() {
         var expected = new StringType(String.valueOf(float1));
         assertEquals(floatype.asString(),expected);
     }
+
 
     @Test
     void operationsTest(){

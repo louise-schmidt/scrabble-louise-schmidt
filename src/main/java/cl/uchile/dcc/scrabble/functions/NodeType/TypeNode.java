@@ -1,6 +1,6 @@
-package cl.uchile.dcc.scrabble.transformations.NodeType;
+package cl.uchile.dcc.scrabble.functions.NodeType;
 
-public interface TypeNode extends INode {
+public interface TypeNode extends INode, Comparable<TypeNode> {
 
     // ADD
     TypeNode add(TypeNode addend);
