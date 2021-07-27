@@ -11,10 +11,10 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class SequenceTest {
+class generalTest {
 
     @Test
-    void lector() {
+    void generalTest() {
         Sequence sequence =
                 new Sequence(
                         new Assign("a",NodeTypeFactory.newIntNode(10)),
