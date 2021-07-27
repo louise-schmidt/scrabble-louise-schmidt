@@ -1,5 +1,5 @@
-package cl.uchile.dcc.scrabble.memory.TypesFactory.numbersFactory;
-import cl.uchile.dcc.scrabble.memory.TypesFactory.BinaryFactory;
+package cl.uchile.dcc.scrabble.factories.TypesFactory.numbersFactory;
+import cl.uchile.dcc.scrabble.factories.TypesFactory.BinaryFactory;
 import cl.uchile.dcc.scrabble.types.numbers.BinaryType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

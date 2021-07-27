@@ -1,6 +1,6 @@
 package cl.uchile.dcc.scrabble.types.numbers;
 
-import cl.uchile.dcc.scrabble.memory.TypesFactory.TypeFactory;
+import cl.uchile.dcc.scrabble.factories.TypesFactory.TypeFactory;
 import cl.uchile.dcc.scrabble.types.AbstractType;
 import cl.uchile.dcc.scrabble.types.StringType;
 

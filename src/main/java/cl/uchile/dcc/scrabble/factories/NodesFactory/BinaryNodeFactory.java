@@ -1,6 +1,6 @@
-package cl.uchile.dcc.scrabble.memory.NodesFactory;
+package cl.uchile.dcc.scrabble.factories.NodesFactory;
 
-import cl.uchile.dcc.scrabble.memory.TypesFactory.TypeFactory;
+import cl.uchile.dcc.scrabble.factories.TypesFactory.TypeFactory;
 import cl.uchile.dcc.scrabble.functions.NodeType.BinaryNode;
 import cl.uchile.dcc.scrabble.types.numbers.BinaryType;
 

@@ -3,7 +3,7 @@ package cl.uchile.dcc.scrabble.visitor;
 import cl.uchile.dcc.scrabble.functions.NodeType.INode;
 import cl.uchile.dcc.scrabble.functions.NodeType.TypeNode;
 import cl.uchile.dcc.scrabble.functions.binaryfunctions.twoNodes;
-import cl.uchile.dcc.scrabble.memory.NodesFactory.NodeTypeFactory;
+import cl.uchile.dcc.scrabble.factories.NodesFactory.NodeTypeFactory;
 
 /**
  * Compara dos nodos con compareTo de java

@@ -1,6 +1,6 @@
 package cl.uchile.dcc.scrabble.functions.NodeType;
 
-import cl.uchile.dcc.scrabble.memory.NodesFactory.NodeTypeFactory;
+import cl.uchile.dcc.scrabble.factories.NodesFactory.NodeTypeFactory;
 import cl.uchile.dcc.scrabble.types.numbers.FloatType;
 
 /**

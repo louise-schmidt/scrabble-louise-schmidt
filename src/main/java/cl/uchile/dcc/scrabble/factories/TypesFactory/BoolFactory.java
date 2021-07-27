@@ -1,4 +1,4 @@
-package cl.uchile.dcc.scrabble.memory.TypesFactory;
+package cl.uchile.dcc.scrabble.factories.TypesFactory;
 
 import cl.uchile.dcc.scrabble.types.BoolType;
 

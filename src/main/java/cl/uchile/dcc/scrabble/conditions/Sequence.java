@@ -1,4 +1,4 @@
-package cl.uchile.dcc.scrabble.controlflujo;
+package cl.uchile.dcc.scrabble.conditions;
 
 import cl.uchile.dcc.scrabble.functions.NodeType.INode;
 

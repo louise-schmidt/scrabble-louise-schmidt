@@ -1,8 +1,8 @@
-package cl.uchile.dcc.scrabble.controlflujo;
+package cl.uchile.dcc.scrabble.conditions;
 
 import cl.uchile.dcc.scrabble.functions.NodeType.INode;
 import cl.uchile.dcc.scrabble.functions.NodeType.TypeNode;
-import cl.uchile.dcc.scrabble.memory.NodesFactory.VarNodeFactory;
+import cl.uchile.dcc.scrabble.factories.NodesFactory.VarNodeFactory;
 import cl.uchile.dcc.scrabble.types.iType;
 
 /**
@@ -11,7 +11,7 @@ import cl.uchile.dcc.scrabble.types.iType;
 public class Assign implements INode {
 
     private String var;
-    private iType val;
+    private INode val;
 
     /**
      * Constructor Assign
@@ -20,7 +20,7 @@ public class Assign implements INode {
      * @param val
      * el valor que se asigna a la variable
      */
-    public Assign (String var, iType val) {
+    public Assign (String var, INode val) {
         this.var = var;
         this.val = val;
     }
@@ -32,7 +32,7 @@ public class Assign implements INode {
      */
     @Override
     public TypeNode evaluate() {
-        VarNodeFactory.getVarNode(this.var).setValue(this.evaluate());
+        VarNodeFactory.getVarNode(this.var).setValue(this.val.evaluate());
         return null;
     }
 

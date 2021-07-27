@@ -1,15 +1,15 @@
 package cl.uchile.dcc.scrabble.AST;
 
 import cl.uchile.dcc.scrabble.functions.unaryfunctions.not;
-import cl.uchile.dcc.scrabble.memory.TypesFactory.TypeFactory;
-import cl.uchile.dcc.scrabble.memory.NodesFactory.NodeTypeFactory;
-import cl.uchile.dcc.scrabble.memory.NodesFactory.VarNodeFactory;
+import cl.uchile.dcc.scrabble.factories.TypesFactory.TypeFactory;
+import cl.uchile.dcc.scrabble.factories.NodesFactory.NodeTypeFactory;
+import cl.uchile.dcc.scrabble.factories.NodesFactory.VarNodeFactory;
 import cl.uchile.dcc.scrabble.functions.binaryfunctions.*;
 import cl.uchile.dcc.scrabble.functions.unaryfunctions.transform.*;
 import cl.uchile.dcc.scrabble.types.iType;
 import org.junit.jupiter.api.Test;
 
-import static cl.uchile.dcc.scrabble.memory.NodesFactory.VarNodeFactory.*;
+import static cl.uchile.dcc.scrabble.factories.NodesFactory.VarNodeFactory.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ASTest {

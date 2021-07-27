@@ -1,5 +1,5 @@
-package cl.uchile.dcc.scrabble.memory.TypesFactory.numbersFactory;
-import cl.uchile.dcc.scrabble.memory.TypesFactory.FloatFactory;
+package cl.uchile.dcc.scrabble.factories.TypesFactory.numbersFactory;
+import cl.uchile.dcc.scrabble.factories.TypesFactory.FloatFactory;
 import cl.uchile.dcc.scrabble.types.numbers.FloatType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

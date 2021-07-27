@@ -73,44 +73,56 @@ public interface TypeNode extends INode, Comparable<TypeNode> {
     // Comparison
 
     /**
-     *
+     * Compara TypeNode
      * @param node
+     * de tipo TypeNode
      * @return
+     * int
      */
     int compareTo(TypeNode node);
 
     /**
-     *
+     * Compara un IntNode
      * @param intNode
+     * se compara
      * @return
+     * Integer
      */
     Integer compareToInt(IntNode intNode);
 
     /**
-     *
+     * Compara un FloatNode
      * @param floatNode
+     * se compara
      * @return
+     * Integer
      */
     Integer compareToFloat(FloatNode floatNode);
 
     /**
-     *
+     * Compara un BinaryNode
      * @param binaryNode
+     * se compara
      * @return
+     * Integer
      */
     Integer compareToBinary(BinaryNode binaryNode);
 
     /**
-     *
+     * Compara un BoolNode
      * @param boolNode
+     * se compara
      * @return
+     * Integer
      */
     Integer compareToBool(BoolNode boolNode);
 
     /**
-     *
+     * Compara un StringNode
      * @param stringNode
+     * se compara
      * @return
+     * Integer
      */
     Integer compareToString(StringNode stringNode);
 }
