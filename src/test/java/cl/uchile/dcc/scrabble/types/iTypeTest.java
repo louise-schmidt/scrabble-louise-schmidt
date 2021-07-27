@@ -1,4 +1,4 @@
-package cl.uchile.dcc.scrabble.gui;
+package cl.uchile.dcc.scrabble.types;
 import cl.uchile.dcc.scrabble.types.StringType;
 import cl.uchile.dcc.scrabble.types.numbers.BinaryType;
 import cl.uchile.dcc.scrabble.types.BoolType;

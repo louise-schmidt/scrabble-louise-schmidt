@@ -18,15 +18,11 @@ public class IntFactory {
      * un IntType creado a partir del parametro ingresado
      */
     public static IntType newIntType(int value) {
-        int key = value;
-        IntType r = mapIntType.get(key);
+        IntType r = mapIntType.get(value);
         if(r==null) {
             r = new IntType(value);
-            mapIntType.put(key, r);
+            mapIntType.put(value, r);
         }
         return r;
-    }
-    public HashMap<Object, IntType> getMapIntType() {
-        return mapIntType;
     }
 }

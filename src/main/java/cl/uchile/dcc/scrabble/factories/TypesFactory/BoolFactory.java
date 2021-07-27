@@ -18,17 +18,11 @@ public class BoolFactory {
      * un BoolType creado a partir del parametro ingresado
      */
     public static BoolType newBoolType(boolean value) {
-        boolean key = value;
-        BoolType r = mapBoolType.get(key);
+        BoolType r = mapBoolType.get(value);
         if (r==null) {
             r = new BoolType(value);
-            mapBoolType.put(key, r);
+            mapBoolType.put(value, r);
         }
         return r;
     }
-
-    public HashMap<Object, BoolType> getMapBoolType() {
-        return mapBoolType;
-    }
-
 }

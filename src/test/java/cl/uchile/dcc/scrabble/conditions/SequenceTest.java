@@ -6,6 +6,7 @@ import cl.uchile.dcc.scrabble.factories.NodesFactory.NodeTypeFactory;
 import cl.uchile.dcc.scrabble.factories.NodesFactory.VarNodeFactory;
 import cl.uchile.dcc.scrabble.visitor.EqualsTo;
 import cl.uchile.dcc.scrabble.visitor.GreaterThan;
+import cl.uchile.dcc.scrabble.visitor.LessThan;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -28,7 +29,7 @@ class SequenceTest {
 
         sequence.lector();
         var expectedValueA = NodeTypeFactory.newIntNode(5).getValue();
-        var expectedValueB = NodeTypeFactory.newIntNode(5).getValue();
+        var expectedValueB = NodeTypeFactory.newIntNode(0).getValue();
         var realValueA = VarNodeFactory.getVarNode("a").getValue();
         var realValueB = VarNodeFactory.getVarNode("b").getValue();
         assertEquals(expectedValueA,realValueA);

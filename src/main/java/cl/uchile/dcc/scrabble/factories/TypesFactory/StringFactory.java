@@ -19,16 +19,11 @@ public class StringFactory {
      * un StringType creado a partir del parametro ingresado
      */
     public static StringType newStringType(String value) {
-        String key = value;
-        StringType r = mapStringType.get(key);
+        StringType r = mapStringType.get(value);
         if (r==null) {
             r = new StringType(value);
-            mapStringType.put(key, r);
+            mapStringType.put(value, r);
         }
         return r;
-    }
-
-    public Map<String, StringType> getMapStringType() {
-        return mapStringType;
     }
 }

@@ -2,14 +2,14 @@ package cl.uchile.dcc.scrabble.factories.TypesFactory;
 
 import cl.uchile.dcc.scrabble.types.numbers.BinaryType;
 
-import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.Map;
 
 /**
  * Factory del tipo Binary de scrabble
  */
 public class BinaryFactory {
-    public static HashMap<String, BinaryType> mapBinaryType = new HashMap<>();
+    public static Hashtable<String, BinaryType> mapBinaryType = new Hashtable<>();
 
     /**
      * Genera un BinaryType a partir del parámetro entregado
@@ -18,17 +18,12 @@ public class BinaryFactory {
      * @return
      * un BinaryType creado a partir del parametro ingresado
      */
-    public static BinaryType newBinaryType(String value) {
-        String key = value;
-        BinaryType r = mapBinaryType.get(key);
+    public static BinaryType newBinaryType(String value) { ;
+        BinaryType r = mapBinaryType.get(value);
         if (r==null) {
             r = new BinaryType(value);
-            mapBinaryType.put(key, r);
+            mapBinaryType.put(value, r);
         }
         return r;
-    }
-
-    public Map<String, BinaryType> getMapBinaryType() {
-        return mapBinaryType;
     }
 }

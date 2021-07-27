@@ -18,16 +18,11 @@ public class FloatFactory {
      * un FloatType creado a partir del parametro ingresado
      */
     public static FloatType newFloatType(double value) {
-        double key = value;
-        FloatType r = mapFloatType.get(key);
+        FloatType r = mapFloatType.get(value);
         if (r==null) {
             r = new FloatType(value);
-            mapFloatType.put(key, r);
+            mapFloatType.put(value, r);
         }
         return r;
-    }
-
-    public HashMap<Object, FloatType> getMapFloatType() {
-        return mapFloatType;
     }
 }
