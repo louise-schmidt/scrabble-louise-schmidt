@@ -23,7 +23,7 @@ public class LessThan extends twoNodes {
      */
     @Override
     public TypeNode evaluate() {
-        if(hijoizq.evaluate().compareTo(this.hijoder.evaluate())==-1) {
+        if(hijoizq.evaluate().compareTo(this.hijoder.evaluate())<=-1) {
             return NodeTypeFactory.newBoolNode(true);
         }
         else {
