@@ -23,9 +23,9 @@ class WhileTest {
 
     @Test
     void whileTest() {
-        var expected = NodeTypeFactory.newIntNode(10).getValue();
+        var expected = NodeTypeFactory.newIntNode(0).getValue();
         var operacion = new While(new LessThan(VarNodeFactory.getVarNode("i"),VarNodeFactory.getVarNode("n")),
-                new Assign("i",new add(VarNodeFactory.getVarNode("i"),NodeTypeFactory.newIntNode(1)))).evaluate();
+                new add(VarNodeFactory.getVarNode("i"),NodeTypeFactory.newIntNode(1)));
         var actual = VarNodeFactory.getVarNode("i").getValue();
         assertEquals(expected,actual);
     }

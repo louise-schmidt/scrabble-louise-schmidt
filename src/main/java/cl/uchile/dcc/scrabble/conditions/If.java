@@ -2,16 +2,16 @@ package cl.uchile.dcc.scrabble.conditions;
 
 import cl.uchile.dcc.scrabble.functions.NodeType.BoolNode;
 import cl.uchile.dcc.scrabble.functions.NodeType.INode;
+import cl.uchile.dcc.scrabble.functions.NodeType.Interfaz;
 import cl.uchile.dcc.scrabble.functions.NodeType.TypeNode;
-import cl.uchile.dcc.scrabble.types.iType;
 
 /**
  * clase If cuenta con una condición, ifTrue e ifFalse
  */
-public class If implements INode {
+public class If implements Interfaz {
     private INode cond;
-    private INode ifTrue;
-    private INode ifFalse;
+    private Interfaz ifTrue;
+    private Interfaz ifFalse;
 
     /**
      * Constructor clase If
@@ -22,20 +22,10 @@ public class If implements INode {
      * @param ifFalse
      * corresponde a cuando la condicion es false
      */
-    public If(INode cond, INode ifTrue, INode ifFalse) {
+    public If(INode cond, Interfaz ifTrue, Interfaz ifFalse) {
         this.cond = cond;
         this.ifTrue = ifTrue;
         this.ifFalse = ifFalse;
-    }
-
-    /**
-     * getter de If
-     * @return
-     * null
-     */
-    @Override
-    public iType getValue() {
-        return null;
     }
 
     /**

@@ -2,7 +2,7 @@ package cl.uchile.dcc.scrabble.functions.NodeType;
 
 import cl.uchile.dcc.scrabble.types.iType;
 
-public interface INode {
+public interface INode extends Interfaz {
 
     /**
      * Getter de nodos
@@ -10,11 +10,4 @@ public interface INode {
      * iType
      */
     iType getValue();
-
-    /**
-     * Evalua los nodos
-     * @return
-     * TypeNode
-     */
-    TypeNode evaluate();
 }

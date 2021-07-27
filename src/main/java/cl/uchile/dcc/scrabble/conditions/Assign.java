@@ -1,14 +1,14 @@
 package cl.uchile.dcc.scrabble.conditions;
 
 import cl.uchile.dcc.scrabble.functions.NodeType.INode;
+import cl.uchile.dcc.scrabble.functions.NodeType.Interfaz;
 import cl.uchile.dcc.scrabble.functions.NodeType.TypeNode;
 import cl.uchile.dcc.scrabble.factories.NodesFactory.VarNodeFactory;
-import cl.uchile.dcc.scrabble.types.iType;
 
 /**
  * Clase Assign le asigna un valor val a una variable var
  */
-public class Assign implements INode {
+public class Assign implements Interfaz {
 
     private String var;
     private INode val;
@@ -33,16 +33,6 @@ public class Assign implements INode {
     @Override
     public TypeNode evaluate() {
         VarNodeFactory.getVarNode(this.var).setValue(this.val.evaluate());
-        return null;
-    }
-
-    /**
-     * Getter de Assign
-     * @return
-     * null
-     */
-    @Override
-    public iType getValue() {
         return null;
     }
 }
