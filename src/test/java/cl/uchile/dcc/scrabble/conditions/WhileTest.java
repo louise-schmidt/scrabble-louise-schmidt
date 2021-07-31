@@ -3,8 +3,8 @@ package cl.uchile.dcc.scrabble.conditions;
 import cl.uchile.dcc.scrabble.factories.NodesFactory.NodeTypeFactory;
 import cl.uchile.dcc.scrabble.factories.NodesFactory.VarNodeFactory;
 import cl.uchile.dcc.scrabble.functions.NodeType.VarNode;
+import cl.uchile.dcc.scrabble.functions.While;
 import cl.uchile.dcc.scrabble.functions.binaryfunctions.add;
-import cl.uchile.dcc.scrabble.visitor.LessThan;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

@@ -1,12 +1,11 @@
 package cl.uchile.dcc.scrabble.conditions;
 
+import cl.uchile.dcc.scrabble.functions.If;
+import cl.uchile.dcc.scrabble.functions.While;
 import cl.uchile.dcc.scrabble.functions.binaryfunctions.subtract;
 import cl.uchile.dcc.scrabble.functions.unaryfunctions.not;
 import cl.uchile.dcc.scrabble.factories.NodesFactory.NodeTypeFactory;
 import cl.uchile.dcc.scrabble.factories.NodesFactory.VarNodeFactory;
-import cl.uchile.dcc.scrabble.visitor.EqualsTo;
-import cl.uchile.dcc.scrabble.visitor.GreaterThan;
-import cl.uchile.dcc.scrabble.visitor.LessThan;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

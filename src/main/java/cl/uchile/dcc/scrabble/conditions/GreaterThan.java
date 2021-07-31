@@ -1,4 +1,4 @@
-package cl.uchile.dcc.scrabble.visitor;
+package cl.uchile.dcc.scrabble.conditions;
 
 import cl.uchile.dcc.scrabble.functions.NodeType.INode;
 import cl.uchile.dcc.scrabble.functions.NodeType.TypeNode;
